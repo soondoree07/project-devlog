@@ -52,6 +52,18 @@
     ]
   },
   {
+    "date": "2026-03-29",
+    "project": "jbae-portfolio",
+    "title": "전체 작업 로그 CHANGELOG.md 추가",
+    "items": [
+      "CHANGELOG.md 생성 — 3/19~3/29 전체 57개 커밋 히스토리 정리"
+    ],
+    "commits": [
+      "c525e3d - CHANGELOG 전체 히스토리로 업데이트 (3/19~3/29)",
+      "c03b678 - 작업 로그 추가 (2026-03-28~29 세션)"
+    ]
+  },
+  {
     "date": "2026-03-28",
     "project": "pokenova",
     "title": "메가/리전폼 특성 및 도감 개선",
@@ -61,6 +73,39 @@
     ],
     "commits": [
       "a43b587 - 메가/리전폼 특성 및 도감 개선"
+    ]
+  },
+  {
+    "date": "2026-03-28",
+    "project": "jbae-portfolio",
+    "title": "작가 소개글 수정 / 갤러리 4열 그리드 전환 / 작품 크기 비례 레이아웃",
+    "items": [
+      "작가 소개글(bio) 수정: 한복천 바느질 + 먹선 콜라쥬 기법으로 표현 구체화",
+      "라이트박스 이미지 영역 확대 (max-width 1400px, 90vh)",
+      "연도별 갤러리 캡션 숨김 — 클릭(라이트박스)에서만 표시",
+      "2024년 작품 순서 재배치: 깊은 곳 어딘가 ↔ 풀밭에서 좌우 배치, 밤이 지나면 ↔ 봄바람 흩날리며 좌우 배치",
+      "작품 크기 비례 레이아웃: 물리적 cm → 화면 비례 (1cm=6px, 320~1050px)",
+      "전체 작품 세로×가로 오기재 10개 수정 (이미지 픽셀 비율 자동 비교)",
+      "갤러리 레이아웃 flex → CSS grid 4열로 전면 개편 (반응형: 3열/2열/1열)",
+      "masonry-item background-color 제거 — 흰 박스 현상 해결",
+      "2021 노을 잔상: 백업본으로 교체 + off-white 여백 크롭 (1919×1920 → 1752×1750)",
+      "2011년 구름에 기대 꿈을 그리다 이미지 교체"
+    ],
+    "commits": [
+      "1e46b76 - 작가 소개글 수정 및 갤러리 UI 개선",
+      "78ba210 - 2011년 구름에 기대 꿈을 그리다 이미지 교체",
+      "6b6baba - 2024년 작품 순서 및 레이아웃 수정",
+      "283259d - 2024년 갤러리 레이아웃 세부 조정",
+      "8e25042 - 2024년 갤러리 세부 조정",
+      "79d7427 - 작품 크기 기반 비례 레이아웃 적용",
+      "f30f1f4 - 작품 크기 비례 방식 개선: 직접 비례 스케일 적용",
+      "60f22c7 - 작품 크기 세로×가로 오기재 10개 수정",
+      "a6a8a18 - 그룹 가로 비율 계산 버그 수정",
+      "7ab0261 - 그룹 작품 세로 높이 통일 제거",
+      "5504f3e - 작품 흰 박스 제거: masonry-item background-color 삭제",
+      "ed57a5b - 갤러리 레이아웃 4열 그리드로 변경",
+      "7ae7b68 - 2021 노을 잔상 이미지 교체 및 흰색 여백 제거",
+      "0250657 - 2021 노을 잔상 off-white 여백 제거"
     ]
   },
   {
@@ -189,6 +234,114 @@
       "3dfbb60 - 데이터 수집 스크립트 + 특성/도구 퀴즈",
       "56e3a67 - 목숨 표시, 힌트 시스템, 게임오버 버튼 수정",
       "9584164 - 다음 문제 로드 시 입력창 자동 포커스"
+    ]
+  },
+  {
+    "date": "2026-03-24",
+    "project": "jbae-portfolio",
+    "title": "작품 배치 전면 정리 / 이미지 교체 및 크롭",
+    "items": [
+      "2009년 만들어가는 이야기~구름시리즈 solo 배치",
+      "2012-2013년 작품 전체 solo 배치 및 순서 조정",
+      "2014-2015년 작품 전체 solo 배치",
+      "2018-2020년 대표 사진 그리움으로 변경",
+      "2011년 대표 사진 꿈꾸는나비2로 변경",
+      "2011년 구름에 기대 꿈을 그리다 순서 및 파일명 수정",
+      "2011년 구름에 기대 꿈을 그리다 2~4 누락 작품 추가",
+      "구름뒤에는 색지 제거 및 흰줄 크롭 적용",
+      "연도 표시 복원, 캡션 연도 제거, 2017년 배치 수정",
+      "갤러리 레이아웃 flexbox 전환으로 혼자 있는 작품 중앙 정렬",
+      "이미지 백업 폴더(images_backup) 추가",
+      "작품 배치 및 소개글 수정"
+    ],
+    "commits": [
+      "2f4bac0 - 작품 배치 및 소개글 수정",
+      "79009eb - 작품 배치 및 소개글 수정",
+      "340ddb9 - 구름뒤에는 색지 제거 및 흰줄 크롭 적용",
+      "4b1dda8 - 2011년 구름에 기대 꿈을 그리다 2~4 누락 작품 추가",
+      "b6381a0 - 연도 표시 복원, 캡션 연도 제거, 2017년 배치 수정",
+      "2fff4aa - 2011년 구름에 기대 꿈을 그리다 순서 및 파일명 수정",
+      "42824a4 - 2011년 대표 사진 꿈꾸는나비2로 변경",
+      "0b4df84 - 2014-2015년 작품 전체 solo 배치",
+      "5dd8a04 - 2018-2020년 대표 사진 그리움으로 변경",
+      "8ef3172 - 2012-2013년 작품 전체 solo 배치 및 순서 조정",
+      "5234367 - 2009년 만들어가는 이야기~구름시리즈 solo 배치",
+      "56c8553 - 이미지 백업 폴더 추가",
+      "7c9dabc - 갤러리 레이아웃 flexbox 전환으로 혼자 있는 작품 중앙 정렬",
+      "35f6cc5 - 갤러리 레이아웃 개선 및 작품 데이터 정리"
+    ]
+  },
+  {
+    "date": "2026-03-22",
+    "project": "jbae-portfolio",
+    "title": "2열 masonry 레이아웃 및 2022년 썸네일 수정",
+    "items": [
+      "갤러리 2열 masonry 레이아웃으로 개선",
+      "그룹 크기 조정",
+      "2022년 썸네일 수정"
+    ],
+    "commits": [
+      "fc0b2ec - improve work display: 2-col masonry, larger groups, fix 2022 thumbnail"
+    ]
+  },
+  {
+    "date": "2026-03-21",
+    "project": "jbae-portfolio",
+    "title": "배정혜 작가 실제 데이터 전면 적용 / 이미지 처리 / 모바일 대응",
+    "items": [
+      "배정혜 작가 포트폴리오 실제 데이터 적용 및 약력 섹션 추가",
+      "전체 작품 이미지 흰색 테두리·캡션 자동 크롭 처리",
+      "이미지 압축 및 모바일 반응형 개선",
+      "사이드바이사이드 그룹 표시 추가 (연작 나란히 배치)",
+      "인덱스 → 연도 페이지 스크롤 위치 복원",
+      "2022년 작품 그룹 재배치",
+      "썸네일 업데이트 및 2013-2021 작품 그룹 추가",
+      "재료·크기 정보 입력 및 그룹 추가",
+      "Hero: 최신 연도 썸네일 표시",
+      "전화번호 public 페이지에서 숨김",
+      "모바일 Lightbox 이미지 크롭 수정 및 햄버거 메뉴 UX 개선",
+      "CV 블록 순서 재정렬 및 모바일 간격 조정",
+      "Placeholder 작가명 및 하드코딩 텍스트 제거"
+    ],
+    "commits": [
+      "4d4e825 - 배정혜 작가 포트폴리오 실제 데이터 적용 및 약력 섹션 추가",
+      "40c7150 - Add compressed artwork images and mobile responsive improvements",
+      "2743a11 - Merge portfolio branch into main",
+      "5c6b64f - Remove hardcoded placeholder names from HTML",
+      "64953d4 - Reorder CV blocks and reduce CV/Works gap on mobile",
+      "9822821 - Remove internal logs and log viewer",
+      "65aafad - Fix lightbox image cropping on mobile",
+      "5cd8af3 - Fix mobile lightbox image clipping and improve hamburger menu UX",
+      "0088159 - Increase mobile nav menu padding-top to prevent items from being cut off",
+      "c6e0934 - Fix mobile nav menu items position",
+      "a77a4a2 - Center mobile nav menu items and fix dark background",
+      "f900fd7 - crop artwork images to remove white borders and captions",
+      "40a0d72 - add side-by-side group display for series works",
+      "d68529b - restore scroll position when returning to index from year page",
+      "ddf7f22 - rearrange 2022 works into groups",
+      "bc2fa7b - update thumbnails and add work groups for 2013-2021",
+      "3aedc09 - fill material/size info and add groups",
+      "32aec4d - improve hero and remove placeholder artist photo",
+      "4eac581 - hero: show most recent year's thumbnail",
+      "e40545f - hide artist phone number from all public pages",
+      "b15a27a - remove beige background from masonry captions, use white"
+    ]
+  },
+  {
+    "date": "2026-03-19",
+    "project": "jbae-portfolio",
+    "title": "포트폴리오 사이트 초기 생성",
+    "items": [
+      "포트폴리오 사이트 최초 생성 (index.html, year.html, style.css, script.js, data.json)",
+      "프로젝트 대시보드(log.html) 추가",
+      "자동 활동 로거 및 라이브 로그 대시보드 추가"
+    ],
+    "commits": [
+      "372b594 - Add README.md",
+      "9b4caf8 - first commit",
+      "402d0b8 - Add complete artist portfolio website",
+      "9e257ba - Add project dashboard (log.html)",
+      "bc81312 - Add automatic activity logger and live log dashboard"
     ]
   },
   {
