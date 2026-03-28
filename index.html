@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokenova Devlog</title>
+  <title>Devlog</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -28,9 +28,7 @@
       color: #fff;
     }
 
-    header h1 span {
-      color: #63b3ed;
-    }
+    header h1 span { color: #63b3ed; }
 
     header p {
       margin-top: 6px;
@@ -38,10 +36,41 @@
       color: #718096;
     }
 
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 20px 16px 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .filter-btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid #2d3748;
+      background: #1a202c;
+      color: #718096;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .filter-btn:hover { border-color: #4a5568; color: #a0aec0; }
+
+    .filter-btn.active {
+      background: #2b4a7a;
+      border-color: #63b3ed;
+      color: #90cdf4;
+    }
+
     main {
       max-width: 800px;
       margin: 0 auto;
-      padding: 40px 16px 80px;
+      padding: 32px 16px 80px;
     }
 
     .timeline {
@@ -61,8 +90,10 @@
 
     .log-entry {
       position: relative;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
+
+    .log-entry.hidden { display: none; }
 
     .log-entry::before {
       content: '';
@@ -85,68 +116,74 @@
       transition: border-color 0.2s;
     }
 
-    .log-card:hover {
-      border-color: #4a5568;
-    }
+    .log-card:hover { border-color: #4a5568; }
 
     .log-header {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px 20px;
+      gap: 10px;
+      padding: 14px 18px;
       cursor: pointer;
       user-select: none;
       background: #1e2535;
+      flex-wrap: wrap;
     }
 
     .log-date {
       background: #2d3748;
       color: #90cdf4;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 9px;
       border-radius: 20px;
       white-space: nowrap;
-      letter-spacing: 0.3px;
+    }
+
+    .log-project-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .log-title {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       color: #e2e8f0;
       flex: 1;
+      min-width: 0;
     }
 
     .log-toggle {
       color: #4a5568;
-      font-size: 1.1rem;
+      font-size: 1rem;
       transition: transform 0.2s;
+      flex-shrink: 0;
     }
 
-    .log-entry.open .log-toggle {
-      transform: rotate(180deg);
-    }
+    .log-entry.open .log-toggle { transform: rotate(180deg); }
 
     .log-body {
       display: none;
-      padding: 16px 20px 20px;
+      padding: 14px 18px 18px;
       border-top: 1px solid #2d3748;
     }
 
-    .log-entry.open .log-body {
-      display: block;
-    }
+    .log-entry.open .log-body { display: block; }
 
     .log-items {
       list-style: none;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .log-items li {
       position: relative;
-      padding-left: 16px;
-      margin-bottom: 7px;
-      font-size: 0.88rem;
+      padding-left: 14px;
+      margin-bottom: 6px;
+      font-size: 0.87rem;
       color: #cbd5e0;
       line-height: 1.55;
     }
@@ -154,28 +191,24 @@
     .log-items li::before {
       content: '•';
       position: absolute;
-      left: 4px;
+      left: 3px;
       color: #63b3ed;
       font-weight: 700;
     }
 
     .commits-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: #718096;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
-    .commits-list {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
+    .commits-list { display: flex; flex-direction: column; gap: 4px; }
 
     .commit-item {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #718096;
       font-family: 'Consolas', 'Monaco', monospace;
       padding: 4px 8px;
@@ -184,15 +217,9 @@
       border-left: 2px solid #2d3748;
     }
 
-    .commit-item span {
-      color: #4fd1c5;
-    }
+    .commit-item span { color: #4fd1c5; }
 
-    .no-commits {
-      font-size: 0.8rem;
-      color: #4a5568;
-      font-style: italic;
-    }
+    .no-commits { font-size: 0.8rem; color: #4a5568; font-style: italic; }
 
     #loading {
       text-align: center;
@@ -209,17 +236,16 @@
       border-top: 1px solid #1a202c;
     }
 
-    footer a {
-      color: #63b3ed;
-      text-decoration: none;
-    }
+    footer a { color: #63b3ed; text-decoration: none; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Pokenova <span>Devlog</span></h1>
-    <p>개발 작업 로그 — 날짜별 변경사항 기록</p>
+    <h1>Dev<span>log</span></h1>
+    <p>프로젝트별 개발 작업 기록</p>
   </header>
+
+  <div class="filter-bar" id="filter-bar"></div>
 
   <main>
     <div id="loading">로딩 중...</div>
@@ -227,14 +253,70 @@
   </main>
 
   <footer>
-    <a href="https://soondoree07.github.io/pokenova_project/" target="_blank">Pokenova 사이트</a> &nbsp;·&nbsp;
-    <a href="https://github.com/soondoree07/pokenova_project" target="_blank">GitHub</a>
+    <a href="https://soondoree07.github.io/pokenova_project/" target="_blank">Pokenova</a> &nbsp;·&nbsp;
+    <a href="https://github.com/soondoree07" target="_blank">GitHub</a>
   </footer>
 
   <script>
+    // 프로젝트별 색상
+    const PROJECT_COLORS = {
+      pokenova: { bg: '#2d3b1f', border: '#68d391', text: '#9ae6b4' },
+    };
+
+    function getProjectColor(name) {
+      if (PROJECT_COLORS[name]) return PROJECT_COLORS[name];
+      // 새 프로젝트는 색상 자동 배정
+      const palette = [
+        { bg: '#2d1f3b', border: '#b794f4', text: '#d6bcfa' },
+        { bg: '#1f2d3b', border: '#63b3ed', text: '#90cdf4' },
+        { bg: '#3b2d1f', border: '#f6ad55', text: '#fbd38d' },
+        { bg: '#3b1f2d', border: '#fc8181', text: '#feb2b2' },
+        { bg: '#1f3b2d', border: '#4fd1c5', text: '#81e6d9' },
+      ];
+      const idx = [...name].reduce((a, c) => a + c.charCodeAt(0), 0) % palette.length;
+      PROJECT_COLORS[name] = palette[idx];
+      return PROJECT_COLORS[name];
+    }
+
+    let allEntries = [];
+    let activeFilter = 'all';
+
+    function applyFilter(project) {
+      activeFilter = project;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.project === project);
+      });
+      document.querySelectorAll('.log-entry').forEach(entry => {
+        const match = project === 'all' || entry.dataset.project === project;
+        entry.classList.toggle('hidden', !match);
+      });
+    }
+
+    function buildFilterBar(projects) {
+      const bar = document.getElementById('filter-bar');
+      const all = document.createElement('button');
+      all.className = 'filter-btn active';
+      all.dataset.project = 'all';
+      all.textContent = '전체';
+      all.addEventListener('click', () => applyFilter('all'));
+      bar.appendChild(all);
+
+      projects.forEach(name => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.project = name;
+        btn.textContent = name;
+        btn.addEventListener('click', () => applyFilter(name));
+        bar.appendChild(btn);
+      });
+    }
+
     async function load() {
       const res = await fetch('logs.json');
       const logs = await res.json();
+
+      const projects = [...new Set(logs.map(l => l.project).filter(Boolean))];
+      buildFilterBar(projects);
 
       const timeline = document.getElementById('timeline');
       document.getElementById('loading').style.display = 'none';
@@ -243,6 +325,10 @@
       logs.forEach((log, i) => {
         const entry = document.createElement('div');
         entry.className = 'log-entry' + (i === 0 ? ' open' : '');
+        entry.dataset.project = log.project || 'etc';
+
+        const color = getProjectColor(log.project || 'etc');
+        const badgeStyle = `background:${color.bg};border:1px solid ${color.border};color:${color.text}`;
 
         const itemsHtml = log.items.map(item => `<li>${item}</li>`).join('');
 
@@ -261,6 +347,7 @@
           <div class="log-card">
             <div class="log-header">
               <div class="log-date">${log.date}</div>
+              <div class="log-project-badge" style="${badgeStyle}">${log.project || 'etc'}</div>
               <div class="log-title">${log.title}</div>
               <div class="log-toggle">▼</div>
             </div>
