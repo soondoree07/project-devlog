@@ -19,7 +19,8 @@
       "abilities '?' 문자열 처리: 추후 공개 예정으로 표시 (Z-A 메가폼 등)",
       "HIDDEN_ITEMS 오타 수정으로 나무열매쥬스 도구 선택에서 제거",
       "폼체인지도구 섹션 신규: 다홍꿀/진노랑꿀/연분홍꿀/보라꿀 (춤추새 폼체인지 전용)",
-      "메가스톤 45개 추가: legends_za 26종 + mega_rush 19종 (id 1000~1044)"
+      "메가스톤 45개 추가: legends_za 26종 + mega_rush 19종 (id 1000~1044)",
+      "메가스톤 92개에 메가진화 포켓몬 매칭 정보 추가 (mega_ko, mega_en, base_id 필드)"
     ],
     "commits": [
       "9e53d9d - 엔트리 구성 페이지 추가 (entry.html)",
@@ -35,7 +36,8 @@
       "97d6f51 - quiz_items: 81개 도구 추가 (for-sell/evolution/species-specific/fossil/held-items)",
       "d477846 - 엔트리 도구: 신규 species-specific 14종 퀴즈 전용으로 제한",
       "0bff2f0 - 엔트리 전용도구: 오거폰 가면 3종, 큰금강옥/백옥/백금옥, 녹슨검/방패 추가",
-      "e1430fe - feat: 메가스톤 45개 추가 (legends_za 26개 + mega_rush 19개)"
+      "e1430fe - feat: 메가스톤 45개 추가 (legends_za 26개 + mega_rush 19개)",
+      "1214f5e - feat: 메가스톤 92개에 메가진화 포켓몬 매칭 정보 추가 (mega_ko, mega_en, base_id)"
     ]
   },
   {
