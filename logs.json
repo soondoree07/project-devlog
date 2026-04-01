@@ -9,11 +9,14 @@
       "위력·명중률 누락 데이터 보완 (소금절이 위력40/명중100, 테라버스트 위력80/명중100 등)",
       "영어명 오류 수정 (대검돌격 bitter blade→Glaive Rush, 레이징불 rage fist→Raging Bull, 썰렁개그 chilling water→Chilly Reception, 달려들기 eternabeam→Pounce)",
       "PokeAPI로 Gen 8/9 전체 기술 검증 후 변화 기술 7개의 power 0 → null 수정 (파워시프트·승리의춤·농성·초승달의기도·화염의수호·하드프레스·드래곤옐)",
-      "fix_gen9_moves.py 수정 스크립트 추가 (PokeAPI 기반 자동 수정)"
+      "fix_gen9_moves.py 수정 스크립트 추가 (PokeAPI 기반 자동 수정)",
+      "전체 기술 896개 PokeAPI 전수 검증 (verify_all_moves.py): 실질 오류 0건 확인",
+      "브레이브차지(ID 850) 세대 9세대→8세대 재수정 (Legends:Arceus Gen 8 기술, mass 수정 시 과다 변경됐던 것)"
     ],
     "commits": [
       "85bb5c8 - fix: Gen 9 기술 35개 타입/위력/명중/세대/영어명 전면 수정 (ID 850-884)",
-      "6bc6962 - fix: 변화 기술 7개의 power 0 → null 수정"
+      "6bc6962 - fix: 변화 기술 7개의 power 0 → null 수정",
+      "02c41e3 - fix: 브레이브차지(Take Heart) 세대 수정 9세대→8세대 + 전체 검증 스크립트 추가"
     ]
   },
   {
