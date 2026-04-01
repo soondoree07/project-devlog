@@ -38,9 +38,11 @@
       "4개 페이지 헤더 크기·위치 통일: max-width 1200px, height 60px, sticky",
       "헤더 padding/z-index/justify-content 완전 통일",
       "4개 페이지 헤더 요소 완전 통일: logo-ball 크기, nav CSS 위치, flex 속성",
-      "퀴즈 페이지 탑바 y축 늘어남 수정 + 탭 버튼 상단 여백 추가"
+      "퀴즈 페이지 탑바 y축 늘어남 수정 + 탭 버튼 상단 여백 추가",
+      "포켓몬 도감·기술 도감·배틀팀 페이지에 푸터 추가 (퀴즈 페이지와 동일)"
     ],
     "commits": [
+      "ce5879e - feat: 포켓몬 도감·기술 도감·배틀팀 페이지에 푸터 추가",
       "66b5794 - fix: 퀴즈 페이지 탑바 y축 늘어남 수정 + 탭 버튼 간격 추가",
       "ec3ebd9 - fix: 4개 페이지 헤더 요소 완전 통일",
       "d735238 - fix: 헤더 padding/z-index/justify-content 완전 통일",
