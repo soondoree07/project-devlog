@@ -39,9 +39,12 @@
       "헤더 padding/z-index/justify-content 완전 통일",
       "4개 페이지 헤더 요소 완전 통일: logo-ball 크기, nav CSS 위치, flex 속성",
       "퀴즈 페이지 탑바 y축 늘어남 수정 + 탭 버튼 상단 여백 추가",
-      "포켓몬 도감·기술 도감·배틀팀 페이지에 푸터 추가 (퀴즈 페이지와 동일)"
+      "포켓몬 도감·기술 도감·배틀팀 페이지에 푸터 추가 (퀴즈 페이지와 동일)",
+      "포켓몬·아이템 스프라이트 1839개 로컬 다운로드 및 sprites/pokemon/, sprites/items/ 로 분류",
+      "quiz_pokemon.json, quiz_items.json sprite 경로를 외부 CDN에서 로컬 상대경로로 전환"
     ],
     "commits": [
+      "b4ea102 - feat: 스프라이트 로컬 저장 및 폴더 분류",
       "ce5879e - feat: 포켓몬 도감·기술 도감·배틀팀 페이지에 푸터 추가",
       "66b5794 - fix: 퀴즈 페이지 탑바 y축 늘어남 수정 + 탭 버튼 간격 추가",
       "ec3ebd9 - fix: 4개 페이지 헤더 요소 완전 통일",
