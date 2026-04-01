@@ -2,6 +2,20 @@
   {
     "date": "2026-04-01",
     "project": "pokenova",
+    "title": "전체 페이지 모바일 최적화",
+    "items": [
+      "movedex: 헤더 nav 모바일 크기 조정, 검색 입력 font-size 1rem(iOS auto-zoom 방지), 칩 터치 영역 38px 확보",
+      "entry: 배틀팀 슬롯 그리드 6열→3열(모바일) — 375px 화면에서 슬롯이 ~50px로 너무 작았던 문제 해결, 헤더 nav 모바일 CSS 추가",
+      "pokedex: 검색 font-size 1rem(iOS zoom 방지), 필터 버튼 터치 영역 36px, nav 버튼 모바일 크기 조정",
+      "admin: 탑바 모바일 패딩·폰트 조정, 380px 이하 로고 숨김으로 버튼 공간 확보"
+    ],
+    "commits": [
+      "560932f - 모바일 최적화: 전체 페이지 반응형 개선"
+    ]
+  },
+  {
+    "date": "2026-04-01",
+    "project": "pokenova",
     "title": "Gen 8/9 기술 데이터 오류 전면 검증 및 수정",
     "items": [
       "ID 850~884 기술 35개가 8세대로 잘못 표기된 것을 9세대로 수정",
