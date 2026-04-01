@@ -29,9 +29,13 @@
       "quiz_moves.json에 SV 미수록 기술 66개 자동 추가 (866→932개)",
       "한국어 미번역 기술 64개 리스트화 → 미번역_기술_목록.docx 생성",
       "entry.html 기술 룩업 하이픈/공백 포맷 불일치 해소",
-      "SV 신규 기술 64개 한국어 번역 적용 (pokemon.fandom.com/ko) → 미번역 기술 0개 달성"
+      "SV 신규 기술 64개 한국어 번역 적용 (pokemon.fandom.com/ko) → 미번역 기술 0개 달성",
+      "기술 도감(movedex.html) 신규 생성 — 타입/분류 필터 + 검색",
+      "learnsets 전면 재구축: SV 미등장 포켓몬 최신 버전 fallback, 메가/거다이맥스 원종 기술 상속 (1286마리, 67638개)"
     ],
     "commits": [
+      "6d49c5f - feat: learnsets 전면 재구축 — SV fallback + 메가/거다이맥스 원종 상속",
+      "11fb923 - feat: 기술 도감(movedex.html) 신규 + learnsets 재구축 스크립트 개선",
       "1dabadb - feat: SV 신규 기술 64개 한국어 번역 적용",
       "dd166fa - feat: SV 9세대 기술 리스트 재구축 + 미번역 기술 추가",
       "1ef269b - feat: 오거폰 폼 이름 정리 + 전용도구 자동 지정 (가면류·원시구슬)",
