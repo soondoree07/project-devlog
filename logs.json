@@ -36,9 +36,11 @@
       "index.html 네비게이션 고정 탑바로 변환: 다른 페이지와 동일한 sticky 헤더 스타일 적용",
       "4개 페이지 로고 통일: 포켓볼 아이콘 + Pokénova 브랜딩 (nova 빨간색 강조)",
       "4개 페이지 헤더 크기·위치 통일: max-width 1200px, height 60px, sticky",
-      "헤더 padding/z-index/justify-content 완전 통일"
+      "헤더 padding/z-index/justify-content 완전 통일",
+      "4개 페이지 헤더 요소 완전 통일: logo-ball 크기, nav CSS 위치, flex 속성"
     ],
     "commits": [
+      "ec3ebd9 - fix: 4개 페이지 헤더 요소 완전 통일",
       "d735238 - fix: 헤더 padding/z-index/justify-content 완전 통일",
       "453513e - fix: 4개 페이지 헤더 크기·위치 통일 (max-width 1200px, height 60px, sticky)",
       "ca63cb1 - feat: 4개 페이지 로고 통일 — 포켓볼 아이콘 + Pokénova 브랜딩",
