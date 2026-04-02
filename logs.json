@@ -30,7 +30,10 @@
       "다이맥스 기술 구분 방식 개선 — 이름 접두사 의존 제거, is_dmax 플래그로 정확하게 구분 (다이빙·다이아스톰·다이맥스포 오분류 방지)",
       "Z기술 플래그 정리 — 범용(is_zmove만)/전용(is_zmove+is_special_zmove) 패턴을 is_dmax/is_gmax와 통일",
       "기술 도감 다이맥스 분류 버그 수정 — DMAX_EXCLUDE 소문자 통일로 다이빙·다이아스톰 정상 제외, 다이맥스포 일반 기술로 이동",
-      "기술 도감 거다이맥스 전용기 표시 버그 수정 — hidden 필터에 isGmax 조건 누락으로 allMoves에서 걸러지던 문제 해결"
+      "기술 도감 거다이맥스 전용기 표시 버그 수정 — hidden 필터에 isGmax 조건 누락으로 allMoves에서 걸러지던 문제 해결",
+      "Zone.Identifier 파일 5개 삭제 (Windows 메타데이터 쓰레기 파일)",
+      "docx 문서 10개 + 일회성 Python 스크립트 11개를 archive/ 폴더로 정리",
+      ".gitignore 추가 — Zone.Identifier, 캐시 JSON, verify_result.json 자동 제외"
     ],
     "commits": [
       "b1f733c - fix: ZA 메가폼 이미지 파일명 수정 및 가라르 달마모드 리전폼 필터 누락 수정",
@@ -51,7 +54,8 @@
       "df78312 - fix: 기술 도감 거다이맥스 전용기 표시 안 되는 버그 수정",
       "bbcec17 - feat: 거다이맥스·전용Z 모달 포켓몬 이미지+이름 카드 표시, 섹션명 변경",
       "851c0f5 - refactor: 다이맥스 기술 구분을 이름 기반에서 is_dmax 플래그 기반으로 변경",
-      "ef20d0a - refactor: Z기술 플래그 정리 (범용 is_special_zmove:false 제거, is_dmax/is_gmax 패턴 통일)"
+      "ef20d0a - refactor: Z기술 플래그 정리 (범용 is_special_zmove:false 제거, is_dmax/is_gmax 패턴 통일)",
+      "bc56fa8 - chore: Zone.Identifier 제거, docx/스크립트 archive로 정리, .gitignore 추가"
     ]
   },
   {
