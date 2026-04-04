@@ -11,7 +11,10 @@
       "드롭다운 외부 탭 시 자동 닫힘, ☰/✕ 아이콘 토글",
       "모바일에서 퀴즈 탭(포켓몬/기술/특성/도구 맞추기)을 2×2 그리드로 표시",
       "포켓몬 도감 필터바: 모바일에서 분류/세대/타입 레이블 아래에 버튼이 세로 정렬되도록 .filter-row를 column으로 변경",
-      "기술 도감 필터에 타입/분류 레이블 추가 — filter-bar column 레이아웃, 검색창 상단 행 분리"
+      "기술 도감 필터에 타입/분류 레이블 추가 — filter-bar column 레이아웃, 검색창 상단 행 분리",
+      "movedex/itemdex/entry init()에 try/catch 추가 — 데이터 로딩 실패 시 에러 메시지 표시",
+      "전체 5개 페이지에 meta description 및 Open Graph 태그 추가",
+      "filter-label 색상 #444 → #888 (WCAG AA 대비 개선)"
     ],
     "commits": [
       "a0c7ba8 - fix: 전체 페이지 모바일 가로 스크롤 방지 및 헤더 전체 너비 수정",
@@ -20,7 +23,8 @@
       "95c5fdd - fix: 모바일 포켓몬 도감 필터 레이아웃 — 분류 버튼을 레이블 아래로",
       "4a3e249 - feat: 기술 도감 필터에 타입/분류 레이블 추가",
       "40af628 - fix: 기술 도감 필터 순서 변경 — 분류를 타입 위로",
-      "e2b6af8 - refactor: 중복 @media(600px) 블록 병합 및 CSS 정리 (index/movedex/itemdex)"
+      "e2b6af8 - refactor: 중복 @media(600px) 블록 병합 및 CSS 정리 (index/movedex/itemdex)",
+      "b566c4c - fix: fetch 에러 처리, SEO 메타 태그, 색상 대비 개선"
     ]
   },
   {
