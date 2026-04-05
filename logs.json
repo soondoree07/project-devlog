@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-04-05",
+    "project": "pokenova",
+    "title": "Vercel 배포 및 커스텀 도메인 설정",
+    "items": [
+      "Vercel CLI로 pokenova_project 배포",
+      "프로젝트 이름을 pokenova로 변경하여 pokenova.vercel.app 도메인 확보",
+      "vercel.json 설정 파일 추가 (cleanUrls, 페이지별 rewrite 규칙)"
+    ],
+    "commits": [
+      "bb0991a - chore: add vercel deployment config"
+    ]
+  },
+  {
     "date": "2026-04-04",
     "project": "pokenova",
     "title": "모바일 반응형: 가로 스크롤 방지 + 햄버거 메뉴",
