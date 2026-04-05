@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-04-06",
+    "project": "pokenova",
+    "title": "SEO 설정 — sitemap.xml 생성 및 robots.txt 추가",
+    "items": [
+      "sitemap.xml 생성 (URL 구조 및 페이지별 lastmod 포함)",
+      "robots.txt 생성 — 전체 크롤링 허용 및 sitemap 경로 등록 (https://pokenova.vercel.app/sitemap.xml)"
+    ],
+    "commits": [
+      "eb9efbf - Add robots.txt with sitemap reference"
+    ]
+  },
+  {
+    "date": "2026-04-06",
     "project": "claude-dashboard",
     "title": "Claude Dashboard 구축 — 브라우저에서 Claude Code 조작하는 원격 대시보드 완성",
     "items": [
