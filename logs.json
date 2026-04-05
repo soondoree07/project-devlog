@@ -2,18 +2,22 @@
   {
     "date": "2026-04-06",
     "project": "pokenova",
-    "title": "SEO 설정 — sitemap.xml 생성 및 robots.txt 추가",
+    "title": "SEO 설정 + 능력치 맞추기 퀴즈 신규 추가",
     "items": [
       "sitemap.xml 생성 (URL 구조 및 페이지별 lastmod 포함)",
       "robots.txt 생성 — 전체 크롤링 허용 및 sitemap 경로 등록 (https://pokenova.vercel.app/sitemap.xml)",
       "5개 페이지(index/pokedex/movedex/entry/itemdex) SEO 메타태그 업데이트 — description·keywords 추가, og 태그 내용 갱신 및 URL을 pokenova.vercel.app으로 변경",
-      "관리자 패널에 리더보드 섹션 추가 — Firestore leaderboard 컬렉션 조회, 모드별 필터, 리더보드 단독 초기화 버튼 추가"
+      "관리자 패널에 리더보드 섹션 추가 — Firestore leaderboard 컬렉션 조회, 모드별 필터, 리더보드 단독 초기화 버튼 추가",
+      "📊 능력치 맞추기 퀴즈 신규 탭 추가 — HP/공격/방어/특수공격/특수방어/스피드 6개 능력치를 모두 공개하고 포켓몬 이름 맞추기, 목숨 10개, 힌트 없음",
+      "능력치가 동일한 포켓몬 다중 정답 처리 — 1286개 포켓몬 stats 데이터 기반 그룹화 (중복 84세트)",
+      "능력치별 색상 막대 시각화, 리더보드 연동 추가"
     ],
     "commits": [
       "eb9efbf - Add robots.txt with sitemap reference",
       "20c7d1b - seo: SEO 메타태그 업데이트 — description/keywords/og 태그 추가 및 URL vercel.app으로 변경",
       "b037622 - seo: og:image URL을 pokenova.vercel.app으로 변경",
-      "a959713 - feat(admin): 리더보드 섹션 추가 및 리더보드 초기화 버튼 추가"
+      "a959713 - feat(admin): 리더보드 섹션 추가 및 리더보드 초기화 버튼 추가",
+      "a53fbd3 - feat: 능력치 맞추기 퀴즈 탭 추가 (HABCDS 공개, 포켓몬 이름 맞추기, 목숨 10개)"
     ]
   },
   {
