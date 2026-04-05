@@ -2,15 +2,17 @@
   {
     "date": "2026-04-05",
     "project": "pokenova",
-    "title": "햄버거 메뉴 CSS 버그 수정 + 카드 크기 통일",
+    "title": "햄버거/카드 버그 수정 + 아이템 도감 오류신고 개선",
     "items": [
       "햄버거 메뉴 CSS 순서 버그 수정: .hamburger-btn 규칙이 미디어쿼리 뒤에 위치하여 display:none이 항상 우선되던 문제 해결 — 규칙을 미디어쿼리 앞으로 이동",
       "포켓몬 맞추기 난이도 선택 HTML에서 b-diff-selector 클래스 제거 — 기술 맞추기와 동일한 diff-selector 클래스만 사용",
-      "기술 맞추기 시작 화면 카드 높이를 포켓몬 맞추기와 일치시킴 — m-name-revealed 요소가 display:none 없이 min-height를 차지하던 문제 수정"
+      "기술 맞추기 시작 화면 카드 높이를 포켓몬 맞추기와 일치시킴 — m-name-revealed 요소가 display:none 없이 min-height를 차지하던 문제 수정",
+      "아이템 도감 오류신고를 카드별 버튼에서 페이지 상단 단일 버튼으로 변경 — 모달에서 아이템 검색 후 선택하여 신고하는 2단계 흐름으로 개선"
     ],
     "commits": [
       "cca1e27 - fix: hamburger CSS order + unify barcode/move diff layout",
-      "b7bd533 - fix: hide m-name-revealed on start so move card matches pokemon card size"
+      "b7bd533 - fix: hide m-name-revealed on start so move card matches pokemon card size",
+      "d12060a - feat: itemdex report as page-level button with item search"
     ]
   },
   {
