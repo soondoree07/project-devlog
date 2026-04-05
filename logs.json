@@ -43,6 +43,9 @@
       "26c56ee - fix: 오거폰 4폼 추가 + 폼 정답에 기본 포켓몬명 허용",
       "7918fb5 - fix: 메가/거다이맥스는 폼 이름 필수, 리전폼만 기본명 허용",
       "0daed14 - fix(today): 특성 뽑는 순간 1회 결정 후 저장·복원 시 유지"
+    ],
+    "notes": [
+      "pokenova_structure.json 생성 — 전체 사이트 구조(페이지/데이터파일/Firebase/localStorage/스프라이트) 정리 문서"
     ]
   },
   {
