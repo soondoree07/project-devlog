@@ -10,7 +10,8 @@
     ],
     "commits": [
       "eb9efbf - Add robots.txt with sitemap reference",
-      "20c7d1b - seo: SEO 메타태그 업데이트 — description/keywords/og 태그 추가 및 URL vercel.app으로 변경"
+      "20c7d1b - seo: SEO 메타태그 업데이트 — description/keywords/og 태그 추가 및 URL vercel.app으로 변경",
+      "b037622 - seo: og:image URL을 pokenova.vercel.app으로 변경"
     ]
   },
   {
