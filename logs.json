@@ -6,10 +6,12 @@
     "items": [
       "Vercel CLI로 pokenova_project 배포",
       "프로젝트 이름을 pokenova로 변경하여 pokenova.vercel.app 도메인 확보",
-      "vercel.json 설정 파일 추가 (cleanUrls, 페이지별 rewrite 규칙)"
+      "vercel.json 설정 파일 추가 (cleanUrls, 페이지별 rewrite 규칙)",
+      "푸터에서 이메일 주소 제거 (전체 5개 페이지)"
     ],
     "commits": [
-      "bb0991a - chore: add vercel deployment config"
+      "bb0991a - chore: add vercel deployment config",
+      "0b96b31 - remove email from footer"
     ]
   },
   {
