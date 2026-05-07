@@ -5,15 +5,19 @@
     "title": "SEO — canonical URL 명시 + 비공개 페이지 색인 차단",
     "description": "Google Search Console '사용자가 선택한 표준이 없는 중복 페이지' 경고에 대응. root layout에 metadataBase + alternates.canonical을 박고 sitemap에 등록한 /teams /samples /calc /stats에 페이지별 canonical 명시(쿼리 파라미터로 인한 중복 URL 방지). 비공개·인증·편집 경로(/admin /my /users /samples/new /teams/new /teams/*/edit)에 metadata.robots noindex + robots.ts disallow 이중 차단.",
     "items": [
-      "src/app/layout.tsx — Metadata에 metadataBase: new URL('https://pochams.com')와 alternates.canonical: '/' 추가. 모든 페이지의 기본 canonical을 pochams.com 도메인으로 고정해 vercel.app 도메인과의 중복 판정 방지",
-      "src/app/teams/page.tsx, samples/page.tsx, stats/page.tsx, calc/page.tsx — export const metadata에 alternates.canonical: '/<path>' 명시. 정렬·페이지·필터 쿼리 파라미터가 들어와도 canonical은 항상 파라미터 없는 기본 URL을 가리키도록",
+      "src/app/layout.tsx — Metadata에 metadataBase: new URL('https://pochams.com') 추가 (vercel.app 도메인과의 중복 판정 방지). canonical은 root에서 박지 않음 — Next.js metadata는 부모→자식으로 shallow merge되기 때문에 root에 canonical: '/'을 박으면 자식이 canonical을 명시 안 한 페이지가 전부 '/' 상속 → 모든 페이지가 홈 중복으로 판정될 위험",
+      "src/app/page.tsx — 홈 페이지에 alternates.canonical: '/' 명시",
+      "src/app/teams/page.tsx, samples/page.tsx, stats/page.tsx, calc/page.tsx, pokedex/page.tsx — export const metadata에 alternates.canonical: '/<path>' 명시. 정렬·페이지·필터 쿼리 파라미터가 들어와도 canonical은 항상 파라미터 없는 기본 URL을 가리키도록",
+      "src/app/patch-notes/layout.tsx 신설 — patch-notes는 'use client' 페이지라 page.tsx에 metadata를 못 박음. 부모 layout으로 분리해서 canonical 박음",
+      "src/app/samples/[id]/page.tsx, teams/[id]/page.tsx, stats/[id]/page.tsx — generateMetadata로 동적 self-canonical(`/<route>/${id}`) 추가. 각 상세 페이지가 자기 자신을 canonical로 가리키도록",
       "src/app/admin/page.tsx, my/page.tsx, users/[id]/page.tsx, samples/new/page.tsx, teams/new/page.tsx, teams/[id]/edit/page.tsx — metadata.robots: { index: false, follow: false } 추가. 사용자별·관리자·편집 페이지가 검색 결과에 노출되지 않도록 차단",
       "src/app/robots.ts — disallow에 /admin, /api/, /sign-in, /my, /setup-nickname, /report, /users/, /samples/new, /samples/*/edit, /teams/new, /teams/*/edit 추가. client component 페이지(metadata 직접 못 박는 sign-in/setup-nickname/report/samples-edit)도 robots.ts로 일괄 차단",
-      "client component 페이지에는 export const metadata가 불가능해서 robots.ts disallow로만 처리. server component 페이지는 metadata.robots와 robots.ts 이중 방어",
+      "두 번째 Search Console 알림(사이트맵 외 페이지 중복 canonical)도 같은 원인이라 동일 수정으로 커버. 단, 1차 수정에서 root canonical cascade 버그가 발견돼 2차 수정으로 페이지별 명시 canonical로 전환",
       "다음 액션 — Vercel 자동 배포 완료 후 Search Console에서 sitemap 재제출 + 영향받은 URL 유효성 검사 요청 (Google이 새 canonical 인식까지 며칠 걸림)"
     ],
     "commits": [
-      "232aa07 - fix(seo): canonical URL 명시 + 비공개 페이지 색인 차단"
+      "232aa07 - fix(seo): canonical URL 명시 + 비공개 페이지 색인 차단",
+      "7c6fb26 - fix(seo): canonical cascade 버그 수정 — 페이지별 명시적 canonical로 전환"
     ]
   },
   {
