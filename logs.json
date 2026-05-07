@@ -27,7 +27,8 @@
       "메인 파티 목록 카드 안 멤버 그리드 끝에도 '+ 추가' 칩 추가 — e.preventDefault/stopPropagation으로 카드 클릭 이동 막고 모달 띄움. 저장 후 renderPartyList로 재렌더",
       "보스 select에서 같은 주/달 클리어 보스 자동 제외 로직 제거 — 항상 모든 활성 보스 노출(중복 회차 기록 자유)",
       "이번 주/이번 달 현황 진행도 위젯 제거 → '이번 주 파티원별 수익'을 메인 컬럼 가장 위로 이동, 그 아래 '이번 달 전체 수익' 카드 신설(헤더에 파티 전체 누적 표기). earnings.js renderMonthlyEarnings 추가, 공용 renderEarningsCard로 weekly/monthly 모두 처리",
-      "결정석 가격 편집 페이지 진입점 — 진행도 위젯에서 페이지 헤더 actions의 '결정석' 링크로 이전"
+      "결정석 가격 편집 페이지 진입점 — 진행도 위젯에서 페이지 헤더 actions의 '결정석' 링크로 이전",
+      "이름 input들에 lang='ko' 추가 — 사다리 이름/파티명/파티원 슬롯/파티원 추가 모달. Chrome·Edge에서 IME 한국어 자동 활성 유도 (OS 키보드 상태가 우선이므로 100% 보장 X)"
     ],
     "commits": [
       "0d68c46 - feat: per-run member selection, distributed loot, weekly earnings, ladder",
@@ -36,7 +37,8 @@
       "9661cf1 - feat: ladder hide-then-reveal + per-name path tracing, add party member",
       "c45cfec - feat(party): + 추가 chip on party card members list",
       "31d2424 - feat(record): always show all bosses, drop same-week/month exclusion",
-      "c1bd0a7 - feat: drop progress widgets, lift earnings to top, add monthly earnings card"
+      "c1bd0a7 - feat: drop progress widgets, lift earnings to top, add monthly earnings card",
+      "06446e6 - feat: lang=ko on name inputs to prefer Korean IME"
     ]
   },
   {
