@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-05-08",
+    "project": "pochams_project",
+    "title": "SEO — canonical URL 명시 + 비공개 페이지 색인 차단",
+    "description": "Google Search Console '사용자가 선택한 표준이 없는 중복 페이지' 경고에 대응. root layout에 metadataBase + alternates.canonical을 박고 sitemap에 등록한 /teams /samples /calc /stats에 페이지별 canonical 명시(쿼리 파라미터로 인한 중복 URL 방지). 비공개·인증·편집 경로(/admin /my /users /samples/new /teams/new /teams/*/edit)에 metadata.robots noindex + robots.ts disallow 이중 차단.",
+    "items": [
+      "src/app/layout.tsx — Metadata에 metadataBase: new URL('https://pochams.com')와 alternates.canonical: '/' 추가. 모든 페이지의 기본 canonical을 pochams.com 도메인으로 고정해 vercel.app 도메인과의 중복 판정 방지",
+      "src/app/teams/page.tsx, samples/page.tsx, stats/page.tsx, calc/page.tsx — export const metadata에 alternates.canonical: '/<path>' 명시. 정렬·페이지·필터 쿼리 파라미터가 들어와도 canonical은 항상 파라미터 없는 기본 URL을 가리키도록",
+      "src/app/admin/page.tsx, my/page.tsx, users/[id]/page.tsx, samples/new/page.tsx, teams/new/page.tsx, teams/[id]/edit/page.tsx — metadata.robots: { index: false, follow: false } 추가. 사용자별·관리자·편집 페이지가 검색 결과에 노출되지 않도록 차단",
+      "src/app/robots.ts — disallow에 /admin, /api/, /sign-in, /my, /setup-nickname, /report, /users/, /samples/new, /samples/*/edit, /teams/new, /teams/*/edit 추가. client component 페이지(metadata 직접 못 박는 sign-in/setup-nickname/report/samples-edit)도 robots.ts로 일괄 차단",
+      "client component 페이지에는 export const metadata가 불가능해서 robots.ts disallow로만 처리. server component 페이지는 metadata.robots와 robots.ts 이중 방어",
+      "다음 액션 — Vercel 자동 배포 완료 후 Search Console에서 sitemap 재제출 + 영향받은 URL 유효성 검사 요청 (Google이 새 canonical 인식까지 며칠 걸림)"
+    ],
+    "commits": [
+      "232aa07 - fix(seo): canonical URL 명시 + 비공개 페이지 색인 차단"
+    ]
+  },
+  {
     "date": "2026-05-07",
     "project": "maple-boss",
     "title": "회차별 참여자 + 전리품 분배 + 파티원별 주간 수익 + 사다리타기 SVG 시각화 + 회차 기록 수정",
