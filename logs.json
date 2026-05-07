@@ -1,5 +1,26 @@
 [
   {
+    "date": "2026-05-07",
+    "project": "maple-boss",
+    "title": "회차별 참여자 선택 + 전리품 분배 / 단독 / 파티원별 주간 수익 + 사다리타기",
+    "description": "구조 변경 — 파티 단위로 고정이던 회차 참여자를 회차마다 선택하게. 같은 날 직전 회차 멤버 자동 미리 채움(없으면 파티 전체). 결정석은 회차 인원수에 따라 자동 분배(Σ crystal/N). 전리품에 분배 체크박스 추가 — ON이면 회차 N명에게 1/N, OFF면 먹은 사람 전액. 캘린더 밑에 파티원별 이번주 수익 섹션(결정석+전리품 합산) 신설. 룰렛 아래 사다리타기 카드 추가(인원≤파티 총원, 당첨 1명 고정).",
+    "items": [
+      "데이터 모델 변경 — BossRun.memberSnapshot 의미를 '회차 참여자'로 (기존엔 그 시점 파티원 전체였으므로 자동 호환). LootEntry에 shared 플래그 신규(true=분배, false=단독). 기존 entry는 shared 미정의 → 단독으로 해석해 기존 동작 보존",
+      "record.js 폼 — '이번 회차 참여자' 토글 그리드(파티원만 후보, 직전 회차 멤버 자동 미리 채움/없으면 전체). 상자 연 사람·기본 보상·전리품 taker select들이 선택된 멤버만 옵션으로",
+      "전리품 행 — 분배 체크박스 추가. 디폴트 ON. ON일 땐 taker select 비활성화 + '분배: 전원 N등분' placeholder. OFF면 taker 필수",
+      "회차 카드(조회) — 참여자 명단 행 추가, 분배 ON 전리품은 'taker' 자리에 '분배 ÷N' aqua 색으로 표시",
+      "결정석 분배 — Σ(getEffectiveCrystal/회차 인원). 회차마다 인원이 달라도 정확하게 1/N씩 누적. progress.js·monthly.js 둘 다 적용",
+      "earnings.js 신설 — 메이플 주차(목~수) 기준 멤버별 수익 카드. 결정석 1/N + 분배 전리품 1/N + 단독 전리품 전액 합산. 총수익 기준 desc, aqua→purple 그라디언트 progress bar로 비중 시각화. 캘린더 바로 밑",
+      "ladder.js 신설 — 룰렛 밑 사다리타기 카드. 인원수 input(2~파티총원), 이름 N개, 뽑기 버튼. Math.random()으로 1명만 O 나머지 X 셔플. 결과 셀 + 당첨자 안내",
+      "app.js 좌측 사이드 컬럼을 .side-left wrapper로 묶어 룰렛+사다리 sticky 함께 노출",
+      "css — member-toggle-grid / loot-shared-check / loot-taker-shared / earnings-section + bar / ladder-card + result-win/lose / side-left 전부 추가. 모바일 540px 이하 loot-form-row를 3행 grid로 재배치(분배 체크 area 추가)",
+      "기존 데이터 호환성 — memberSnapshot은 의미만 바뀌어 그대로 호환, LootEntry.shared 미정의는 단독으로 해석되어 taker 전액 (기존 의미 보존)"
+    ],
+    "commits": [
+      "0d68c46 - feat: per-run member selection, distributed loot, weekly earnings, ladder"
+    ]
+  },
+  {
     "date": "2026-05-04",
     "project": "maple-boss",
     "title": "메이플 보스 파티 기록 — 월별 사이드/예약/배경 테마/배포 + 채널 룰렛",
