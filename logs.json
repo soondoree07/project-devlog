@@ -20,12 +20,16 @@
       "애니메이션 중에는 인원수/이름 input 모두 disabled, cancelAnim으로 repaint 시 진행 중 rAF 안전 종료",
       "회차 기록 수정 — record.js openRecordForm에 existingRun 파라미터 추가. 수정 모드에서 boss/members/opener/baseReward/loot(taker+price+shared) 모두 prefill. 저장 시 updateRun(existingRun.id)",
       "수정 모드 보스 select은 자기 보스를 옵션에 남기도록 (clearedBossIds 계산에서 자기 회차 filter). 보스 변경 시에만 lootEntries 비우는 가드 추가",
-      "회차 카드 ✎ 수정 버튼 — renderRunCard에 onEdit 콜백 추가, run-card-actions wrapper에 ✎(aqua hover) + ×(rose hover) 나란히"
+      "회차 카드 ✎ 수정 버튼 — renderRunCard에 onEdit 콜백 추가, run-card-actions wrapper에 ✎(aqua hover) + ×(rose hover) 나란히",
+      "ladder.js 3차 — UX 변경: 뽑기 전엔 사다리가 블러+🎴 cover로 가려짐. 뽑기 누르면 공개 + 이름 input들이 클릭 가능한 색상 칩으로 전환. 칩 클릭 시 그 사람 path를 stroke-dashoffset 애니메이션 + dot rAF 추적(1.5초 cubic ease) → 도착 컬럼 결과 셀이 outline + pop 강조. 다른 이름 클릭 시 이전 trace 정리 후 새로",
+      "ladder-cover / ladder-svg.hidden(blur) / ladder-name-chip(.focused) / ladder-trace-path/dot / ladder-result-arrival CSS 추가",
+      "파티 멤버 추가 — party.js에 openAddMemberModal export. 닉네임 input(trim/중복 검사) → updateParty로 members 배열에 append → onSaved로 파티 상세 재렌더. 파티원 strip 끝에 '+ 추가' 칩 추가(.member-chip-add, dashed border, aqua hover)"
     ],
     "commits": [
       "0d68c46 - feat: per-run member selection, distributed loot, weekly earnings, ladder",
       "3aa36fe - docs: refresh RESUME for v0.4",
-      "40b295d - feat: real ladder visualization + edit existing run records"
+      "40b295d - feat: real ladder visualization + edit existing run records",
+      "9661cf1 - feat: ladder hide-then-reveal + per-name path tracing, add party member"
     ]
   },
   {
