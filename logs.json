@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-05-08",
+    "project": "claude-dashboard",
+    "title": "Dependency Graph에 maple-boss 등록 + \"새 프로젝트 시작\" 자동화 룰",
+    "description": "claude-dashboard 의존성 그래프 분석 대상이 5개에 하드코딩되어 있어 신규 프로젝트 maple-boss가 누락된 문제 발견. 4파일(run-all.ts JOBS, vanilla-js.ts PROJECT_PATHS, build-index.ts PROJECTS, package.json 스크립트) 일괄 등록 + analyze:all + pm2 reload로 즉시 반영. 추후 같은 일이 반복되지 않도록 전역 CLAUDE.md에 \"새로운 프로젝트 시작하자\" 트리거 표현 → 자동 등록 절차 박음.",
+    "items": [
+      "analyzers/run-all.ts JOBS — { project: 'maple-boss', script: 'analyzers/vanilla-js.ts' } 추가 (cron 자동 재생성에 포함)",
+      "analyzers/vanilla-js.ts PROJECT_PATHS — \"maple-boss\": \"/home/soondoree07/maple-boss\"",
+      "analyzers/build-index.ts PROJECTS — id/displayName(메이플 보스 파티 기록)/stack(vanilla-js)/graphFile/repo(local:maple-boss)/notes 메타 추가. _index.json projects 6개로 갱신",
+      "package.json — analyze:maple-boss 스크립트 추가",
+      "분석 결과: maple-boss 12 nodes / 24 links 생성. _run-all.log 6/6 success",
+      "pm2 reload claude-dashboard — UI 반영",
+      "전역 ~/.claude/CLAUDE.md에 '새 프로젝트 시작 — Dependency Graph 자동 등록' 섹션 추가. 트리거(\"새로운 프로젝트 시작하자\"/\"새 프로젝트 시작\") 들으면 4파일 수정→analyze:all→pm2 reload 자동 수행. 스택 분류표(ts-next/vanilla-js/flutter-dart) + CROSS_LINKS·고정 프로젝트명 테이블 동기화 후속 처리도 포함",
+      "메모리 추가 — feedback_new_project_dep_graph.md / MEMORY.md 인덱스 항목"
+    ],
+    "commits": [
+      "a312ba2 - feat(graph): maple-boss 의존성 분석 등록"
+    ]
+  },
+  {
+    "date": "2026-05-08",
     "project": "pochams_project",
     "title": "SEO — canonical URL 명시 + 비공개 페이지 색인 차단",
     "description": "Google Search Console '사용자가 선택한 표준이 없는 중복 페이지' 경고에 대응. root layout에 metadataBase + alternates.canonical을 박고 sitemap에 등록한 /teams /samples /calc /stats에 페이지별 canonical 명시(쿼리 파라미터로 인한 중복 URL 방지). 비공개·인증·편집 경로(/admin /my /users /samples/new /teams/new /teams/*/edit)에 metadata.robots noindex + robots.ts disallow 이중 차단.",
