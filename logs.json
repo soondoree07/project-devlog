@@ -2,7 +2,7 @@
   {
     "date": "2026-05-09",
     "project": "flow-project",
-    "title": "Flow Project 디자인 단계 1일차 — 다크모드 + 9:16 ShortsFrame + PC방 자동재생 + Voronoi treemap → SquareTreemap 롤백",
+    "title": "Flow Project 디자인 단계 1일차 — 다크모드 + 9:16 ShortsFrame + PC방 자동재생 + Voronoi → SquareTreemap → StatView 채널 분석 후 Voronoi 부활",
     "description": "Phase 1~3 데이터 수집 종료 후 디자인 폴리시 단계 본격 진입. 사이트 다크모드 단일화 → 9:16 ShortsFrame 컴포넌트 신규 (URL ?recording=true로 1080×1920 영상 캡처 모드 자동 전환) → 8개 시리즈에 적용 → PC방에 useAutoplay 자동재생 (172시점 × 8초 = 24분, variation 기반 weight) + 진행바 + 1위 교체 토스트 + 변곡점 글로우 + 캡션 fade + README 영상 제작 절차. 시각화는 SquareTreemap → PentagonChart → PolygonMosaic → PentagonChart edge-pinned 거쳐 최종 d3-voronoi-treemap (정확한 면적 비례 + sides prop으로 정N각형 컨테이너 가변) 적용. 디자인 시스템 토큰 351줄 + 가이드 499줄도 산출 (적용은 후속).",
     "items": [
       "globals.css 다크 단일화 (Tailwind v4 @custom-variant dark)",
@@ -20,9 +20,15 @@
       "PC방 시리즈 voronoi 롤백 — 사용자 의도(영역 크기가 점차 변하는 시각화)가 안 살아서 SquareTreemap(자체 squarify lib + CSS 600ms transition)으로 복귀",
       "데이터 룰 변경: 표시 수치 = 게임트릭스 등급 대표값(weight) 그대로, 영역 = TOP5 + 기타(=100-합) 합 100% 정규화. 정수 weight는 35%, 비정수(2.5)는 2.5%로 표기",
       "Treemap.tsx에 valueLabel/highlightKey prop 추가 (변곡점 글로우 효과 보존)",
-      "VoronoiPolygon.tsx 삭제, d3-voronoi-treemap/d3-weighted-voronoi 의존성 제거 (d3-hierarchy는 SquareTreemap 검증 페이지가 아직 사용)"
+      "VoronoiPolygon.tsx 삭제, d3-voronoi-treemap/d3-weighted-voronoi 의존성 제거 (d3-hierarchy는 SquareTreemap 검증 페이지가 아직 사용)",
+      "벤치마크 채널 @statview (스탯뷰 StatView, 2025-08 개설, UCyCcCwXA8j91_G9AIFjP8kQ) RSS feed로 영상 8편 분석 — 모든 영상이 Voronoi treemap 메인 시각화 사용 (포켓몬 105만 조회 히트작 포함)",
+      "사용자 불만 원인 재진단: voronoi 자체가 아니라 우리 구현의 디테일 부족 (라벨 박스/정사각형 컨테이너/배경 확대 효과 부재). 채널 스타일 1차 폴리시 적용 결정 (옵션 A)",
+      "VoronoiPolygon 부활 — 정사각형 컨테이너 default(sides='square') + 라벨 박스(검은 반투명 0.78 + 흰 텍스트 + 금색 #fbbf24 이탤릭 % + 1위 👑)",
+      "PcbangView Treemap → VoronoiPolygon swap, FittedVoronoi wrapper로 ResizeObserver 측정. ShortsFrame/하단 카드 둘 다 voronoi (정사각형, 1:1 비율)",
+      "d3-voronoi-treemap/d3-weighted-voronoi 의존성 재추가"
     ],
     "commits": [
+      "4f49550 - feat(pcbang): voronoi 부활 + StatView 채널 스타일 라벨/정사각형",
       "6991b4f - revert(pcbang): voronoi 제거 + SquareTreemap 복귀, TOP5+기타 룰",
       "c4e6f30 - docs: RESUME 2026-05-09 - voronoi treemap, autoplay, design system",
       "8086cc9 - feat(voronoi): d3-voronoi-treemap polygon container with exact area mapping",
