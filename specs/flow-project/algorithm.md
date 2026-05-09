@@ -179,8 +179,9 @@ if (segmentT < 0.5) {
 
 ## 마커 (Stop Points)
 
-- **원스탭 = `862a2f1`** (2026-05-10): voronoi-map의 originalObject 구조 정확히 파악 + initialPosition cache 작동 시점. 사용자가 "원스탭으로 돌아가자" 시 복원.
-- **투스탭 = `37da949`** (2026-05-10): voronoi-map-tween 정착 + 12 anchor + 라벨 박스 제거 + '맵' 이름 통일. 사용자가 "투스탭으로 돌아가자" 시 복원.
+- **원스탭 = `862a2f1`** (2026-05-10): voronoi-map의 originalObject 구조 정확히 파악 + initialPosition cache 작동 시점.
+- **투스탭 = `37da949`** (2026-05-10): voronoi-map-tween 정착 + 12 anchor + 라벨 박스 제거 + '맵' 이름 통일.
+- **쓰리스탭 = `8b852f4`** (2026-05-10): useFlowVoronoi hook 추출 (`src/lib/flow-voronoi.ts`) — 알고리즘 + 룰 단일 모듈로 캡슐화. canonical viewBox 1000 + per-viz ResizeObserver. anchorCount 24 + cumulativeMap 영구 reservation으로 collision 차단. LoL 색 청록(#0AC8B9, Hextech).
 
 ## 의존성
 
