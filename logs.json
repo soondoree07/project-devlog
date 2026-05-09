@@ -2,7 +2,7 @@
   {
     "date": "2026-05-09",
     "project": "flow-project",
-    "title": "Flow Project 디자인 단계 1일차 — 다크모드 + 9:16 ShortsFrame + PC방 자동재생 + Voronoi treemap",
+    "title": "Flow Project 디자인 단계 1일차 — 다크모드 + 9:16 ShortsFrame + PC방 자동재생 + Voronoi treemap → SquareTreemap 롤백",
     "description": "Phase 1~3 데이터 수집 종료 후 디자인 폴리시 단계 본격 진입. 사이트 다크모드 단일화 → 9:16 ShortsFrame 컴포넌트 신규 (URL ?recording=true로 1080×1920 영상 캡처 모드 자동 전환) → 8개 시리즈에 적용 → PC방에 useAutoplay 자동재생 (172시점 × 8초 = 24분, variation 기반 weight) + 진행바 + 1위 교체 토스트 + 변곡점 글로우 + 캡션 fade + README 영상 제작 절차. 시각화는 SquareTreemap → PentagonChart → PolygonMosaic → PentagonChart edge-pinned 거쳐 최종 d3-voronoi-treemap (정확한 면적 비례 + sides prop으로 정N각형 컨테이너 가변) 적용. 디자인 시스템 토큰 351줄 + 가이드 499줄도 산출 (적용은 후속).",
     "items": [
       "globals.css 다크 단일화 (Tailwind v4 @custom-variant dark)",
@@ -16,9 +16,14 @@
       "VoronoiPolygon 신규 (d3-voronoi-treemap iterative weighted Voronoi, sides 3~20 정N각형 컨테이너, 정확한 percentage 면적 비례)",
       "디자인 시스템 산출 (UI Designer 에이전트): tokens/design-tokens.css 351줄 + docs/design-system.md 499줄. 시리즈별 팔레트 (포켓몬 18 공식/메이플 14 5그룹 hue/PC방 21 게임 브랜드)",
       "의존성 추가: framer-motion, d3-hierarchy, d3-voronoi-treemap, d3-weighted-voronoi",
-      "Cloudflare wrangler commit message UTF-8 이슈 발견 (≥ 같은 일부 BMP 외 문자 reject)"
+      "Cloudflare wrangler commit message UTF-8 이슈 발견 (≥ 같은 일부 BMP 외 문자 reject)",
+      "PC방 시리즈 voronoi 롤백 — 사용자 의도(영역 크기가 점차 변하는 시각화)가 안 살아서 SquareTreemap(자체 squarify lib + CSS 600ms transition)으로 복귀",
+      "데이터 룰 변경: 표시 수치 = 게임트릭스 등급 대표값(weight) 그대로, 영역 = TOP5 + 기타(=100-합) 합 100% 정규화. 정수 weight는 35%, 비정수(2.5)는 2.5%로 표기",
+      "Treemap.tsx에 valueLabel/highlightKey prop 추가 (변곡점 글로우 효과 보존)",
+      "VoronoiPolygon.tsx 삭제, d3-voronoi-treemap/d3-weighted-voronoi 의존성 제거 (d3-hierarchy는 SquareTreemap 검증 페이지가 아직 사용)"
     ],
     "commits": [
+      "6991b4f - revert(pcbang): voronoi 제거 + SquareTreemap 복귀, TOP5+기타 룰",
       "c4e6f30 - docs: RESUME 2026-05-09 - voronoi treemap, autoplay, design system",
       "8086cc9 - feat(voronoi): d3-voronoi-treemap polygon container with exact area mapping",
       "46dfbcc - tune(pentagon): exact least-squares scale = 2a, h-ratio matches percentage",
