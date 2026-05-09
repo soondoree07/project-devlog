@@ -1,5 +1,45 @@
 [
   {
+    "date": "2026-05-09",
+    "project": "flow-project",
+    "title": "Flow Project 디자인 단계 1일차 — 다크모드 + 9:16 ShortsFrame + PC방 자동재생 + Voronoi treemap",
+    "description": "Phase 1~3 데이터 수집 종료 후 디자인 폴리시 단계 본격 진입. 사이트 다크모드 단일화 → 9:16 ShortsFrame 컴포넌트 신규 (URL ?recording=true로 1080×1920 영상 캡처 모드 자동 전환) → 8개 시리즈에 적용 → PC방에 useAutoplay 자동재생 (172시점 × 8초 = 24분, variation 기반 weight) + 진행바 + 1위 교체 토스트 + 변곡점 글로우 + 캡션 fade + README 영상 제작 절차. 시각화는 SquareTreemap → PentagonChart → PolygonMosaic → PentagonChart edge-pinned 거쳐 최종 d3-voronoi-treemap (정확한 면적 비례 + sides prop으로 정N각형 컨테이너 가변) 적용. 디자인 시스템 토큰 351줄 + 가이드 499줄도 산출 (적용은 후속).",
+    "items": [
+      "globals.css 다크 단일화 (Tailwind v4 @custom-variant dark)",
+      "ShortsFrame v2 신규 (22%/56%/22% 영역 + ?recording=true URL → 1080×1920 fixed overlay 자동 전환 + topOverlay/progress prop)",
+      "src/components/shared/ShortsFrame.tsx (v1) 삭제 → src/components/ShortsFrame.tsx로 통일, 8개 View import 경로 변경",
+      "useAutoplay 훅 신규 (RAF 기반, ?duration=N + ?loop=true URL, currentSnapshot/nextSnapshot/segmentT/isMajorEvent 출력, customWeights 옵션)",
+      "PC방 PcbangView 자동재생 적용 — 슬라이더 제거, 표본당 8초 (총 24분), 변곡점 (2017-11/2018-07/2025-12) 5x weight + variation 기반 weight (1+v/30)",
+      "ShortsFrame 진행바 (1px white/30 + 1위 색으로 차오름)",
+      "Whimsy 디테일 (whimsy-injector 에이전트): 변곡점 drop-shadow 글로우 + 1위 교체 👑 토스트 + 캡션 fade-in/out 400ms",
+      "README.md 신규 (영상 제작 5단계 절차)",
+      "VoronoiPolygon 신규 (d3-voronoi-treemap iterative weighted Voronoi, sides 3~20 정N각형 컨테이너, 정확한 percentage 면적 비례)",
+      "디자인 시스템 산출 (UI Designer 에이전트): tokens/design-tokens.css 351줄 + docs/design-system.md 499줄. 시리즈별 팔레트 (포켓몬 18 공식/메이플 14 5그룹 hue/PC방 21 게임 브랜드)",
+      "의존성 추가: framer-motion, d3-hierarchy, d3-voronoi-treemap, d3-weighted-voronoi",
+      "Cloudflare wrangler commit message UTF-8 이슈 발견 (≥ 같은 일부 BMP 외 문자 reject)"
+    ],
+    "commits": [
+      "c4e6f30 - docs: RESUME 2026-05-09 - voronoi treemap, autoplay, design system",
+      "8086cc9 - feat(voronoi): d3-voronoi-treemap polygon container with exact area mapping",
+      "46dfbcc - tune(pentagon): exact least-squares scale = 2a, h-ratio matches percentage",
+      "9b54f82 - tune(pentagon): zero-pct edge contact + variation-weighted snapshot duration",
+      "970ae26 - tune(autoplay): remove hold zone, full 0-1 linear interpolation per snapshot",
+      "89b9a76 - tune(pentagon): 8s per snapshot (24m total), scale x1.5 with apothem clamp",
+      "adf743c - feat(pentagon): edge-pinned slots with O moving toward smaller-share edges",
+      "05ec75f - feat(mosaic): polygon-clipped pixel mosaic + 70/30 hold-transition split",
+      "c83a560 - feat(pentagon): full-fill pie slices, outside labels, per-frame snapshot lerp",
+      "6ce918c - feat(chart): pentagon 5-slot chart with key-pinned positions, autoplay 120s",
+      "dfffefd - feat(treemap): SquareTreemap component + pcbang first-snapshot verification",
+      "146c392 - feat(autoplay): useAutoplay hook + ShortsFrame progress bar + pcbang autoplay",
+      "813f5a8 - feat(whimsy): major-event glow + top1-change toast + caption fade + README",
+      "b7f7173 - refactor(shorts): v1 deletion + URL recording auto-detect + 1080x1920 overlay",
+      "ef06ebb - feat(shorts): 7개 시리즈 ShortsFrame 적용 (국회·이름·메이플·롤·PC방)",
+      "47fe71e - feat(shorts): ShortsFrame v2 신규 + 검증 페이지",
+      "f78d0e3 - feat(shorts): 쇼츠 안전 영역 분할 (상단 36% / 시각화 47.92% / 하단 15.625%)",
+      "05a6554 - feat(design): 다크모드 단일화 + 9:16 쇼츠 섹션 도입 (포켓몬 시범)"
+    ]
+  },
+  {
     "date": "2026-05-08",
     "project": "claude-dashboard",
     "title": "Dependency Graph에 maple-boss 등록 + \"새 프로젝트 시작\" 자동화 룰",
