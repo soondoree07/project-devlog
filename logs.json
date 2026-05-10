@@ -40,10 +40,14 @@
       "[디자인] 👑 1위 표시 제거",
       "[디자인] 라벨 위치 CSS transition (transform 400ms cubic-bezier) — 시점 변경 시 부드러운 follow",
       "[fix] tween 객체 cache (currentIndex 변경 시에만 새로 생성) — 매 frame voronoiMapTween() 새 객체 생성으로 cell.cx 깜빡거림 → tween 두 개 useMemo (tweenFirstHalf, tweenSecondHalf) → 매 frame interpolator(t)만 호출. 시점 변경 instant 라벨 점프 제거",
-      "[설계] 사각형 컨테이너 명칭 = '맵' (사용자 정의)"
+      "[설계] 사각형 컨테이너 명칭 = '맵' (사용자 정의)",
+      "[마커] 스탭포 = `1c4daeb` (tween 객체 cache + 라벨 transition 400ms — 사용자 정의 stop point)",
+      "[디자인] 자글자글 픽셀 침투 (잡아먹기 효과) — cell fill 자체에 sandyEdge filter 직접 적용 (이전엔 stroke만). 두 cell이 같은 deterministic noise map 공유 → tiling 유지하며 한 fill이 경계 넘어 침투하는 만큼 옆 fill이 들어옴 → voronoi-map-tween의 vertex 이동에 따라 자글자글한 경계가 흐르며 '잡아먹는' 시각 효과. baseFreq 0.25→0.18, numOctaves 2→1, scale 6→10 (큰 픽셀, 강한 침투), stroke 1.5px→1.0px alpha 0.7→0.55 (손글씨 톤 다듬기), highlight CSS filter chain에 url(#sandyEdge) 결합 보존"
     ],
     "commits": [
-      "1c4daeb - fix(voronoi): cache tween objects per currentIndex (이번 세션 마지막)",
+      "94b0c38 - docs(resume): 스탭포 마커 + abd3763 자글자글 침투 기록",
+      "abd3763 - design(voronoi): nibble-style cell boundary — fill carries deterministic noise displacement",
+      "1c4daeb - fix(voronoi): cache tween objects per currentIndex (스탭포)",
       "e407f3e - design(voronoi): CSS transform transition on labels",
       "85900d9 - design(voronoi): remove crown for 1st place",
       "bab2773 - design(voronoi): handwriting font (Gaegu) for cell labels",
