@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-11",
+    "project": "pochams_project",
+    "title": "Railway 트라이얼 만료 대응 — OCR 기능 비활성화",
+    "items": [
+      "Railway 무료 트라이얼 2026-05-12 만료 알림 → OCR 서버(EasyOCR FastAPI) 운영 중단 결정",
+      "샘플 등록 폼(`SampleNewForm.tsx`)에서 OCR 버튼·다이얼로그·`SampleOCR` 임포트·`handleOCRFill`·`showOCR` 상태 제거",
+      "`/api/ocr/route.ts`를 503 응답('OCR 기능은 현재 비활성화되어 있습니다')으로 단축 — 외부 호출에도 명확한 에러 반환",
+      "`ocr_server/Dockerfile`·`OCR_SERVER_URL` env 변수는 그대로 보존 → 다른 PaaS(Fly.io, Cloud Run 등)로 이전 시 즉시 복구 가능",
+      "기획서 v7.8 갱신 — 핵심 가치에서 OCR 제거, 3-3 섹션에 비활성화 사유·재활성화 절차 명시, 개발 히스토리에 2026-05-11 항목 추가"
+    ],
+    "commits": [
+      "992427e - chore(ocr): Railway 트라이얼 만료로 OCR 기능 비활성화"
+    ]
+  },
+  {
     "date": "2026-05-10",
     "project": "flow-project",
     "title": "PC방 시리즈 voronoi 알고리즘 정착 (voronoi-map-tween + 24 anchor + tween cache) + 디자인 폴리시 (Gaegu 손글씨, 모래 stroke, LoL 청록, 👑 제거)",
