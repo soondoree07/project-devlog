@@ -9,11 +9,13 @@
       "src/components/visualizations/BarChartRace.tsx: framer-motion layout + AnimatePresence로 자리바뀜 + enter/exit, 막대 width spring + 우측 값 라벨이 끝을 따라감",
       "PcbangView: 영역(Voronoi) / 막대(Race) 토글 + URL ?viz=bar 지원, bar 모드에서 RankingSidebar 숨김",
       "8개 시리즈 시각화 매핑 표 정리 — 레이스 추천: 3-1/3-2/5-1/5-2 / voronoi 유지: 1/2/4 / PC방은 둘 다 비교용",
-      "Bar Race 보간 제거 — 라벨 숫자가 항상 그 시점의 정확한 raw 값 (이전엔 transition 중 보간된 중간값 표시). width transition은 framer-motion spring이 처리."
+      "Bar Race 보간 제거 — 라벨 숫자가 항상 그 시점의 정확한 raw 값 (이전엔 transition 중 보간된 중간값 표시). width transition은 framer-motion spring이 처리.",
+      "Bar Race 보간 룰 사용자 정의 적용 — 0~t/2: 이전 시점 끝값→curV, t/2~1: curV→cur/next 중간값. 첫 시점은 0 시작, t=0.5에 정확한 raw 값. width/라벨은 매 프레임 보간값으로 부드럽게 흐르고 y 좌표만 spring."
     ],
     "commits": [
       "972bbf9 - feat(pcbang): bar chart race 프로토타입 + voronoi/bar 토글",
-      "f5de7ac - fix(bar-race): 보간 제거, 현재 시점의 raw 값만 사용"
+      "f5de7ac - fix(bar-race): 보간 제거, 현재 시점의 raw 값만 사용",
+      "bb74ba4 - fix(bar-race): 매 프레임 보간 + 사용자 정의 절반 분할 룰"
     ]
   },
   {
