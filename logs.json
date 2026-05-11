@@ -16,7 +16,8 @@
       "PcbangView 헤더 layout shift 방지 — 1위 교체 토스트 제거, 이벤트 뱃지를 year/month 같은 라인으로 + 없을 때 invisible placeholder로 자리 유지, isLoading/eventNote는 min-h-[2.5rem] 고정 height 컨테이너 → 헤더 높이 항상 일정, ShortsFrame 위치 흔들림 차단",
       "Bar Race 사이즈 2배 + 프리뷰 깨짐 fix — motion.div layout prop 제거(animate y와 충돌)·initial y 추가·totalHeight=max(bars,5)*stride 고정(rank-in/out 변동 시 컨테이너 흔들림 차단). Shorts/하단 모두 rowHeight 2배, 라벨 폰트 rowHeight 비례 동적",
       "Shorts 프리뷰 막대 간격 좁힘(rowGap 40→14, rowHeight 56→40) + 부모 div overflow-hidden/max-h-full로 상단 글자 영역 침범 차단 (이중 안전)",
-      "Bar Race 색·테마 변경 — ShortsFrame에 theme prop 추가(bar 모드만 라이트, 베이지 #f7f4ec 배경), BarChartRace에 overrideColor/labelColor props 추가, 막대 단일 색 #8B2A2A (부르고뉴) + 프리뷰 라벨 black/78"
+      "Bar Race 색·테마 변경 — ShortsFrame에 theme prop 추가(bar 모드만 라이트, 베이지 #f7f4ec 배경), BarChartRace에 overrideColor/labelColor props 추가, 막대 단일 색 #8B2A2A (부르고뉴) + 프리뷰 라벨 black/78",
+      "Bar 모드 폴리시 — 라이트 배경 #f7f4ec→#dcd5c2 (한 단계 어둡게) + 상단 22% 영역 끝에 가로 구분선(border-b black/20|white/15, recording 포함) + 막대/라벨 단일 색 제거하고 게임별 색(game-colors.json) 복원"
     ],
     "commits": [
       "972bbf9 - feat(pcbang): bar chart race 프로토타입 + voronoi/bar 토글",
@@ -27,7 +28,8 @@
       "c7bb196 - fix(pcbang): 1위 교체 토스트 제거 + 이벤트 뱃지 자리 고정 (layout shift 방지)",
       "f211921 - fix(bar-race): 사이즈 2배 확대 + 프리뷰 깨짐 해결",
       "e8680fa - fix(pcbang/shorts): 막대 간격 좁힘 + 상단 글자 영역 침범 차단",
-      "8aa8a95 - feat(pcbang/bar): 프리뷰 라이트 테마 + 막대 단일 색 (부르고뉴)"
+      "8aa8a95 - feat(pcbang/bar): 프리뷰 라이트 테마 + 막대 단일 색 (부르고뉴)",
+      "f67b056 - fix(pcbang/bar): 라이트 톤 낮춤 + 상단 구분선 + 막대 색 게임별 복원"
     ]
   },
   {
