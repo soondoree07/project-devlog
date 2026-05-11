@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-05-12",
+    "project": "claude-dashboard",
+    "title": "flow-project 의존성 분석 등록 + graph-analyzer-cron 복구",
+    "description": "claude-dashboard에 flow-project 등록 — analyzers/ts-next.ts PROJECT_PATHS, run-all.ts JOBS, build-index.ts PROJECTS, package.json analyze:flow-project 추가. 첫 분석 결과 83 nodes / 179 links. 또한 PM2 graph-analyzer-cron이 list에서 사라져 있어 마지막 실행이 2026-05-08(4일 전)에 멈춰있던 것을 ecosystem.config.js로 재시작 → 매일 03:00 KST 자동 분석 복귀. analyze:all 7/7 success.",
+    "items": [
+      "analyzers/ts-next.ts PROJECT_PATHS에 flow-project: /home/soondoree07/flow-project 추가",
+      "analyzers/run-all.ts JOBS에 { project: flow-project, script: analyzers/ts-next.ts } 추가",
+      "analyzers/build-index.ts PROJECTS에 flow-project 메타 추가 (ts-next, repo: soondoree07/flow-project, domain: flow-project.pages.dev)",
+      "package.json analyze:flow-project 스크립트 추가",
+      "PM2 graph-analyzer-cron 복구 — pm2 start ecosystem.config.js --only graph-analyzer-cron + pm2 save"
+    ],
+    "commits": [
+      "89e30d9 - feat(graph): flow-project 의존성 분석 등록"
+    ]
+  },
+  {
     "date": "2026-05-11",
     "project": "flow-project",
     "title": "PC방 시리즈에 Bar Chart Race 프로토타입 추가 + voronoi/bar 토글",
