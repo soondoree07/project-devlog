@@ -13,7 +13,8 @@
       "Bar Race 보간 룰 사용자 정의 적용 — 0~t/2: 이전 시점 끝값→curV, t/2~1: curV→cur/next 중간값. 첫 시점은 0 시작, t=0.5에 정확한 raw 값. width/라벨은 매 프레임 보간값으로 부드럽게 흐르고 y 좌표만 spring.",
       "Bar Race UI 폴리시 — 첫 시점에 모든 막대가 0에서 함께 올라오는 모습 보이게 + 상단에 0~80% 가상 ruler + 전체 크기 축소(rowHeight 26~32, labelWidth 68~88)",
       "Bar Race mock-up 반영 — 상단 ruler/눈금 숨김 (스케일 maxScale=80 가상), rank/값 라벨 숨김, 막대 두께 얇게(10~12px) + 행 간격 크게(20~28px) + barHeight/rowGap/showRank/showValueLabel props 추가",
-      "PcbangView 헤더 layout shift 방지 — 1위 교체 토스트 제거, 이벤트 뱃지를 year/month 같은 라인으로 + 없을 때 invisible placeholder로 자리 유지, isLoading/eventNote는 min-h-[2.5rem] 고정 height 컨테이너 → 헤더 높이 항상 일정, ShortsFrame 위치 흔들림 차단"
+      "PcbangView 헤더 layout shift 방지 — 1위 교체 토스트 제거, 이벤트 뱃지를 year/month 같은 라인으로 + 없을 때 invisible placeholder로 자리 유지, isLoading/eventNote는 min-h-[2.5rem] 고정 height 컨테이너 → 헤더 높이 항상 일정, ShortsFrame 위치 흔들림 차단",
+      "Bar Race 사이즈 2배 + 프리뷰 깨짐 fix — motion.div layout prop 제거(animate y와 충돌)·initial y 추가·totalHeight=max(bars,5)*stride 고정(rank-in/out 변동 시 컨테이너 흔들림 차단). Shorts/하단 모두 rowHeight 2배, 라벨 폰트 rowHeight 비례 동적"
     ],
     "commits": [
       "972bbf9 - feat(pcbang): bar chart race 프로토타입 + voronoi/bar 토글",
@@ -21,7 +22,8 @@
       "bb74ba4 - fix(bar-race): 매 프레임 보간 + 사용자 정의 절반 분할 룰",
       "266303b - fix(bar-race): 첫 시점 0%에서 함께 등장 + 0~80% ruler + 크기 축소",
       "6c209ca - fix(bar-race): 사용자 mock-up 반영 — 눈금 숨김, 막대 얇게, 행 간격 키움",
-      "c7bb196 - fix(pcbang): 1위 교체 토스트 제거 + 이벤트 뱃지 자리 고정 (layout shift 방지)"
+      "c7bb196 - fix(pcbang): 1위 교체 토스트 제거 + 이벤트 뱃지 자리 고정 (layout shift 방지)",
+      "f211921 - fix(bar-race): 사이즈 2배 확대 + 프리뷰 깨짐 해결"
     ]
   },
   {
