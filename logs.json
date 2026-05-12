@@ -11,13 +11,15 @@
       "메뉴 닫기 — 바깥 mousedown + ESC 키, menu 자체 mousedown은 stopPropagation으로 즉시 닫힘 방지",
       "터미널 selectAll/clear 동작도 메뉴에 노출 (term.selectAll(), term.clear())",
       "드래그 선택이 mouseup 순간 사라지는 1차 fix 시도(a014e6d) — term.onData에서 button<64인 mouse click/drag/release escape sequence는 ws.send에서 drop. 그러나 xterm.js는 여전히 mouse-reporting 모드라 자체 셀렉션을 안 그려서 드래그 자체가 아예 안 보이는 부작용 발생",
-      "2차 fix(2914115) — ws.onmessage output에서 mouse-mode 활성화 DECSET 시퀀스(\\x1b[?1000h/1001/1002/1003/1005/1006/1015/1016 + h/l)를 strip해 xterm.js가 mouse-reporting OFF 상태를 유지하게 했고, 그 결과 자체 셀렉션이 정상 동작 + 드래그 + mouseup 후 selection 유지 + Ctrl+C 복사. 트레이드오프: tmux 마우스 휠 스크롤·pane 클릭 무력화(prefix+[ 키보드 스크롤로 대체)",
+      "2차 fix(2914115) — ws.onmessage output에서 mouse-mode 활성화 DECSET 시퀀스(\\x1b[?1000h/1001/1002/1003/1005/1006/1015/1016 + h/l)를 strip해 xterm.js가 mouse-reporting OFF 상태를 유지하게 했고, 그 결과 자체 셀렉션이 정상 동작 + 드래그 + mouseup 후 selection 유지 + Ctrl+C 복사",
+      "3차 fix(2715af4) — 2차 fix 부작용으로 tmux 마우스 휠 스크롤이 죽은 것을 복구. wheel 이벤트만 우리가 직접 SGR mouse-reporting 시퀀스(\\x1b[<64;1;1M=up / <65;1;1M=down)로 변환해 ws.send → tmux copy-mode 스크롤은 살아나고 드래그 셀렉션은 그대로 유지. deltaY/40으로 줄 수 계산, 좌표는 1;1 고정(단일 pane 환경 가정)",
       ".next/ dirty cache 정리 — 옛 prod 빌드 산출물(server/app/api/sessions/route.js)이 dev hot-compile과 충돌해 routes-manifest.json ENOENT 반복 → .next 통째 삭제 + pm2 reload"
     ],
     "commits": [
       "bc30611 - feat(terminal): 복붙 단축키 + 커스텀 컨텍스트 메뉴",
       "a014e6d - fix(terminal): tmux mouse-reporting 차단해 드래그 선택이 mouseup에 사라지지 않게",
-      "2914115 - fix(terminal): mouse-reporting DECSET strip해 xterm 자체 셀렉션 복구"
+      "2914115 - fix(terminal): mouse-reporting DECSET strip해 xterm 자체 셀렉션 복구",
+      "2715af4 - feat(terminal): 휠 스크롤만 SGR sequence로 직접 송신해 tmux copy-mode 살림"
     ]
   },
   {
