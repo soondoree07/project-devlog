@@ -9,10 +9,13 @@
       "containerRef에 contextmenu 핸들러 + mousedown/mouseup capture로 우클릭 이벤트가 xterm mouse-reporting을 통해 tmux로 흘러가지 않게 차단",
       "커스텀 컨텍스트 메뉴 컴포넌트(MenuItem/MenuDivider) 추가 — cyan 글로우 톤, backdrop-blur, 복사(선택 없으면 disabled)/붙여넣기/전체선택/화면지우기 4개 항목",
       "메뉴 닫기 — 바깥 mousedown + ESC 키, menu 자체 mousedown은 stopPropagation으로 즉시 닫힘 방지",
-      "터미널 selectAll/clear 동작도 메뉴에 노출 (term.selectAll(), term.clear())"
+      "터미널 selectAll/clear 동작도 메뉴에 노출 (term.selectAll(), term.clear())",
+      "드래그 선택이 mouseup 순간 사라지는 추가 버그 fix — tmux `set -g mouse on`이 xterm.js mouse-reporting을 통해 마우스 이벤트를 받아 selection을 자기 buffer로 가져가는 게 원인. term.onData에서 button<64인 mouse click/drag/release escape sequence(\\x1b[<…M/m, \\x1b[M…)는 ws.send에서 drop, button>=64(휠)는 통과시켜 tmux 스크롤 copy-mode는 유지",
+      ".next/ dirty cache 정리 — 옛 prod 빌드 산출물(server/app/api/sessions/route.js)이 dev hot-compile과 충돌해 routes-manifest.json ENOENT 반복 → .next 통째 삭제 + pm2 reload"
     ],
     "commits": [
-      "bc30611 - feat(terminal): 복붙 단축키 + 커스텀 컨텍스트 메뉴"
+      "bc30611 - feat(terminal): 복붙 단축키 + 커스텀 컨텍스트 메뉴",
+      "a014e6d - fix(terminal): tmux mouse-reporting 차단해 드래그 선택이 mouseup에 사라지지 않게"
     ]
   },
   {
