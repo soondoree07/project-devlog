@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-05-13",
+    "project": "claude-dashboard",
+    "title": "터미널 복붙 단축키 + 커스텀 우클릭 메뉴",
+    "description": "외부에서 ai.junghyeok.com 터미널 세션 이용 시 복붙이 안 되는 문제 해결. Ctrl+C(선택 시 클립보드 복사 + 블록 유지)·Ctrl+V(클립보드 paste) 단축키와 우클릭 시 대시보드 자체의 커스텀 컨텍스트 메뉴(복사/붙여넣기/전체선택/화면지우기)를 추가했고, 브라우저 기본 메뉴 + tmux MouseDown3Pane display-menu(검은 kill 메뉴) 둘 다 차단되도록 mousedown/mouseup을 capture 단계에서 가로채 xterm.js mouse-reporting이 tmux로 우클릭 이벤트를 전달하지 못하게 했다.",
+    "items": [
+      "components/Terminal.tsx attachCustomKeyEventHandler 추가 — Ctrl+C(선택 시 navigator.clipboard.writeText + 블록 유지, 없으면 기본 SIGINT) / Ctrl+V(clipboard.readText → ws input 전송)",
+      "containerRef에 contextmenu 핸들러 + mousedown/mouseup capture로 우클릭 이벤트가 xterm mouse-reporting을 통해 tmux로 흘러가지 않게 차단",
+      "커스텀 컨텍스트 메뉴 컴포넌트(MenuItem/MenuDivider) 추가 — cyan 글로우 톤, backdrop-blur, 복사(선택 없으면 disabled)/붙여넣기/전체선택/화면지우기 4개 항목",
+      "메뉴 닫기 — 바깥 mousedown + ESC 키, menu 자체 mousedown은 stopPropagation으로 즉시 닫힘 방지",
+      "터미널 selectAll/clear 동작도 메뉴에 노출 (term.selectAll(), term.clear())"
+    ],
+    "commits": [
+      "bc30611 - feat(terminal): 복붙 단축키 + 커스텀 컨텍스트 메뉴"
+    ]
+  },
+  {
     "date": "2026-05-12",
     "project": "claude-dashboard",
     "title": "flow-project 의존성 분석 등록 + graph-analyzer-cron 복구",
