@@ -2,7 +2,7 @@
   {
     "date": "2026-05-16",
     "project": "maple-boss",
-    "title": "보스 난이도 모델 전면 도입 (v0.5) — 결정석 난이도별 고정 + 보스 27종 + 보스 설정 페이지",
+    "title": "보스 난이도 모델 전면 도입 (v0.5) — 결정석 난이도별 고정 + 보스 27종 + 보스 설정 페이지 + 디자인 무드 개편 1단계 & 공유 백엔드 전환 설계",
     "description": "결정석을 사용자 자유 입력에서 보스×난이도별 고정값으로 전환(boss_table.md 기반, 메소→억 변환 후 표와 전수 대조). 보스를 기존 9종에서 27종으로 확장하되 기존 9보스 ID는 보존해 기존 기록 호환. 회차 폼에 보스 다음 난이도 드롭다운을 추가하고 난이도 초기값을 (직전 회차>보스 기본설정>첫 난이도) 캐스케이드로. 결정석 페이지를 보스 설정 페이지(보이기 체크박스/기본 난이도/난이도별 결정석·전리품 조회, 가나다순)로 확장. 전리품은 표 우선·빈칸은 결정석만, 선택받은 세렌만 기존 전리품으로 채움. 커포→커포링 통일.",
     "items": [
       "data.js — BOSSES를 difficulties:[{key,crystal,loot}] 모델로 재작성, 27보스(기존 9 ID 보존+18 신규), getEffectiveCrystal(boss,diff)/getBossLoot/resolveDifficultyKey/getVisibleBosses/bossesByName/getLootGroup 신설, BOSS_LOOT/getLootDef/getEnabledBosses 제거",
@@ -24,7 +24,11 @@
       "장식 이모지 제거 — 룰렛/사다리 '뽑기' 버튼, 사다리 숨김 커버 아이콘, 당첨/힌트 이모지 모두 텍스트화. '이모지 임의 사용 금지' 규칙을 RESUME.md '작업 규칙' 섹션 + 프로젝트 메모리에 기록",
       "파티 비밀번호 게이트 추가 — Party.pw(SHA-256, 선택). 새 파티 모달에 비밀번호 칸, #/party/:id 진입 시 게이트(메모리 unlockedParties, 재접속 재입력). 비번 없는 파티는 그대로 입장, 잠긴 카드 표시. utils.sha256Hex(subtle+fallback). localStorage라 진짜 보안 아님 명시",
       "파티 상세 헤더에 '비밀번호' 버튼 추가 — 설정/변경/해제 모달(openChangePasswordModal). 새 비번+확인, 비우고 저장하면 해제. 기존 비번 없는 파티도 신규 설정 가능. 변경 시 unlockedParties 동기화",
-      "디자인 개편 전 체크포인트 — css/style.pre-redesign.css 백업 + git 태그 pre-redesign-2026-05-16, RESUME 재개 가이드(1.무드 8벌 in-repo→선택→확정 / 2.공유 백엔드 전환 설계)"
+      "디자인 개편 전 체크포인트 — css/style.pre-redesign.css 백업 + git 태그 pre-redesign-2026-05-16, RESUME 재개 가이드(1.무드 8벌 in-repo→선택→확정 / 2.공유 백엔드 전환 설계)",
+      "디자인 무드 개편 1단계(in-repo CSS-only) — style.css의 하드코딩 색/블러 약16곳을 의미 토큰(:root)으로 치환, 렌더 1:1 동일(무변화) 후 무드는 :root만 덮어쓰는 구조로",
+      "css/themes/mood-1..8.css — :root 오버라이드만으로 라이트4·다크4 무드(Midnight Slate/Pure Paper/Warm Sand/Forest Night/Mono Ink/Royal Plum/Nordic Frost/Carbon Amber). 단색배경·블러제거·WCAG AA·보스/전리품 기능색(JS 인라인) 유지",
+      "js/theme-switch.js + index.html 1줄 — dev 전용 무드 미리보기 전환기(우하단 select, localStorage로 선택 유지, 확정 후 삭제 예정). 구조/클래스/JS 로직 무변경",
+      "BACKEND_PLAN.md — 공유 백엔드 전환 설계(2단계): 스택비교(Supabase 추천)·Postgres 데이터모델·storage.js 인메모리캐시+Realtime 방식·1회 마이그레이션·비번 서버검증(RPC+RLS) 승격·작업분해 약3~4.5일"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
@@ -38,7 +42,9 @@
       "32485c9 - style: 장식 이모지 제거 + 규칙 기록",
       "a2227b7 - feat: 파티 비밀번호 게이트 (선택적, 재접속 재입력)",
       "f31c380 - feat: 파티 상세에 비밀번호 설정/변경/해제 버튼",
-      "e98e223 - chore: 디자인 개편 전 체크포인트"
+      "e98e223 - chore: 디자인 개편 전 체크포인트",
+      "3386a9f - feat: 무드 미리보기 — style.css 토큰화(값 동일) + 무드 8벌 + 임시 전환기 [maple-boss-party]",
+      "80b9582 - docs: 공유 백엔드 전환 설계(2단계) [maple-boss-party]"
     ]
   },
   {
