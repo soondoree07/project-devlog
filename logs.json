@@ -13,10 +13,12 @@
       "record.js — 보스 select(보이는 보스만,가나다순) 후 난이도 select 노출, 난이도 초기값 캐스케이드(직전회차>기본설정>첫난이도), 전리품 타일=(보스×난이도), BossRun.difficulty 저장, 회차 카드 난이도 칩",
       "earnings.js/monthly.js — 결정석을 resolveDifficultyKey(boss,run.difficulty,defaults) 기준 합산, 난이도 없는 legacy 회차는 기본설정→첫난이도 fallback",
       "CSS — 보스 설정 가로행(.boss-setting-card/.bsd-row 등)·.run-difficulty 칩·.form-hint 추가, 구 .crystal-card* 제거",
-      "검증 — 전 JS node --check 통과, data.js 표 전수 대조 스크립트 ALL PASS(27보스), 로컬 서버 주요 자산 200(한글 png 포함)"
+      "검증 — 전 JS node --check 통과, data.js 표 전수 대조 스크립트 ALL PASS(27보스), 로컬 서버 주요 자산 200(한글 png 포함)",
+      "전리품 병합 버그 수정 — '선택받은 세렌'에만 채우던 빈칸 backfill을 합의(option A)대로 기존 9보스 전체로 확대. v0.4 BOSS_LOOT를 이름 매칭한 LEGACY_LOOT 맵으로 복원(표 빈칸=기존 전리품, 표 있으면 표 값, 신규 18보스 빈칸=결정석만). node로 9보스 전 난이도 loot 존재 검증"
     ],
     "commits": [
-      "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)"
+      "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
+      "3c23f70 - fix: 기존 9보스 전리품 병합 누락 수정 — LEGACY_LOOT 도입"
     ]
   },
   {
