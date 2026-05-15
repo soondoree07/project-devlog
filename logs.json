@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-05-16",
+    "project": "maple-boss",
+    "title": "보스 난이도 모델 전면 도입 (v0.5) — 결정석 난이도별 고정 + 보스 27종 + 보스 설정 페이지",
+    "description": "결정석을 사용자 자유 입력에서 보스×난이도별 고정값으로 전환(boss_table.md 기반, 메소→억 변환 후 표와 전수 대조). 보스를 기존 9종에서 27종으로 확장하되 기존 9보스 ID는 보존해 기존 기록 호환. 회차 폼에 보스 다음 난이도 드롭다운을 추가하고 난이도 초기값을 (직전 회차>보스 기본설정>첫 난이도) 캐스케이드로. 결정석 페이지를 보스 설정 페이지(보이기 체크박스/기본 난이도/난이도별 결정석·전리품 조회, 가나다순)로 확장. 전리품은 표 우선·빈칸은 결정석만, 선택받은 세렌만 기존 전리품으로 채움. 커포→커포링 통일.",
+    "items": [
+      "data.js — BOSSES를 difficulties:[{key,crystal,loot}] 모델로 재작성, 27보스(기존 9 ID 보존+18 신규), getEffectiveCrystal(boss,diff)/getBossLoot/resolveDifficultyKey/getVisibleBosses/bossesByName/getLootGroup 신설, BOSS_LOOT/getLootDef/getEnabledBosses 제거",
+      "전리품 병합 규칙 — (보스,난이도) 표에 있으면 표 값, 빈칸은 전리품 없이 결정석만, '선택받은 세렌'만 전 난이도에 기존 세렌 전리품(해머(얼굴장식)·미트라의 분노·영달포+공통) 채움",
+      "커포→커포링 이름 통일 (png/커포.png 재사용, 레거시 '커포' 기록도 동일 그룹/이미지로 호환)",
+      "storage.js — crystalOverrides 폐기, bossSettings{visible,defaults} getter/setter + readRaw/import 정규화",
+      "crystals.js — 보스 설정 페이지로 확장: 보스당 가로행 [보이기][보스명][기본난이도▼]+난이도별 결정석·전리품, 가나다순, 저장 시 bossSettings 반영",
+      "record.js — 보스 select(보이는 보스만,가나다순) 후 난이도 select 노출, 난이도 초기값 캐스케이드(직전회차>기본설정>첫난이도), 전리품 타일=(보스×난이도), BossRun.difficulty 저장, 회차 카드 난이도 칩",
+      "earnings.js/monthly.js — 결정석을 resolveDifficultyKey(boss,run.difficulty,defaults) 기준 합산, 난이도 없는 legacy 회차는 기본설정→첫난이도 fallback",
+      "CSS — 보스 설정 가로행(.boss-setting-card/.bsd-row 등)·.run-difficulty 칩·.form-hint 추가, 구 .crystal-card* 제거",
+      "검증 — 전 JS node --check 통과, data.js 표 전수 대조 스크립트 ALL PASS(27보스), 로컬 서버 주요 자산 200(한글 png 포함)"
+    ],
+    "commits": [
+      "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)"
+    ]
+  },
+  {
     "date": "2026-05-13",
     "project": "claude-dashboard",
     "title": "터미널 복붙 단축키 + 커스텀 우클릭 메뉴",
