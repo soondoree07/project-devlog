@@ -14,12 +14,14 @@
       "파티원 추가 UX 변경 — 파티 선택 카드/파티 상세 strip의 \"+ 추가\" 칩 제거, 파티원 추가·삭제는 파티 설정 페이지(#/party/:id/settings)에서만. 사용처 사라진 openAddMemberModal 함수·import 제거(dead code)",
       "새 파티 모달 순서 입력 — 파티원 칸을 순서대로만 입력(직전 칸 비면 다음 칸 잠금, 1부터 채워야 활성), 중간 칸 비우면 뒤 값 자동 위로 당김(blur 시 compactSlots), Enter는 다음 활성 칸으로만 이동",
       "네이티브 알림 → 무드 UI: utils.confirmDialog() 신설(무드 토큰 기반 확인 모달, 메시지·PIN 입력·위험버튼·async onConfirm 인라인 오류). 파티 삭제 prompt+confirm+alert 3단을 confirmDialog 한 화면으로(비번 파티면 PIN 칸, 틀리면 모달 안 다른 색 글자). 메인 카드·파티 상세 두 진입점 공용",
-      "파티 설정 비밀번호: alert 제거 → 저장 버튼 위 인라인 메시지(성공 \"비밀번호가 변경되었습니다.\" 성공색 / 새비번≠확인 \"비밀번호를 확인하세요\" 경고색 / 4자리 아님 안내), 재렌더 후 flash로 유지. 멤버 삭제 confirm→confirmDialog, 검증 alert→인라인. dead code openChangePasswordModal 제거. CSS .modal-confirm/.dialog-*/.btn-danger/.inline-msg* 전부 무드 토큰"
+      "파티 설정 비밀번호: alert 제거 → 저장 버튼 위 인라인 메시지(성공 \"비밀번호가 변경되었습니다.\" 성공색 / 새비번≠확인 \"비밀번호를 확인하세요\" 경고색 / 4자리 아님 안내), 재렌더 후 flash로 유지. 멤버 삭제 confirm→confirmDialog, 검증 alert→인라인. dead code openChangePasswordModal 제거. CSS .modal-confirm/.dialog-*/.btn-danger/.inline-msg* 전부 무드 토큰",
+      "남은 네이티브 알림 정리 — utils.toast() 신설(하단 중앙 무드 일시 알림, 성공/오류 색, 클릭·자동 닫힘). 새 파티 만들기 모달 입력검증 alert 4건→모달 안 인라인 메시지(+같은 파일 재선택 가능하게 file input value 초기화), 백업 복원 confirm→confirmDialog·완료/실패 alert→toast, app.js 서버연결 실패 alert→toast(6s), storage.js 서버 저장/삭제/복원 실패 alert→toast. CSS .toast-* 무드 토큰. 잔존(범위 외)=record.js 회차 기록 폼 alert/confirm"
     ],
     "commits": [
       "a6790d9 - fix(storage): 파티 비번 race condition — INSERT→set_party_pw 직렬화",
       "788a41a - feat(party): 파티원 추가는 파티 설정에서만 + 새 파티 모달 순서 입력",
-      "99dae81 - feat(ui): 파티 삭제·설정 네이티브 알림 → 무드 다이얼로그/인라인 메시지"
+      "99dae81 - feat(ui): 파티 삭제·설정 네이티브 알림 → 무드 다이얼로그/인라인 메시지",
+      "b96f216 - feat(ui): 남은 네이티브 알림 → 무드 인라인/토스트/다이얼로그"
     ]
   },
   {
