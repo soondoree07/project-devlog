@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-05-17",
+    "project": "maple-boss",
+    "title": "파티 비밀번호 race condition 수정 (createParty INSERT→set_party_pw 직렬화)",
+    "items": [
+      "버그 진단 — 새 파티를 PIN과 함께 만들면 만든 PC는 게이트만 뜨고 정답 PIN도 거부, 다른/재접속 PC는 비번 없이 입장. 원인 = createParty가 parties INSERT와 set_party_pw RPC를 둘 다 fire-and-forget push()로 병렬 발사 → PostgREST 도달 순서 미보장, RPC가 INSERT보다 먼저 도착하면 UPDATE 대상 row 없어 pw_hash NULL로 남는 race condition (claude.ai 채팅 진단 md의 트리거 로그 26ms 선행과 코드 독립 분석 일치)",
+      "storage.js — pushSerial(fn,label) 헬퍼 신설(await로 순서 보장하는 async 작업용, 실패 시 재동기+알림)",
+      "createParty — parties INSERT를 await한 뒤에만 set_party_pw RPC 호출(직렬화). 낙관적 캐시 동기 반환 구조는 그대로 유지해 호출부(party.js) 무변경",
+      "updateParty — 비번/필드 수정도 동일 직렬화(갓 만든 파티 즉시 수정 안전 + 일관성). 기존 파티 수정은 본래 race 없으나 일관성 차원",
+      "Supabase 검증 — 진짜 데이터 파티 0f265ffa5d80(밈곰잉, 회차21+예약2)는 has_pw=true 정상, 나머지 8개는 회차0 디버깅 테스트 파티. verify_party_pw는 일부러 틀린 PIN에 false 정상 반환(디버깅 중 미변경 확인)",
+      "라이브 배포 확인 — push 후 maplebossparty.vercel.app/js/storage.js에 pushSerial 마커 3회 서빙 확인",
+      "잔여(사용자 작업) — Supabase SQL Editor에서 set_party_pw 원본 복구 + debug_log/trg_debug_parties/debug_parties_change 디버깅 객체 정리 + 깨진 테스트 파티 8개 삭제"
+    ],
+    "commits": [
+      "a6790d9 - fix(storage): 파티 비번 race condition — INSERT→set_party_pw 직렬화"
+    ]
+  },
+  {
     "date": "2026-05-16",
     "project": "maple-boss",
     "title": "보스 난이도 모델 전면 도입 (v0.5) — 결정석 난이도별 고정 + 보스 27종 + 보스 설정 페이지 + 디자인 무드 개편 1단계 & 공유 백엔드 전환 설계",
