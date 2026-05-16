@@ -10,10 +10,13 @@
       "updateParty — 비번/필드 수정도 동일 직렬화(갓 만든 파티 즉시 수정 안전 + 일관성). 기존 파티 수정은 본래 race 없으나 일관성 차원",
       "Supabase 검증 — 진짜 데이터 파티 0f265ffa5d80(밈곰잉, 회차21+예약2)는 has_pw=true 정상, 나머지 8개는 회차0 디버깅 테스트 파티. verify_party_pw는 일부러 틀린 PIN에 false 정상 반환(디버깅 중 미변경 확인)",
       "라이브 배포 확인 — push 후 maplebossparty.vercel.app/js/storage.js에 pushSerial 마커 3회 서빙 확인",
-      "잔여(사용자 작업) — Supabase SQL Editor에서 set_party_pw 원본 복구 + debug_log/trg_debug_parties/debug_parties_change 디버깅 객체 정리 + 깨진 테스트 파티 8개 삭제"
+      "잔여(사용자 작업) — Supabase SQL Editor에서 set_party_pw 원본 복구 + debug_log/trg_debug_parties/debug_parties_change 디버깅 객체 정리 + 깨진 테스트 파티 8개 삭제",
+      "파티원 추가 UX 변경 — 파티 선택 카드/파티 상세 strip의 \"+ 추가\" 칩 제거, 파티원 추가·삭제는 파티 설정 페이지(#/party/:id/settings)에서만. 사용처 사라진 openAddMemberModal 함수·import 제거(dead code)",
+      "새 파티 모달 순서 입력 — 파티원 칸을 순서대로만 입력(직전 칸 비면 다음 칸 잠금, 1부터 채워야 활성), 중간 칸 비우면 뒤 값 자동 위로 당김(blur 시 compactSlots), Enter는 다음 활성 칸으로만 이동"
     ],
     "commits": [
-      "a6790d9 - fix(storage): 파티 비번 race condition — INSERT→set_party_pw 직렬화"
+      "a6790d9 - fix(storage): 파티 비번 race condition — INSERT→set_party_pw 직렬화",
+      "788a41a - feat(party): 파티원 추가는 파티 설정에서만 + 새 파티 모달 순서 입력"
     ]
   },
   {
