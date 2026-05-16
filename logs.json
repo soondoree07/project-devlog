@@ -57,7 +57,9 @@
       "모바일 캘린더 주 단위 뷰 — calendar.js paintWeek(): 모바일에선 목->수 한 주(7칸)만 + 이전/다음 주 네비. 라벨 N월 N주차는 그 주 일요일이 속한 달/주차(주차=ceil(일요일날짜/7)). 주간 데이터 정렬은 앱 목요일 기준 유지(보스 주간 리셋 일치), 라벨만 일요일 기준. 데스크톱은 월 그리드 그대로. css .calendar-grid.calendar-week 셀 124px(세로 여유, 미디어쿼리 명시도 충돌 회피)",
       "모바일 더블탭 확대 제거 — html,body에 touch-action: manipulation (더블탭 줌만 차단, 핀치 줌·스크롤은 유지로 접근성 보존)",
       "파티 설정 페이지 신설 #/party/:id/settings (웹·모바일 공통) — 파티원 추가/삭제(최소 1명 보장, 기존 회차 memberSnapshot은 유지)+비밀번호 4자리 설정/해제. 헤더 \"비밀번호\" 버튼을 \"파티 설정\" 링크로 교체. party.js renderPartySettingsPage",
-      "모바일 룰렛/사다리 = 별도 페이지로 변경 — 위젯 임베드 폐기, #/party/:id/roulette·/ladder(renderWidgetPage), 햄버거엔 \"채널 룰렛\"·\"사다리타기\" 이동 버튼. 데스크톱은 side-left 위젯 그대로. route() 하위경로+게이트 동일 적용"
+      "모바일 룰렛/사다리 = 별도 페이지로 변경 — 위젯 임베드 폐기, #/party/:id/roulette·/ladder(renderWidgetPage), 햄버거엔 \"채널 룰렛\"·\"사다리타기\" 이동 버튼. 데스크톱은 side-left 위젯 그대로. route() 하위경로+게이트 동일 적용",
+      "인앱 캐시로 업데이트 안 보이던 문제 — vercel.json 추가(/, /index.html, /js/*, /css/* Cache-Control: no-store)로 항상 최신 로드. 서버는 정상 검증됨(라이브 plain 파일에 새 코드 확인), 클라 캐시가 원인",
+      "모바일 단독 페이지 다듬기 — 룰렛 페이지 세로로 길게(.widget-page-main .roulette-window 360px·display 44px), 사다리 페이지 한 화면에(.ladder-svg aspect-ratio auto·height 38vh+여백 축소, preserveAspectRatio=none이라 압축돼도 컬럼 정렬 유지). 데스크톱 side-left 위젯 영향 없음"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
@@ -92,7 +94,9 @@
       "13e3624 - fix(mobile): input 포커스 자동확대 차단(16px) + 캘린더 가독성 개선",
       "e61c125 - feat(mobile): 캘린더 주 단위 뷰 (N월 N주차, 일요일 기준 라벨)",
       "3410082 - fix(mobile): 더블탭 확대 제거 (touch-action: manipulation)",
-      "140b88a - feat: 파티 설정 페이지(멤버 추가/삭제+비번) + 모바일 룰렛/사다리 별도 페이지"
+      "140b88a - feat: 파티 설정 페이지(멤버 추가/삭제+비번) + 모바일 룰렛/사다리 별도 페이지",
+      "6954b30 - chore: vercel.json — JS/CSS/HTML no-store",
+      "9b0544c - style(mobile): 룰렛 단독페이지 세로로 길게 + 사다리 단독페이지 한 화면에"
     ]
   },
   {
