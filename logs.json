@@ -41,7 +41,8 @@
       "파티 삭제 보안 — 삭제 시 ① (비번 있으면) 비밀번호 입력·sha256 검증 → ② \"정말 삭제하시겠습니까?(되돌릴 수 없음·기록 N건)\" 2차 경고 confirm 후 삭제. party.js confirmAndDeleteParty() 공용 가드 신설, 메인 카드 ×·파티 상세 헤더 두 진입점 공용 사용. 비번 없는 파티는 2차 경고만",
       "파티 비밀번호를 숫자 4자리 PIN으로 통일 — utils.js pinInput()(마스킹+숫자 키패드+비숫자 자동제거·4자리 컷)·isPin() 신설, 새 파티 모달·비번 변경 모달·입장 게이트·삭제 prompt 4곳 적용. 제출 시 4자리 아니면 alert·중단. 라벨/힌트/플레이스홀더 문구 갱신. (기존 비4자리 비번 파티가 잠겨있으면 입력 불가 — 비번 기능은 이번 세션 신규라 실데이터 영향 거의 없음)",
       "무드 정책 분리 + 무드 설정 모달 — 파티 선택 화면만 방문마다 랜덤, 파티 안/게이트/보스설정은 유저가 고른 무드(localStorage maple-mood). js/mood.js 신설(applyMood/getSavedMood/setSavedMood/applyRouteMood/openMoodModal), index.html 무드 링크 id=mood-theme-link+window.__moodRandomId, app.js route() 시작에 applyRouteMood. 파티 상세 헤더 \"보스 설정\" 왼쪽 \"무드 설정\" 버튼 → 고르면 즉시 미리보기, \"적용\" 눌러야 저장(취소/닫기 원복)",
-      "비밀번호 변경 모달 — 새 비번/확인 칸 사이 marginTop 10px 간격 추가"
+      "비밀번호 변경 모달 — 새 비번/확인 칸 사이 marginTop 10px 간격 추가",
+      "무드 번호 1~6 연속화 (사용자 요청) — mood-6.css→mood-5.css(Royal Plum), mood-8.css→mood-6.css(Carbon Amber) git mv + 헤더 주석 갱신. index.html moods=[1,2,3,4,5,6], js/mood.js MOOD_IDS/MOOD_LABELS 동기. 무드 설정 모달이 1·2·3·4·5·6 연속 표시"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
@@ -65,7 +66,8 @@
       "c0f781a - feat(security): 모든 진입을 파티 선택 페이지로 강제",
       "4358853 - feat(security): 파티 삭제 시 비밀번호 검증 + 2차 경고 확인",
       "d1dc891 - feat(security): 파티 비밀번호를 숫자 4자리 PIN으로 통일",
-      "d72e4b1 - feat(mood): 파티 선택만 랜덤·파티 안 유저 선택 무드 + 무드 설정 모달"
+      "d72e4b1 - feat(mood): 파티 선택만 랜덤·파티 안 유저 선택 무드 + 무드 설정 모달",
+      "d5a6281 - refactor(mood): 무드 번호 1~6 연속화 (6→5 Royal Plum, 8→6 Carbon Amber)"
     ]
   },
   {
