@@ -54,7 +54,8 @@
       "호스팅 GitHub Pages -> Vercel 이전 — 사이트 링크에서 GitHub 아이디 제거(사용자 요청). 새 기본 URL https://maplebossparty.vercel.app (정적 zero-config, Framework=Other, env/build 없음). 데이터/백엔드(Supabase) 무영향, 파티/회차 그대로 확인. 이후 git push 시 Vercel 자동 재배포. 기존 github.io 링크는 당분간 유지(같은 Supabase 데이터, 추후 Pages off 가능)",
       "모바일 최적화 — 헤더 액션(무드/보스설정/비번/백업/삭제·목록의 백업/복원)과 룰렛/사다리타기를 모바일(<=720px)에서 햄버거 드로어로 수납. utils.js isMobile()/buildMobileMenu()(CSS 3선 토글, 이모지 없음·열면 X), 렌더 분기(중복 렌더 없음·데스크톱 100% 동일), matchMedia change 시 재렌더. style.css .nav-toggle/.mobile-drawer/.drawer-actions",
       "모바일 보정 — ① input/select/textarea 16px(<=720px)로 iOS·카카오톡 인앱 브라우저 타이핑 자동확대 차단 ② 캘린더 가독성: 셀 min-height 70->82·여백 축소·날짜 13px·pill 10px, weekday/header 여백 축소, <=480px는 #app 좌우 패딩 6px로 캘린더 폭 확보",
-      "모바일 캘린더 주 단위 뷰 — calendar.js paintWeek(): 모바일에선 목->수 한 주(7칸)만 + 이전/다음 주 네비. 라벨 N월 N주차는 그 주 일요일이 속한 달/주차(주차=ceil(일요일날짜/7)). 주간 데이터 정렬은 앱 목요일 기준 유지(보스 주간 리셋 일치), 라벨만 일요일 기준. 데스크톱은 월 그리드 그대로. css .calendar-grid.calendar-week 셀 124px(세로 여유, 미디어쿼리 명시도 충돌 회피)"
+      "모바일 캘린더 주 단위 뷰 — calendar.js paintWeek(): 모바일에선 목->수 한 주(7칸)만 + 이전/다음 주 네비. 라벨 N월 N주차는 그 주 일요일이 속한 달/주차(주차=ceil(일요일날짜/7)). 주간 데이터 정렬은 앱 목요일 기준 유지(보스 주간 리셋 일치), 라벨만 일요일 기준. 데스크톱은 월 그리드 그대로. css .calendar-grid.calendar-week 셀 124px(세로 여유, 미디어쿼리 명시도 충돌 회피)",
+      "모바일 더블탭 확대 제거 — html,body에 touch-action: manipulation (더블탭 줌만 차단, 핀치 줌·스크롤은 유지로 접근성 보존)"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
@@ -87,7 +88,8 @@
       "(검증 완료, 코드 변경 없음 — 2단계 종료)",
       "5e23a27 - feat(mobile): 헤더 액션 + 룰렛/사다리타기를 모바일 햄버거 드로어로",
       "13e3624 - fix(mobile): input 포커스 자동확대 차단(16px) + 캘린더 가독성 개선",
-      "e61c125 - feat(mobile): 캘린더 주 단위 뷰 (N월 N주차, 일요일 기준 라벨)"
+      "e61c125 - feat(mobile): 캘린더 주 단위 뷰 (N월 N주차, 일요일 기준 라벨)",
+      "3410082 - fix(mobile): 더블탭 확대 제거 (touch-action: manipulation)"
     ]
   },
   {
