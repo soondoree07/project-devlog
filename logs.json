@@ -36,7 +36,8 @@
       "미사용 무드 5(Graphite Mono)·7(Espresso Copper) + style.pre-redesign.css 백업 삭제 (revert는 git tag pre-redesign-2026-05-16)",
       "2단계(공유 백엔드) 결정 4개 확정 — ① Supabase ② 그냥 공유(링크만 알면 누구나, 로그인X) ③ boss_settings 파티별 분리(party_id PK) ④ GitHub Pages 유지(추후 Vercel 전환 가능)",
       "BACKEND_PLAN.md 갱신 — boss_settings party_id PK, §5 (a)그냥공유 확정, §7 결정완료+P1 다음단계, §8 \"그냥 공유\" 운영 가드(delete 차단·pw_hash RLS 숨김·backup 유도) 신설",
-      "다음 단계 = P1(사용자 Supabase 프로젝트 생성 → URL/키 → 스키마·RPC·RLS SQL 제공). 공수 약 3.5~5.5일"
+      "다음 단계 = P1(사용자 Supabase 프로젝트 생성 → URL/키 → 스키마·RPC·RLS SQL 제공). 공수 약 3.5~5.5일",
+      "보안 강화 — 모든 진입(공유된 #/party/:id 딥링크 포함)을 파티 선택 페이지로 강제(DOMContentLoaded에서 history.replaceState로 #/ 재작성 후 route). 링크로 비번 게이트 우회·파티 존재 노출 방지. 앱 내 파티 클릭 이동은 hashchange라 영향 없음. (확인: 해제상태는 메모리 Set이라 링크에 비번/토큰 안 담겨 — 원래도 우회 불가)"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
@@ -56,7 +57,8 @@
       "8edb39d - feat(mood): 라이트 제거·다크 8벌 재구성 [maple-boss-party]",
       "449dd44 - feat(mood): 방문마다 무드 6벌 랜덤 적용으로 1단계 확정",
       "449dd44 등 — (1단계 종료분 위 기록)",
-      "4c1d45a - docs(2단계): 결정 4개 확정 (Supabase/그냥공유/파티별/Pages)"
+      "4c1d45a - docs(2단계): 결정 4개 확정 (Supabase/그냥공유/파티별/Pages)",
+      "c0f781a - feat(security): 모든 진입을 파티 선택 페이지로 강제"
     ]
   },
   {
