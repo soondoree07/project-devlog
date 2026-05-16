@@ -50,7 +50,8 @@
       "보안: 채팅 노출된 legacy service_role 무효화 진행 — config.js를 신규 Publishable 키(sb_publishable_…, anon 역할 동일·RLS/RPC grant 그대로)로 교체. 무중단 절차: 키 교체·푸시 → 배포 확인 → Legacy API keys Disable(노출 service_role+legacy anon 일괄 폐기)",
       "버그픽스: boss_runs base_reward 빈문자열→null (numeric 컬럼이 \"\" 거부 → 복원 시 boss_runs/reservations upsert 전체 실패, parties만 올라가던 문제). runToRow numOrNull() 도입 + difficulty/channel/opener \"\"→null, member_snapshot/loot Array 가드. 원본 localStorage(파티1·회차21·예약2)는 무손실 — 재복원으로 해결",
       "재복원 성공 — base_reward 픽스 후 \"↑ 복원\" 재실행으로 회차 21·예약 2가 Supabase boss_runs/reservations 에 정상 적재, 파티 상세에 회차 표시 확인. 데이터 이전 완전 완료(무손실).",
-      "★2단계 공유 백엔드 전환 완전 종료★ — P5 사용자 검증 통과(pw_hash 클라 0건 노출·삭제 PIN 서버검증·비번 해제 정상), legacy API keys Disable 완료(노출 service_role/옛 anon 폐기), Publishable 키로 무중단 전환. 데이터 이전 무손실, 다기기 공유+Realtime 동작 확인. localStorage→Supabase 공유 백엔드 + 비번/삭제 서버 강제 완료."
+      "★2단계 공유 백엔드 전환 완전 종료★ — P5 사용자 검증 통과(pw_hash 클라 0건 노출·삭제 PIN 서버검증·비번 해제 정상), legacy API keys Disable 완료(노출 service_role/옛 anon 폐기), Publishable 키로 무중단 전환. 데이터 이전 무손실, 다기기 공유+Realtime 동작 확인. localStorage→Supabase 공유 백엔드 + 비번/삭제 서버 강제 완료.",
+      "호스팅 GitHub Pages -> Vercel 이전 — 사이트 링크에서 GitHub 아이디 제거(사용자 요청). 새 기본 URL https://maplebossparty.vercel.app (정적 zero-config, Framework=Other, env/build 없음). 데이터/백엔드(Supabase) 무영향, 파티/회차 그대로 확인. 이후 git push 시 Vercel 자동 재배포. 기존 github.io 링크는 당분간 유지(같은 Supabase 데이터, 추후 Pages off 가능)"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
