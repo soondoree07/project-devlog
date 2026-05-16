@@ -29,7 +29,11 @@
       "css/themes/mood-1..8.css — :root 오버라이드만으로 라이트4·다크4 무드(Midnight Slate/Pure Paper/Warm Sand/Forest Night/Mono Ink/Royal Plum/Nordic Frost/Carbon Amber). 단색배경·블러제거·WCAG AA·보스/전리품 기능색(JS 인라인) 유지",
       "js/theme-switch.js + index.html 1줄 — dev 전용 무드 미리보기 전환기(우하단 select, localStorage로 선택 유지, 확정 후 삭제 예정). 구조/클래스/JS 로직 무변경",
       "BACKEND_PLAN.md — 공유 백엔드 전환 설계(2단계): 스택비교(Supabase 추천)·Postgres 데이터모델·storage.js 인메모리캐시+Realtime 방식·1회 마이그레이션·비번 서버검증(RPC+RLS) 승격·작업분해 약3~4.5일",
-      "무드 세트 재구성 — 라이트4 제거, 다크 8벌로(1 Midnight Slate·6 Royal Plum·8 Carbon Amber 유지 + 신규 다크5: 2 Abyss Teal·3 Crimson Noir·4 Neon Synth·5 Graphite Mono·7 Espresso Copper). 전환기 라벨 갱신, 구조/클래스/JS 무변경"
+      "무드 세트 재구성 — 라이트4 제거, 다크 8벌로(1 Midnight Slate·6 Royal Plum·8 Carbon Amber 유지 + 신규 다크5: 2 Abyss Teal·3 Crimson Noir·4 Neon Synth·5 Graphite Mono·7 Espresso Copper). 전환기 라벨 갱신, 구조/클래스/JS 무변경",
+      "무드 개편 1단계 확정 — 단일 무드 고정 대신 방문(로드)마다 무드 6벌(1·2·3·4·6·8) 중 1벌 랜덤 적용",
+      "index.html <head>에 인라인 랜덤 무드 스크립트 추가 (style.css 뒤 :root 오버라이드, 구조/클래스/JS 불변·FOUC 없음)",
+      "app.js applyRandomBackground/BACKGROUNDS 제거 (배경은 무드가 단색으로 처리) — 임시 전환기 theme-switch.js·index 임시 script 삭제",
+      "미사용 무드 5(Graphite Mono)·7(Espresso Copper) + style.pre-redesign.css 백업 삭제 (revert는 git tag pre-redesign-2026-05-16)"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
@@ -46,7 +50,8 @@
       "e98e223 - chore: 디자인 개편 전 체크포인트",
       "3386a9f - feat: 무드 미리보기 — style.css 토큰화(값 동일) + 무드 8벌 + 임시 전환기 [maple-boss-party]",
       "80b9582 - docs: 공유 백엔드 전환 설계(2단계) [maple-boss-party]",
-      "8edb39d - feat(mood): 라이트 제거·다크 8벌 재구성 [maple-boss-party]"
+      "8edb39d - feat(mood): 라이트 제거·다크 8벌 재구성 [maple-boss-party]",
+      "449dd44 - feat(mood): 방문마다 무드 6벌 랜덤 적용으로 1단계 확정"
     ]
   },
   {
