@@ -17,7 +17,8 @@
       "파티 설정 비밀번호: alert 제거 → 저장 버튼 위 인라인 메시지(성공 \"비밀번호가 변경되었습니다.\" 성공색 / 새비번≠확인 \"비밀번호를 확인하세요\" 경고색 / 4자리 아님 안내), 재렌더 후 flash로 유지. 멤버 삭제 confirm→confirmDialog, 검증 alert→인라인. dead code openChangePasswordModal 제거. CSS .modal-confirm/.dialog-*/.btn-danger/.inline-msg* 전부 무드 토큰",
       "남은 네이티브 알림 정리 — utils.toast() 신설(하단 중앙 무드 일시 알림, 성공/오류 색, 클릭·자동 닫힘). 새 파티 만들기 모달 입력검증 alert 4건→모달 안 인라인 메시지(+같은 파일 재선택 가능하게 file input value 초기화), 백업 복원 confirm→confirmDialog·완료/실패 alert→toast, app.js 서버연결 실패 alert→toast(6s), storage.js 서버 저장/삭제/복원 실패 alert→toast. CSS .toast-* 무드 토큰. 잔존(범위 외)=record.js 회차 기록 폼 alert/confirm",
       "회차 기록 폼(record.js) 네이티브 알림 통일 — 회차 폼 검증 alert 6건(보스·난이도·참여자·상자·가격·분배)→저장 버튼 위 인라인(showFormMsg), 회차 삭제 confirm→confirmDialog(위험·보스명), 예약 시간 미입력 alert→예약 폼 인라인. 이로써 js 전체 네이티브 alert/confirm/prompt 0건(완전 제거)",
-      "세션 코드 리뷰 정리(3-에이전트 reuse/quality/efficiency 병렬 리뷰 반영) — ① inlineMsg() 헬퍼 신설로 인라인 메시지 중복 5곳+flash 통합, storage push/pushSerial 동일 catch→onPushError 추출 ② mood-3 .btn-danger 대비 실패(2.5:1) 수정: 전용 --on-danger 토큰(#2a0606) 도입 ③ confirmDialog 겹친 다이얼로그 키 가드(isTopmost)·처리중 닫기 차단(inFlight)·onConfirm throw 로깅·message 배열 허용, openDateModal ESC 최상단 가드(회귀 방지) ④ toast 최대 3개·compactSlots no-op 스킵(IME). 전 JS node --check 통과, 네이티브 알림 0건 유지"
+      "세션 코드 리뷰 정리(3-에이전트 reuse/quality/efficiency 병렬 리뷰 반영) — ① inlineMsg() 헬퍼 신설로 인라인 메시지 중복 5곳+flash 통합, storage push/pushSerial 동일 catch→onPushError 추출 ② mood-3 .btn-danger 대비 실패(2.5:1) 수정: 전용 --on-danger 토큰(#2a0606) 도입 ③ confirmDialog 겹친 다이얼로그 키 가드(isTopmost)·처리중 닫기 차단(inFlight)·onConfirm throw 로깅·message 배열 허용, openDateModal ESC 최상단 가드(회귀 방지) ④ toast 최대 3개·compactSlots no-op 스킵(IME). 전 JS node --check 통과, 네이티브 알림 0건 유지",
+      "dead code js/progress.js 삭제 — v0.5(2026-05-16)부터 어디서도 import 안 되는 미로드 파일(data.js 재작성으로 getWeeklyBosses/getMonthlyBosses import도 깨진 상태, 런타임 무영향). 삭제 후 전 15개 JS node --check 통과 + import/export 교차검증 0건(완전 정합) 달성"
     ],
     "commits": [
       "a6790d9 - fix(storage): 파티 비번 race condition — INSERT→set_party_pw 직렬화",
@@ -25,7 +26,8 @@
       "99dae81 - feat(ui): 파티 삭제·설정 네이티브 알림 → 무드 다이얼로그/인라인 메시지",
       "b96f216 - feat(ui): 남은 네이티브 알림 → 무드 인라인/토스트/다이얼로그",
       "c3ca347 - feat(ui): 회차 기록 폼 네이티브 알림 → 인라인/confirmDialog (전부 제거 완료)",
-      "0a04153 - refactor: 세션 변경 코드 리뷰 정리 (3-에이전트 리뷰 반영)"
+      "0a04153 - refactor: 세션 변경 코드 리뷰 정리 (3-에이전트 리뷰 반영)",
+      "08aa2a9 - chore: dead code js/progress.js 삭제"
     ]
   },
   {
