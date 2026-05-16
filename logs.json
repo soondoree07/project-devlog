@@ -44,7 +44,8 @@
       "비밀번호 변경 모달 — 새 비번/확인 칸 사이 marginTop 10px 간격 추가",
       "무드 번호 1~6 연속화 (사용자 요청) — mood-6.css→mood-5.css(Royal Plum), mood-8.css→mood-6.css(Carbon Amber) git mv + 헤더 주석 갱신. index.html moods=[1,2,3,4,5,6], js/mood.js MOOD_IDS/MOOD_LABELS 동기. 무드 설정 모달이 1·2·3·4·5·6 연속 표시",
       "2단계 P1 완료 — Supabase 프로젝트(plunswlhklpbyihrnxwo) 생성, 스키마 4테이블(parties/boss_runs/reservations/boss_settings 파티별)+RLS(select/insert/update)+verify_party_pw RPC 적용",
-      "2단계 P2 — js/config.js(supabase-js v2 ESM, URL+anon) 신설, storage.js 전면 재작성=인메모리 캐시+init() 1회 로드+Realtime 구독+낙관적 write-through(읽기 API 동기 그대로→화면코드 거의 불변, snake/camel 매핑, reservation payload jsonb). boss_settings 파티별: getBossSettings(partyId)/setBossSettings(partyId,patch), 라우트 #/crystals/:partyId, crystals/earnings/monthly/record 호출부 party.id 전달. app.js DOMContentLoaded await Storage.init()+onRemoteChange(route) 실시간 재렌더. mood.js #/crystals/:id 파티 안 인식. 롤백 태그 pre-supabase-2026-05-16"
+      "2단계 P2 — js/config.js(supabase-js v2 ESM, URL+anon) 신설, storage.js 전면 재작성=인메모리 캐시+init() 1회 로드+Realtime 구독+낙관적 write-through(읽기 API 동기 그대로→화면코드 거의 불변, snake/camel 매핑, reservation payload jsonb). boss_settings 파티별: getBossSettings(partyId)/setBossSettings(partyId,patch), 라우트 #/crystals/:partyId, crystals/earnings/monthly/record 호출부 party.id 전달. app.js DOMContentLoaded await Storage.init()+onRemoteChange(route) 실시간 재렌더. mood.js #/crystals/:id 파티 안 인식. 롤백 태그 pre-supabase-2026-05-16",
+      "2단계 P2 사용자 검증 통과 — 기존 localStorage 데이터 \"↑ 복원\"으로 Supabase 업로드 성공, 새로고침 유지·다른 기기에서 동일 데이터·다른 기기 추가분 실시간 반영 모두 확인. 공유 백엔드 핵심 목표(누가 수정→모두 보임) 달성. (코드 변경 없는 검증 마일스톤)"
     ],
     "commits": [
       "a16ed37 - feat: 보스 난이도 모델 전면 도입 (v0.5)",
