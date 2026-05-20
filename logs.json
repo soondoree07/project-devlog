@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-05-21",
+    "project": "maple-boss",
+    "title": "회차 폼 — 전리품 없는 난이도 안내가 좁은 셀에서 세로로 흐르던 문제 수정",
+    "items": [
+      "버그 — 회차 기록 폼에서 전리품이 없는 (보스×난이도)를 선택하면 '이 난이도는 전리품 없이 결정석만 기록돼요' 안내가 한 글자씩 세로로 흘러 모달 스크롤 발생",
+      "원인 — .loot-grid가 grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)) 인 grid라 .empty-state-sm 자식이 78px 셀 하나만 차지, 텍스트가 그 좁은 폭 안에서 줄바꿈",
+      "수정 — css/style.css에 .loot-grid > .empty-state-sm { grid-column: 1 / -1; padding: 16px 12px; } 5줄 추가. 같은 grid 안의 다른 안내(\"보스를 먼저 선택해주세요\")도 한 줄로 자연 노출"
+    ],
+    "commits": [
+      "2ac9a54 - fix(record): 전리품 빈 난이도 안내가 loot-grid 좁은 셀에서 세로로 흐르던 문제"
+    ]
+  },
+  {
+    "date": "2026-05-21",
     "project": "claude-dashboard",
     "title": "로컬 CLAUDE.md에 사용 가능한 서브에이전트 매핑 표 추가",
     "items": [
