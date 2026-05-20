@@ -1,13 +1,69 @@
 [
   {
     "date": "2026-05-21",
+    "project": "claude-dashboard",
+    "title": "로컬 CLAUDE.md에 사용 가능한 서브에이전트 매핑 표 추가",
+    "items": [
+      "전역 CLAUDE.md 리팩토링에 따라 21행 통합 매핑 표를 프로젝트별 로컬로 분리",
+      "claude-dashboard 작업 시 호출 가능한 7개 에이전트 정리 — frontend-developer/backend-architect/devops-automator/security-engineer + 공용(code-reviewer/reality-checker/project-shepherd)"
+    ],
+    "commits": [
+      "be12bad - docs(claude.md): 사용 가능한 서브에이전트 매핑 표 추가"
+    ]
+  },
+  {
+    "date": "2026-05-21",
+    "project": "byeolharu",
+    "title": "로컬 CLAUDE.md 신규 작성 — devlog 표준명·실기기 검증·에이전트 매핑",
+    "items": [
+      "전역 CLAUDE.md 리팩토링에 따라 별하루 전용 운영 컨텍스트를 로컬로 분리",
+      "devlog project 필드 표준명 명시(byeolharu), AVD·Web 금지·실기기 USB 검증 룰 명시",
+      "사용 가능한 12개 서브에이전트 매핑 — mobile-app-builder, ui/ux/whimsy/brand/storyteller, product-manager/feedback/nudge, ASO 등"
+    ],
+    "commits": [
+      "680f72d - docs: 로컬 CLAUDE.md 신규 — devlog 표준명·실기기 검증·에이전트 매핑"
+    ]
+  },
+  {
+    "date": "2026-05-21",
+    "project": "pochams_project",
+    "title": "로컬 CLAUDE.md에 게임/도메인 명칭 규칙 섹션 추가",
+    "items": [
+      "전역 CLAUDE.md에서 pochams/pokenova 한정 규칙을 로컬로 이동",
+      "포켓몬·기술·아이템 등 명칭은 DB/데이터 파일에서만 가져온다는 원칙 명시 (하드코딩·임의 추측 금지)"
+    ],
+    "commits": [
+      "2a4fd58 - docs(claude.md): 게임/도메인 명칭 규칙 섹션 추가"
+    ]
+  },
+  {
+    "date": "2026-05-21",
+    "project": "pokenova_project",
+    "title": "로컬 CLAUDE.md에 게임/도메인 명칭 규칙 섹션 추가",
+    "items": [
+      "전역 CLAUDE.md에서 pochams/pokenova 한정 규칙을 로컬로 이동",
+      "포켓몬·기술·아이템 등 명칭은 DB/데이터 파일에서만 가져온다는 원칙 명시 (하드코딩·임의 추측 금지)"
+    ],
+    "commits": [
+      "258b72e - docs(claude.md): 게임/도메인 명칭 규칙 섹션 추가"
+    ]
+  },
+  {
+    "date": "2026-05-21",
     "project": "claude-config",
-    "title": "전역 CLAUDE.md에 기본 작업 원칙 3가지 추가",
+    "title": "전역 CLAUDE.md 리팩토링 — 슬래시 커맨드 분리 + 로컬 CLAUDE.md 분산 + 코드 작성 원칙 신설",
     "items": [
       "~/.claude/CLAUDE.md 최상단에 '기본 작업 원칙 (모든 프로젝트 공통)' 섹션 신설 — 트리거 키워드 섹션 위에 배치해 모든 프로젝트 작업에 우선 적용되도록 함",
       "규칙 1 — 대규모 수정 전 확인: 파일 3개 이상 동시 수정·핵심 로직 구조 변경·폴더/아키텍처 변경·의존성 변경·마이그레이션은 첫 수정 전에 멈추고 사용자 승인 필수. '이미 시작했으니 마저 하겠다' 금지. 1~2줄 typo/버그 수정은 예외",
       "규칙 2 — 기능별 모듈화: 한 파일 = 하나의 책임. components/hooks/lib/utils/services/types 등 역할별 폴더 분리 권장. 200~300줄 넘으면 분리 검토. 비대한 기존 파일에 추가 전 분리부터 제안",
-      "규칙 3 — 모호한 요청 시 추론·실행 금지: '제가 이해한 내용은 다음과 같습니다: [요약]. 이 방향이 맞나요?' 형태로 먼저 확인. 사용자의 명시적 승인('응'/'맞아'/'그렇게 해') 받은 뒤 작업 시작. 명백한 단순 요청('변수명 바꿔줘')은 예외"
+      "규칙 3 — 모호한 요청 시 추론·실행 금지: '제가 이해한 내용은 다음과 같습니다: [요약]. 이 방향이 맞나요?' 형태로 먼저 확인. 사용자의 명시적 승인('응'/'맞아'/'그렇게 해') 받은 뒤 작업 시작. 명백한 단순 요청('변수명 바꿔줘')은 예외",
+      "전역 CLAUDE.md 대폭 축소 (337줄 → 94줄, 72% 감소) — 슬래시 커맨드/로컬 CLAUDE.md로 분산해 매 세션 토큰 절약",
+      "슬래시 커맨드 3개 신설 — /세션마감(오늘은 여기까지 트리거), /새프로젝트(Dependency Graph 자동 등록), /devlog업데이트(logs.json+기획서+세션요약)",
+      "'코드 작성 원칙' 섹션 신설 — 유지보수성 우선/SRP/DRY/200줄 분리 검토/명확한 네이밍/구조 변경 시 문서 동기화/작은 단위 분할 7항목",
+      "전역에서 제거 → 슬래시 커맨드 이동: 세션 인계 절차(40줄), 새 프로젝트 등록 절차(40줄), Devlog 자동 업데이트(70줄), 세션 요약 자동 기록(50줄)",
+      "전역에서 제거 → 프로젝트 로컬 CLAUDE.md 이동: 21행 에이전트 매핑 표(45줄), 게임/도메인 명칭 규칙(pochams/pokenova 한정)",
+      "메모리 업데이트 — feedback_session_handoff.md, feedback_new_project_dep_graph.md를 슬래시 커맨드 참조로 변경",
+      "중복 통합 — '기능별 모듈화' 섹션을 새 '코드 작성 원칙'에 흡수"
     ],
     "commits": []
   },
