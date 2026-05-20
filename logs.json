@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-05-21",
+    "project": "junghyeok-portfolio",
+    "title": "editorial 시안 → 독립 Vite 프로젝트 변환 + 기획서 7개 데이터 적용",
+    "items": [
+      "portfolio-editorial을 Vite + React 18 + TypeScript 독립 프로젝트로 셋업 (package.json/vite.config.ts:5174/tsconfig 3종/index.html/.gitignore)",
+      "_UI/Portfolio Site editorial.html의 인라인 <style> 블록(597줄) 전체를 portfolio-editorial/src/styles.css로 분리",
+      "window.X 글로벌 React 패턴 → ES module import/export 변환 — data.ts, types.ts, helpers/t.ts, hooks/useReducedMotion·useScrollY, components 8개(Hero/Carousel/ProjectCard/ProjectDetail/LangToggle/Topbar/Footer/Toast)",
+      "시안의 가상 5개 프로젝트 → 기획서 7개 실제 프로젝트로 한·영 데이터 완비 (01 젤로팡 / 02 포챔스 / 03 포케노바 / 04 작가 포트폴리오 / 05 원격 대시보드 / 06 유기견 분양 / 07 돈이돼지 분석)",
+      "Hero 카피·heroMeta·sectionMeta·footerEmail(soondoree07@gmail.com)·footerGit(github.com/soondoree07) 모두 박정혁 본인 정보로 교체",
+      "tsc -b 통과 / dev 서버 모든 모듈 URL 200 확인 후 종료",
+      "_UI 시안 정본 폴더(editorial/neon/bubble)와 기획서.md를 git 추적에 추가 — neon은 아직 미작업, 다음 단계 C에서 동일 패턴 진행 예정",
+      "RESUME.md 신규 작성 — 트리거 '포트폴리오' / '/포트폴리오' 슬래시 커맨드 시 이 RESUME을 가장 먼저 읽고 이어가도록 메모리·커맨드 설정",
+      "주의 — GitHub 레포(soondoree07/junghyeok-portfolio)가 archived 상태라 push 403. 로컬 커밋 34be9f9는 안전. 사용자가 unarchive 후 재push 필요"
+    ],
+    "commits": [
+      "34be9f9 - feat(editorial): 시안 → 독립 Vite 프로젝트 변환 + 기획서 7개 데이터 적용"
+    ]
+  },
+  {
+    "date": "2026-05-21",
     "project": "maple-boss",
     "title": "회차 폼 — 전리품 없는 난이도 안내가 좁은 셀에서 세로로 흐르던 문제 수정",
     "items": [
