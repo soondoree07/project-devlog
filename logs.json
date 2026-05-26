@@ -3253,5 +3253,34 @@
     ],
     "description": "pokenova_project의 최초 시작점. 포켓몬 실루엣 맞추기 퀴즈 사이트로 출발했고, 관리자 페이지와 Enter 키 다음 문제 이동 같은 기본 인터랙션을 깔았다. 이후 한 달간 도감/리더보드/도구 모달까지 확장되는 출발선.",
     "details": "## 배경\n\n취미 프로젝트로 포켓몬 도감/퀴즈 사이트를 만들기 시작한 첫날. 한 화면짜리 실루엣 퀴즈만 있는 단순한 정적 사이트로 출발.\n\n## 작업 내용\n\n- `index.html` + `quiz.html` + `admin.html` 기본 구조\n- 실루엣 이미지를 흐리게 → 정답 입력 → 정답 시 다음 문제로 자동 전환\n- 관리자 페이지: 문제 등록/수정/삭제 (당시엔 비밀번호 인증 수준)\n- 입력 필드 Enter 키 → 다음 문제 이동 (UX 1차 보완)\n- 이미지 정렬 깨지던 버그 수정\n\n## 커밋\n\n```\n99395f0  Initial commit: add pokemon quiz and admin pages\ne16b74f  Fix image alignment, add Enter key navigation, update admin auth\n```\n\n이때는 Vanilla JS + 정적 파일만 있는 GitHub Pages 호스팅 단계. Vercel 배포는 약 2주 후(2026-04-05)."
+  },
+  {
+    "date": "2026-05-26",
+    "project": "byeolharu",
+    "title": "PRD v1.1 채택 + 카테고리 라벨 통일 + Claude Design 시안 22개 저장",
+    "items": [
+      "PRD v1.1 채택 — 성취 별 추가, \"밝은 별 = 성취\" 정의 통합. 후회 극복 / 성취 직접 입력 두 경로로 확장. 영향 섹션: 1, 3.3, 6, 7.1, 7.2, 7.3, 7.5",
+      "문서 정리 — PRD-Byeolharu-v2.md를 00_docs/ 메인으로 이동, v1.0 + 초기 기획서를 00_docs/archive/로 이동, v1.0에 deprecated 헤더 추가, 00_docs/README.md 인덱스 갱신",
+      "devlog 통합 기획서 v1.1 기반 재작성 — 두 경로 (후회 극복 / 성취 입력) 반영, 카테고리 공유 규칙 명시, 상태 전이 규칙 갱신",
+      "메모리 갱신 (project_byeolharu.md) — 핵심 철학 3축으로 확장, 두 입력 경로, v1.1 상태 정의 통합",
+      "클로드 디자인 명령어 19개 + 스킬 매핑 RESUME §5에 수록 — Frontend design / Make tweakable / Wireframe / Interactive prototype / Animated video / Save as standalone HTML 단계별 사용법",
+      "사용자 결정 7개 확정 — 별 모양=타이트 후광 ✅ / 패키지명=com.junghyeok.byeolharu ✅ / 로컬 저장소=Hive ✅ / 스크린샷 #1 헤드라인=B \"오늘의 후회, 별이 됩니다\" ✅ / 한글 폰트=Pretendard(시안에서 추출) ✅ / 앱 아이콘=신규 제작 대기",
+      "카테고리 라벨 통일 — 기존 \"시도(해볼걸)/관계(잘할걸)/도덕(그러지말걸)/시간낭비/돈소비/건강몸\" → \"시도/관계/도덕/시간/돈/건강\" 짧게. 후회·성취 위저드 공통 라벨, 부제 제거. PRD §7.3 / 기획서 §3.7 / 메모리 일괄 갱신",
+      "Claude Design 1차 작업 — 22개 standalone HTML 시안 완성, Desktop/ex/ → 01_design/screens/ 복사 완료",
+      "토큰 추출본 작성 (01_design/screens/tokens.md) — 배경 #06091C(외곽)/#0A1028(표면), 포인트 골드 #F5C868, 연결선 알파 8%, 폰트 Pretendard Variable + Instrument Serif + JetBrains Mono. 카테고리 6색은 PRD와 동일",
+      "screens README.md 작성 — 22개 파일 인덱스, 미완성 4건 메모, 폐기 deck 목록",
+      "미완성 4건 RESUME §1-A에 기록 (사용량 복구 후 처리) — ConstellationComplete(북두칠성 좌우 반전·별 위치) / OvercomeInteractive(카테고리·제목 세로→가로) / CompletionMotion(별 위치) / AchievementWizardInteractive(정적 통일)",
+      "RESUME §0 자동 안내 박스 신설 — 다음 세션 별하루 트리거 시 미완성 4건 표 + 앱 아이콘 신규 제작 명령어 전문 자동 출력. \"시안 없이 가능한 코드부터\" 옵션도 제시",
+      "이전 deck 형식 폐기 — byeolharu_v1.1_design.html / .pptx 삭제 (전 버전, UI 불일치). deck/통합본/src jsx는 Desktop/ex/에 보존만"
+    ],
+    "commits": [
+      "3a20b97 - docs: PRD v1.1 채택 — 성취 별 추가, v1.0 archive 이동",
+      "e0978e8 - docs: 디자인 1차 진행 상황 기록 — 결정·미완성·다음 액션",
+      "9b61209 - docs: RESUME에 다음 세션 자동 안내 박스 + 결정 7개 표 정비",
+      "d0c79f3 - docs: 카테고리 라벨 통일 + 사용자 결정 7개 확정",
+      "0dfafaf - design: 시안 22개 + tokens.md + README 저장, 미완성 4건 명시"
+    ],
+    "description": "PRD v1.1 (성취 별 추가) 채택 + 카테고리 라벨 짧게 통일 + Claude Design 시안 22개 1차 저장 + 사용자 결정 7개 확정. 다음 세션은 미완성 4건 수정 + 앱 아이콘 제작 후 코딩 진입.",
+    "details": "## v1.1 핵심 변경\n\n후회 별에 더해 **성취 별** 추가. \"밝은 별 = 성취\" 정의 통합 → 밝은 별에 도달하는 경로 2가지:\n\n- **후회 극복 경로**: 흐린 별로 태어난 후회를 다짐·행동을 거쳐 밝은 별로 변환 (3단계 위저드)\n- **성취 직접 입력 경로**: 잘한 일·해낸 일은 입력 순간 바로 밝은 별 (2단계 위저드)\n\n두 입구 모두 같은 6 카테고리 공유, 별자리 슬롯에 함께 점유. 성취 별은 흐림 상태 없이 입력 즉시 풀컬러.\n\n## 카테고리 라벨 통일\n\n| 기존 | → | 신규 |\n|---|---|---|\n| 시도 (해볼걸) | → | 시도 |\n| 관계 (잘할걸) | → | 관계 |\n| 도덕 (그러지 말걸) | → | 도덕 |\n| 시간낭비 | → | 시간 |\n| 돈소비 | → | 돈 |\n| 건강몸 | → | 건강 |\n\n후회·성취 위저드 모두 동일 라벨, 부제 제거. 컨텍스트별 예시는 위저드 화면에서 별도 노출.\n\n## Claude Design 시안 22개\n\n클로드 디자인으로 사용자 직접 제작. 사용량 복구 대기 중 미완성 4건 남음.\n\n**완료 시안:**\n- 컴포넌트 5: StarWidget / StarShapes / CategoryGrid / CommonWidgets / Playground\n- 화면 17: Splash·SplashMotion / Onboarding / Home / NewStar / RegretWizard·Interactive / AchievementWizard / FaintStarDetail / FullStarDetail / OvercomeMorphMotion / ReviewPush / ArchiveWorld / ViewingMode / CrisisModal / Settings / Wireframes\n\n**미완성 4건 (사용량 복구 후 수정):**\n1. ConstellationComplete.html — 북두칠성 좌우 반전, 별 위치 어긋남\n2. OvercomeInteractive.html — 카테고리 라벨·제목 세로 배치 → 가로로\n3. CompletionMotion.html — 별 위치 어긋남\n4. AchievementWizardInteractive.html — 정적 시안과 불일치\n\n## 시안 ↔ PRD 토큰 차이 (코드 반영 시 시안 우선)\n\n| 항목 | PRD | 시안 |\n|---|---|---|\n| 배경 외곽 | #0F1733 | #06091C |\n| 배경 표면 | #0F1733 | #0A1028 |\n| 포인트 골드 | #FFD95A | #F5C868 |\n| 연결선 알파 | 50% | 8% |\n| 카테고리 6색 | (변경 없음) | PRD와 동일 ✅ |\n\n## 사용자 결정 7개 확정\n\n| # | 항목 | 결정 |\n|---|---|---|\n| 1 | 앱 아이콘 | 신규 제작 (사용량 복구 후) |\n| 2 | 한글 폰트 | Pretendard ✅ |\n| 3 | 별 모양 | 타이트 후광 ✅ |\n| 4 | 패키지명 | com.junghyeok.byeolharu ✅ |\n| 5 | 로컬 저장소 | Hive ✅ |\n| 6 | 카테고리 라벨 | 시도/관계/도덕/시간/돈/건강 ✅ |\n| 7 | 스크린샷 헤드라인 | B \"오늘의 후회, 별이 됩니다\" ✅ |\n\n## 다음 세션 첫 액션\n\n별하루 트리거 시 RESUME §0 자동 안내 박스가 다음을 명시적으로 출력:\n- Step 1 — 미완성 4건 수정 (클로드 디자인에서)\n- Step 2 — 앱 아이콘 신규 제작 명령어 (전문 포함)\n- 또는 \"시안 없이 가능한 코드부터\" 옵션 (도메인 모델·StarType enum·StarCategory 리네임·Hive Repository)\n\n## 커밋 5개\n\n```\n3a20b97  docs: PRD v1.1 채택 — 성취 별 추가, v1.0 archive 이동\ne0978e8  docs: 디자인 1차 진행 상황 기록 — 결정·미완성·다음 액션\n9b61209  docs: RESUME에 다음 세션 자동 안내 박스 + 결정 7개 표 정비\nd0c79f3  docs: 카테고리 라벨 통일 + 사용자 결정 7개 확정\n0dfafaf  design: 시안 22개 + tokens.md + README 저장, 미완성 4건 명시\n```"
   }
 ]
