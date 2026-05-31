@@ -11,10 +11,12 @@
       "ROWS 8→16 — 사다리 전체 길이 ~2배. CSS .ladder-svg aspect-ratio 100/192 → 100/368 비례 조정. preserveAspectRatio='none'이라 카드 폭 유지하며 세로만 늘어남",
       "결과 칸 div → button (revealed일 때만) — type='button' + .ladder-result-clickable 클래스로 cursor:pointer + hover transform/box-shadow. .ladder-result에 padding:0/font-family:inherit/appearance:none 추가해 button reset",
       "자동 winner 안내 + trace hint 두 줄 제거 — 사용자가 직접 눌러서 확인하는 흐름이라 김새는 안내 불필요. dead CSS selector(.ladder-winner / .ladder-trace-hint / .ladder-cover-icon)까지 같이 정리",
-      "검증 — 전 JS node --check 통과, ladder.js 관련 dead selector 0건"
+      "검증 — 전 JS node --check 통과, ladder.js 관련 dead selector 0건",
+      "후속 — 사용자 피드백 '사다리가 너무 길어졌고 자동 스크롤 생긴다' 반영. ROWS 16→8, aspect-ratio 100/368→100/192 원복. .side-left(max-height:calc(100vh-32px) + overflow-y:auto) 안에서 룰렛+사다리 합이 viewport 넘어 자체 스크롤바가 생기던 문제 해소(콘텐츠를 viewport 안에 맞춰 자연 해결)"
     ],
     "commits": [
-      "d310564 - feat(ladder): 결과 칸 클릭으로 직접 공개 + 양방향 trace + O 위치 균일 랜덤 + 행 2배"
+      "d310564 - feat(ladder): 결과 칸 클릭으로 직접 공개 + 양방향 trace + O 위치 균일 랜덤 + 행 2배",
+      "3c1bf4e - fix(ladder): 행 수와 SVG aspect-ratio 원래대로 (사이드 컬럼 자체 스크롤 방지)"
     ]
   },
   {
