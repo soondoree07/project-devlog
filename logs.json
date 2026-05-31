@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-05-31",
+    "project": "maple-boss",
+    "title": "사다리타기 UX 개편 — 결과 칸 직접 공개 + 양방향 trace + O 위치 균일 랜덤 + 행 2배",
+    "items": [
+      "사용자 피드백 — 뽑기 누르면 바로 'OOO 당첨!' 노출돼서 김새는 흐름, 결과 칸도 첫눈에 다 보임, 중앙이 O로 자주 보이는 인상, 행이 너무 적은 느낌",
+      "결과 칸 가리기 — 뽑기 직후 결과 칸 N개 전부 '?'로 표시. 사용자가 칸을 직접 눌러야 그 칸 O/X 공개. 한 번 공개된 칸은 계속 유지(revealedResults Set 추가)",
+      "양방향 trace — 이름 칩 클릭은 위→아래(기존), 결과 칸 클릭은 아래→위 reverse. result.reverseTrace 플래그 + traceAlongPath 호출 시 corners 배열 reverse",
+      "O 위치 균일화 — 기존 winnerIdx(시작 컬럼)를 균일 랜덤으로 뽑고 그 사람 endCol에 O 박는 방식 → winnerEndCol(결과 칸)을 직접 균일 랜덤으로 뽑고 그에 대응하는 시작 컬럼은 사다리에서 역추적. 사다리 가로줄 분포에 의존한 미세 편향 제거, 결과 칸 기준 정확히 1/N",
+      "ROWS 8→16 — 사다리 전체 길이 ~2배. CSS .ladder-svg aspect-ratio 100/192 → 100/368 비례 조정. preserveAspectRatio='none'이라 카드 폭 유지하며 세로만 늘어남",
+      "결과 칸 div → button (revealed일 때만) — type='button' + .ladder-result-clickable 클래스로 cursor:pointer + hover transform/box-shadow. .ladder-result에 padding:0/font-family:inherit/appearance:none 추가해 button reset",
+      "자동 winner 안내 + trace hint 두 줄 제거 — 사용자가 직접 눌러서 확인하는 흐름이라 김새는 안내 불필요. dead CSS selector(.ladder-winner / .ladder-trace-hint / .ladder-cover-icon)까지 같이 정리",
+      "검증 — 전 JS node --check 통과, ladder.js 관련 dead selector 0건"
+    ],
+    "commits": [
+      "d310564 - feat(ladder): 결과 칸 클릭으로 직접 공개 + 양방향 trace + O 위치 균일 랜덤 + 행 2배"
+    ]
+  },
+  {
     "date": "2026-05-21",
     "project": "junghyeok-portfolio",
     "title": "editorial 시안 → 독립 Vite 프로젝트 변환 + 기획서 7개 데이터 적용",
