@@ -3302,5 +3302,21 @@
     ],
     "description": "PRD v1.1 (성취 별 추가) 채택 + 카테고리 라벨 짧게 통일 + Claude Design 시안 22개 1차 저장 + 사용자 결정 7개 확정. 다음 세션은 미완성 4건 수정 + 앱 아이콘 제작 후 코딩 진입.",
     "details": "## v1.1 핵심 변경\n\n후회 별에 더해 **성취 별** 추가. \"밝은 별 = 성취\" 정의 통합 → 밝은 별에 도달하는 경로 2가지:\n\n- **후회 극복 경로**: 흐린 별로 태어난 후회를 다짐·행동을 거쳐 밝은 별로 변환 (3단계 위저드)\n- **성취 직접 입력 경로**: 잘한 일·해낸 일은 입력 순간 바로 밝은 별 (2단계 위저드)\n\n두 입구 모두 같은 6 카테고리 공유, 별자리 슬롯에 함께 점유. 성취 별은 흐림 상태 없이 입력 즉시 풀컬러.\n\n## 카테고리 라벨 통일\n\n| 기존 | → | 신규 |\n|---|---|---|\n| 시도 (해볼걸) | → | 시도 |\n| 관계 (잘할걸) | → | 관계 |\n| 도덕 (그러지 말걸) | → | 도덕 |\n| 시간낭비 | → | 시간 |\n| 돈소비 | → | 돈 |\n| 건강몸 | → | 건강 |\n\n후회·성취 위저드 모두 동일 라벨, 부제 제거. 컨텍스트별 예시는 위저드 화면에서 별도 노출.\n\n## Claude Design 시안 22개\n\n클로드 디자인으로 사용자 직접 제작. 사용량 복구 대기 중 미완성 4건 남음.\n\n**완료 시안:**\n- 컴포넌트 5: StarWidget / StarShapes / CategoryGrid / CommonWidgets / Playground\n- 화면 17: Splash·SplashMotion / Onboarding / Home / NewStar / RegretWizard·Interactive / AchievementWizard / FaintStarDetail / FullStarDetail / OvercomeMorphMotion / ReviewPush / ArchiveWorld / ViewingMode / CrisisModal / Settings / Wireframes\n\n**미완성 4건 (사용량 복구 후 수정):**\n1. ConstellationComplete.html — 북두칠성 좌우 반전, 별 위치 어긋남\n2. OvercomeInteractive.html — 카테고리 라벨·제목 세로 배치 → 가로로\n3. CompletionMotion.html — 별 위치 어긋남\n4. AchievementWizardInteractive.html — 정적 시안과 불일치\n\n## 시안 ↔ PRD 토큰 차이 (코드 반영 시 시안 우선)\n\n| 항목 | PRD | 시안 |\n|---|---|---|\n| 배경 외곽 | #0F1733 | #06091C |\n| 배경 표면 | #0F1733 | #0A1028 |\n| 포인트 골드 | #FFD95A | #F5C868 |\n| 연결선 알파 | 50% | 8% |\n| 카테고리 6색 | (변경 없음) | PRD와 동일 ✅ |\n\n## 사용자 결정 7개 확정\n\n| # | 항목 | 결정 |\n|---|---|---|\n| 1 | 앱 아이콘 | 신규 제작 (사용량 복구 후) |\n| 2 | 한글 폰트 | Pretendard ✅ |\n| 3 | 별 모양 | 타이트 후광 ✅ |\n| 4 | 패키지명 | com.junghyeok.byeolharu ✅ |\n| 5 | 로컬 저장소 | Hive ✅ |\n| 6 | 카테고리 라벨 | 시도/관계/도덕/시간/돈/건강 ✅ |\n| 7 | 스크린샷 헤드라인 | B \"오늘의 후회, 별이 됩니다\" ✅ |\n\n## 다음 세션 첫 액션\n\n별하루 트리거 시 RESUME §0 자동 안내 박스가 다음을 명시적으로 출력:\n- Step 1 — 미완성 4건 수정 (클로드 디자인에서)\n- Step 2 — 앱 아이콘 신규 제작 명령어 (전문 포함)\n- 또는 \"시안 없이 가능한 코드부터\" 옵션 (도메인 모델·StarType enum·StarCategory 리네임·Hive Repository)\n\n## 커밋 5개\n\n```\n3a20b97  docs: PRD v1.1 채택 — 성취 별 추가, v1.0 archive 이동\ne0978e8  docs: 디자인 1차 진행 상황 기록 — 결정·미완성·다음 액션\n9b61209  docs: RESUME에 다음 세션 자동 안내 박스 + 결정 7개 표 정비\nd0c79f3  docs: 카테고리 라벨 통일 + 사용자 결정 7개 확정\n0dfafaf  design: 시안 22개 + tokens.md + README 저장, 미완성 4건 명시\n```"
+  },
+  {
+    "date": "2026-06-01",
+    "project": "maple-boss",
+    "title": "월별 사이드 헤더 — 인당 결정석 → 전리품 총합(원가 합)",
+    "items": [
+      "월별 누적 사이드바(오른쪽 컬럼) 각 카드의 빨간 헤더 수치를 \"인당 총 결정석\"에서 \"전리품 총합\"으로 변경 (monthly.js)",
+      "계산식 변경 — 그 달 전리품 가격을 1/N(회차 인원 분배) 없이 원가 그대로 합산. price 비어있거나 비숫자는 0 처리해 제외",
+      "미사용 정리 — 결정석 계산에만 쓰이던 import(getBoss/getEffectiveCrystal/resolveDifficultyKey)와 defaults/partyCount 제거, 헤더 title 툴팁도 \"전리품 총합\"으로",
+      "메인 상단 수익 카드(earnings.js)는 무변경 — 멤버별 실수익(결정석+분배 전리품 1/N)은 그대로. 월별 사이드는 전리품 총 원가, 메인 상단은 인당 실수익으로 의미 분리(사용자 확인)"
+    ],
+    "commits": [
+      "1e568d5 - feat(monthly): 월별 사이드 헤더를 인당 결정석→전리품 총합(원가 합)으로 변경"
+    ],
+    "description": "오른쪽 월별 사이드바 빨간 헤더 수치를 그 달 결정석 인당 합이 아니라 전리품 가격을 나누지 않고 원가 그대로 더한 총합으로 변경. 메인 상단 수익 카드는 그대로 두어 두 영역의 의미를 분리.",
+    "details": "## 변경 내용\n\n월별 누적 사이드바(monthly.js) 각 월 카드 헤더의 빨간 글씨(.month-card-perhead)를 변경.\n\n- **이전**: 인당 총 결정석 = Σ(회차 결정석 ÷ 회차 참여자 수)\n- **이후**: 전리품 총합 = 그 달 lootRows의 price를 1/N 없이 단순 합산\n\nprice가 null이거나 NaN인 전리품은 0으로 처리해 합계에서 제외. 0이면 \"0억\" 표시 유지.\n\n## 정리\n\n결정석 계산에만 쓰이던 import 3개(getBoss/getEffectiveCrystal/resolveDifficultyKey)와 defaults/partyCount 지역변수 제거. 헤더 title 툴팁 \"인당 총 결정석\"→\"전리품 총합\".\n\n## 의미 분리 (사용자 확인)\n\n- 메인 상단 수익 카드(earnings.js) = 멤버별 실수익(결정석 + 분배 전리품, 인당) — **무변경**\n- 오른쪽 월별 사이드 헤더 = 그 달 전리품 총 원가 합(1/N 안 함) — 이번 변경\n\nnode --check 통과, 커밋 1e568d5 push 완료(Vercel 자동 배포)."
   }
 ]
