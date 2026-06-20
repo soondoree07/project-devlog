@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-06-20",
+    "project": "pochams_project",
+    "title": "데이터 동기화 브릿지 — JSON 한 곳 수정으로 포챔스+포케노바 동시 반영",
+    "items": [
+      "배경 — 시즌 변경으로 포챔스에 포켓몬·기술·도구 추가 필요. 포챔스는 Neon DB에서, 포케노바는 정적 사이트가 data/*.json을 직접 읽어 두 사이트 데이터 반영 경로가 달랐음. '한 곳만 고치면 둘 다 반영' 요구로 동기화 브릿지(C안) 구축",
+      "champions_pokemon_ids.json 단일 원천 도입 — 포챔스 노출 포켓몬 목록(baseIds 185 + altOnlyEns/megaOnlyEns)을 한 파일로. pokenova_project/data/에 배치해 seed.ts와 재생성 스크립트가 공유",
+      "seed.ts 하드코딩 챔피언스 ID 목록 3종 → 위 파일 읽기로 교체",
+      "잠복 불일치 발견·정리 — seed.ts(670 없음) vs CLAUDE.md 인라인 스크립트(670 있음)가 이미 어긋나 있었음. 670은 영원의꽃/메가플라엣테 학습기술용으로 의도된 포함이라, 재생성 스크립트가 altOnlyEns/megaOnlyEns 원종 ID를 자동 유도하도록 설계해 양쪽 동작 보존",
+      "인라인 파이썬 → scripts/regen_champions_learnsets.py 파일로 분리",
+      "scripts/sync-data.sh + npm run sync 추가 — ①champions_learnsets 재생성 ②포챔스 DB seed ③포케노바 data 커밋. 기본은 push 안 함(확인 후), --push로 배포까지",
+      "검증 — 새 재생성 결과가 기존 champions_learnsets.json과 완전 동일(186마리·11542기술), seed.ts 데이터 읽기 정상 확인. DB 무접속으로 동작 변화 0 증명",
+      "CLAUDE.md 데이터 워크플로 섹션을 단일 원천 + npm run sync 방식으로 갱신",
+      "다음 — 사용자가 포챔스 추가 데이터(포켓몬/기술/도구 한국어 이름)를 전달하면 JSON 반영 후 실제 sync 실행 예정"
+    ],
+    "commits": [
+      "37572e9 - feat(sync): 데이터 동기화 브릿지 — JSON 한 곳 수정으로 포챔스+포케노바 반영",
+      "93279bb - data: champions_pokemon_ids.json 추가 — 챔피언스 포켓몬 단일 원천 (pokenova_project)"
+    ]
+  },
+  {
     "date": "2026-05-31",
     "project": "maple-boss",
     "title": "사다리타기 UX 개편 — 결과 칸 직접 공개 + 양방향 trace + O 위치 균일 랜덤 + 행 2배",
