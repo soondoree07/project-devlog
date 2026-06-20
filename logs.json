@@ -12,11 +12,20 @@
       "scripts/sync-data.sh + npm run sync 추가 — ①champions_learnsets 재생성 ②포챔스 DB seed ③포케노바 data 커밋. 기본은 push 안 함(확인 후), --push로 배포까지",
       "검증 — 새 재생성 결과가 기존 champions_learnsets.json과 완전 동일(186마리·11542기술), seed.ts 데이터 읽기 정상 확인. DB 무접속으로 동작 변화 0 증명",
       "CLAUDE.md 데이터 워크플로 섹션을 단일 원천 + npm run sync 방식으로 갱신",
-      "다음 — 사용자가 포챔스 추가 데이터(포켓몬/기술/도구 한국어 이름)를 전달하면 JSON 반영 후 실제 sync 실행 예정"
+      "다음 — 사용자가 포챔스 추가 데이터(포켓몬/기술/도구 한국어 이름)를 전달하면 JSON 반영 후 실제 sync 실행 예정",
+      "[시즌3 반영] 사용자가 docs/champions_seasons에 season3.md(포켓몬 19+메가16 타입·특성·기술셋) + season3_items.md(도구 15+메가스톤 16) 제공. 시즌별 추적 인덱스 README + 폴더 정리",
+      "분석 결과 — 포켓몬 19종·메가 16종·도구 31종·기술 330종 전부 이미 우리 데이터에 존재. 신규 생성 불필요(메가라이츄X/Y도 이미 forms+스프라이트 보유, md '메가라이츄X' vs 데이터 '메가라이츄 X' 띄어쓰기 차이로 오인했던 것)",
+      "방침 확정 — md를 정답지로, 포켓몬별 learnsets.json 엔트리를 md 챔피언스 기술폭으로 통째 교체(B안). 프론트(SampleNewForm·DamageCalc)가 learnset에서 en만 읽어 method/level 무관 확인",
+      "찌르호크 — md에 기술 목록 없어(메가찌르호크가 원종 참조) pokemon.fandom.com MediaWiki API로 43개 기술 가져와 season3.md에 보강",
+      "반영 — champions_pokemon_ids baseIds +20(일반19+찌르호크398, 185→205), quiz_moves in_champions +5, quiz_items in_champions +31(도구15+메가스톤16, champions_category 보정), learnsets 20종 교체, champions_learnsets 재생성(186→206마리·12823기술)",
+      "seed 완료(DB 반영) → 포챔스 즉시 반영, 포케노바 push로 재배포. 화염레오 learnset 0→49개 정상화 등 검증 통과",
+      "남은 일 — md의 기술 위력/PP/명중률 스탯과 우리 quiz_moves 값 차이 동기화는 계산기 영향 커서 다음 단계로 보류"
     ],
     "commits": [
       "37572e9 - feat(sync): 데이터 동기화 브릿지 — JSON 한 곳 수정으로 포챔스+포케노바 반영",
-      "93279bb - data: champions_pokemon_ids.json 추가 — 챔피언스 포켓몬 단일 원천 (pokenova_project)"
+      "93279bb - data: champions_pokemon_ids.json 추가 — 챔피언스 포켓몬 단일 원천 (pokenova_project)",
+      "7ff11f6 - data: 포챔스 시즌3 반영 — 포켓몬 20종 + 기술/도구 챔피언스 추가 (pokenova_project)",
+      "817be1d - docs(champions): 시즌3 원본 데이터 + 시즌 추적 인덱스 추가"
     ]
   },
   {
