@@ -36,7 +36,9 @@
       "[계산기 싱글/더블] format 토글 추가 — 더블 시 리플렉터/빛의장막/오로라베일 ×1/2→×2/3, 광역기(×0.75) 체크박스는 더블에서만 노출(싱글 전환 시 해제). 검증: 지진 기본 81~96 / 리플렉터 싱글 40~48 / 더블 54~64(×2/3) 정확. 빌드 통과",
       "[포케노바 완전 독립] 포챔스를 포케노바에서 떼어내 독립 사이트화. 위키 'Champions 기술' 문서가 폼 있는 포켓몬은 페이지 내 다중 섹션(트레이닝시작/CP 헤더)으로 폼별 기술폭 보유 발견 → build_pochams_db.py를 섹션 분리+타입매칭으로 재작성(라이츄66/알로라75, 윈디56/히스이64, 로토무·메가는 base 공유). 미수집 폼은 base 보강",
       "자체 소스 데이터(pochams_project/data/) 생성 — build_pochams_source.py가 quiz_pokemon(챔피언스+폼)·stats·moves·items·abilities·learnsets·champions_pokemon_ids 생성. seed.ts DATA_DIR을 자체 data/로, SPRITE_BASE='' (로컬 /sprites), learnsets 자체화·오버레이 제거. next.config pokenova 이미지호스트 제거",
-      "스프라이트 자체 호스팅 — 챔피언스 475개(~41MB) public/sprites/ 복사. seed 결과 챔피언스 312종(base205+메가77+알트30)만. 검증: /api/data/pokemon 스프라이트 100% 로컬·pokenova 0, 로컬 png HTTP200, 폼별 learnset 분리, 계산기 데미지·방벽·랭크·도구 재검증 통과. CLAUDE.md 데이터 규칙 독립 워크플로로 갱신"
+      "스프라이트 자체 호스팅 — 챔피언스 475개(~41MB) public/sprites/ 복사. seed 결과 챔피언스 312종(base205+메가77+알트30)만. 검증: /api/data/pokemon 스프라이트 100% 로컬·pokenova 0, 로컬 png HTTP200, 폼별 learnset 분리, 계산기 데미지·방벽·랭크·도구 재검증 통과. CLAUDE.md 데이터 규칙 독립 워크플로로 갱신",
+      "[UI 정리] 메인(/)→포켓몬 도감(/pokedex는 /로 redirect), 네비=도감·계산기·신고만(주간Top10·패치노트 제거), /patch-notes·PatchNotePanel 삭제, 도감 제목 옆 시즌 배지 SEASON_LABEL='M-B' 추가, sitemap 갱신",
+      "[데이터 검증] namu.wiki 'Pokémon Champions/밸런스 패치' M-B(2026.6.17) 대조 — 기술폭 추가 5건(나무킹 대지의힘/대짱이 웨이브태클/메타그로스 개척하기·아이언롤러/찌르호크 날개쉬기·블레이즈킥/펜드라 개척하기·흡혈) + 삭제 11건(메타그로스 헤비봄버·탁쳐서떨구기/화염레오 대지의힘/저승갓숭 목숨걸기/칼라마네로 인파이트·문어굳히기/곤율거니 막말내뱉기 등) **19/19 완전 일치**. 위키 수집 데이터가 M-B 최신 반영 확인, 데이터 수정 불필요"
     ],
     "commits": [
       "37572e9 - feat(sync): 데이터 동기화 브릿지 — JSON 한 곳 수정으로 포챔스+포케노바 반영",
@@ -48,7 +50,8 @@
       "1a86152 - feat(calc): 챔피언스 기술폭 연동 — 포챔스 DB에 위키 수집 movepool 적용",
       "ba7b6e0 - feat(calc): 싱글/더블 포맷 토글 — 더블 시 벽 ×2/3, 광역기 노출",
       "09613d7 - feat(독립): 포챔스를 포케노바에서 완전 분리 — 자체 데이터+스프라이트",
-      "149f136 - docs(claude.md): 데이터 규칙을 포챔스 독립 워크플로로 갱신"
+      "149f136 - docs(claude.md): 데이터 규칙을 포챔스 독립 워크플로로 갱신",
+      "046d7b0 - feat(ui): 메인을 도감으로 + 네비 도감/계산기/신고 + 도감 M-B 배지"
     ]
   },
   {
