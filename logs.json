@@ -30,7 +30,9 @@
       "[포챔스 전용 DB 구축] 포케노바 공유데이터와 분리된 자체 데이터 신설. 포켓몬위키 'Champions 기술' 문서를 baseIds 205종 전부 MediaWiki API로 수집(.wiki_cache, 실패 0)",
       "스키마 — pochams_pokemon.json(205: 이름·종족값·타입·특성·기술폭), pochams_moves.json(494: 분류·카테고리[배열]·위력·명중·우선도·접촉·효과), pochams_abilities.json(180: 이름·효과). 도구는 기존 quiz_items 챔피언스 재사용",
       "하이브리드 출처 — 기술폭·분류·카테고리·위력·명중·우선도는 위키, 접촉/효과/종족값/특성효과는 기존 데이터 이름매칭(미매칭 0). 카테고리 12종(펀치·물기·소리·정신·구슬/폭탄·베기·파동·회복·춤·바람·가루·폭발), 복수카테고리는 <br>분리 배열화",
-      "scripts/build_pochams_db.py + data/README.md. 다음 단계(미진행) — 이 JSON을 Neon 적재/사이트 연동(도감·계산기 API 교체). 위력/PP 스탯 동기화는 이 수집으로 사실상 해결됨"
+      "scripts/build_pochams_db.py + data/README.md. 다음 단계(미진행) — 이 JSON을 Neon 적재/사이트 연동(도감·계산기 API 교체). 위력/PP 스탯 동기화는 이 수집으로 사실상 해결됨",
+      "[계산기 연동] 방식 선택: '기존 파이프라인에 적용'(새 데이터엔 타입·영문키·메가폼 없어 완전 API교체는 리스크 큼, 위력은 이미 일치 → 실질 가치는 정확 기술폭). pochams_learnsets.json(pokemon_en→[move_en]) 생성, seed.ts seedLearnsets가 pokemon_learnset에 오버레이(챔피언스 205종 교체, 포케노바 learnsets.json 무영향)",
+      "검증 — verify_calc.mjs로 실제 calcDamage 함수 재현: 리플렉터 정확히 ½, 공격랭크+2 ≈×2, 생명의구슬 ×1.3, 타입도구 ×1.2, 화상 ½, 수비랭크 전부 정확. dev서버 /api/data/learnsets(한카리아스 58기술 챔피언스폭 일치)·/api/data/moves(지진 땅·물리·100) 서빙 확인. seed로 DB 반영"
     ],
     "commits": [
       "37572e9 - feat(sync): 데이터 동기화 브릿지 — JSON 한 곳 수정으로 포챔스+포케노바 반영",
@@ -38,7 +40,8 @@
       "7ff11f6 - data: 포챔스 시즌3 반영 — 포켓몬 20종 + 기술/도구 챔피언스 추가 (pokenova_project)",
       "817be1d - docs(champions): 시즌3 원본 데이터 + 시즌 추적 인덱스 추가",
       "538330b - refactor: 샘플·팀·통계 제거 — 도감·계산기·주간Top10·버그신고·패치노트 중심으로 개편",
-      "eac43a4 - feat(data): 포챔스 전용 DB 구축 — 포켓몬/기술/특성 (위키 Champions 기술 수집)"
+      "eac43a4 - feat(data): 포챔스 전용 DB 구축 — 포켓몬/기술/특성 (위키 Champions 기술 수집)",
+      "1a86152 - feat(calc): 챔피언스 기술폭 연동 — 포챔스 DB에 위키 수집 movepool 적용"
     ]
   },
   {
