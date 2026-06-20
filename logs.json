@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-06-21",
+    "project": "pochams_project",
+    "title": "리팩터 잔재 미사용 코드 일괄 정리 (−2132줄)",
+    "items": [
+      "레퍼런스 도구 개편 이후 남은 죽은 코드/기능/잔재를 전수 조사 후 3개 등급으로 분류해 일괄 제거. Explore 에이전트로 참조 0건을 grep 증거와 함께 확인한 뒤 진행",
+      "Tier A 죽은 코드 — queries.ts(팀·샘플·통계 함수 10개, import 0건) 파일 전체, aggregateStats.ts 파일 전체, 미사용 shared/NatureSelector.tsx(DamageCalc 로컬 버전이 대체), nameMaps의 buildSampleDisplayName + DamageCalc의 stale import 정리",
+      "Tier B 기능 제거(관리자엔 살아있으나 공개 화면 없음) — 주간랭킹·패치노트·GameNamesContext 전부. 모델·API 라우트(weekly-ranking/patch-notes/game-names)·관리자 매니저 컴포넌트·layout provider·admin 페이지 섹션 일괄 삭제, admin은 버그신고만 유지",
+      "Tier C 비코드 잔재 — OCR 인프라(ocr/·ocr_server/·public/ocr/·kor.traineddata 2.2MB) + tesseract.js 의존성, 중복 .env.vercel.* 5개, 일회성 마이그레이션 스크립트 4개 삭제. backups/는 보존",
+      "Prisma — 모델 11개(Team*·StandaloneSample*·UsageStat·WeeklyRanking·PatchNote) + BattleFormat enum + User 관계 필드 제거. 직전 세션 후속 후보였던 '미사용 모델 정리(마이그레이션 리스크로 보류)'를 db push로 실제 반영(patch_notes·weekly_rankings 테이블 drop)",
+      "검증 — npm run build 통과, lint의 51개 에러는 변경과 무관한 기존 에러로 확인. lockfile은 tesseract 트랜지티브 의존성 116줄만 정리. 26 files −2132/+21"
+    ],
+    "commits": [
+      "8b3ed69 - chore: 리팩터 잔재 미사용 코드 일괄 정리"
+    ]
+  },
+  {
     "date": "2026-06-20",
     "project": "pochams_project",
     "title": "데이터 동기화 브릿지 — JSON 한 곳 수정으로 포챔스+포케노바 동시 반영",
