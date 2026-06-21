@@ -15,7 +15,10 @@
       "[계산기 재디자인] 계산 엔진(순수 함수·useMemo 계산 블록·state·effect)은 그대로 두고 화면만 배틀 HUD 다크 테마로 재작성. Oxanium 디스플레이 폰트(계산기 내부 전용)·공격(로즈)/수비(스카이) 액센트 카드·데미지 대형 readout+HP게이지·KO 배지·흰 배경 버그(amber-50/indigo-50) 다크화. CheckBox 모듈 스코프 분리로 static-components 11개 해소. 이후 사용자 요청으로 섹션 헤더 아이콘 제거 + '기술 & 조건'→'기술'",
       "[데미지 영향 도구·특성 추가] 데이터 조사: 특성은 이름+설명만(효과는 abilityModifiers.ts 하드코딩), 도구는 champions_effect 구조화 필드가 있으나 DB/API 미노출(calcItemMod 하드코딩). 추가 적용 — 도구: 힘의머리띠 물리×1.1·박식안경 특수×1.1·달인의띠 효과굉장×1.2·타입반감열매 18종(수비자 ×0.5)·메트로놈 0~5 드롭다운(×1.0~2.0). 특성: 우격다짐×1.3·의욕 물리×1.5·선파워 쾌청 특공×1.5·근성 on/off 토글×1.5·총대장 0/1/2 ×(1+0.1n). '특성·도구 효과' 활성화 칸 신설+보정 칩",
       "[스피드 실수치 반영] SP 분배 위 실수치 칸 스피드에 도구·특성 반영 — 구애스카프 ×1.5, 날씨/필드 자동(쓱쓱·엽록소·모래헤치기·눈치우기·서핑테일 ×2), 트리거형(곡예·가속·속보·전기엔진·불굴) on/off 토글. 결정력·실데미지 두 블록 일관 반영, build·verify_calc 통과 후 배포",
-      "[수비 특성 3종 + lint 0] 퍼코트(물리 ×0.5)·정화의소금(고스트 ×0.5)·건조피부(불꽃 ×1.25)를 calcDefenderAbilityMod에 추가(결과 칩 자동). 계산기 React 훅 lint 13개 정리 — set-state-in-effect(선택 시 자동 채움 effect)는 의도적 패턴이라 disable(DamageCalc 파일 단위/Header·LangContext 라인 단위), useMemo 누락 의존성 보강(calcResult lang, ketteiryokuOnly defJustSwitched)으로 언어/교체직후 staleness 버그까지 해소+preserve-manual-memoization 자동 충족, atkDefVal const화. 세션 시작 51개 → lint 0 problems, build·verify_calc 통과"
+      "[수비 특성 3종 + lint 0] 퍼코트(물리 ×0.5)·정화의소금(고스트 ×0.5)·건조피부(불꽃 ×1.25)를 calcDefenderAbilityMod에 추가(결과 칩 자동). 계산기 React 훅 lint 13개 정리 — set-state-in-effect(선택 시 자동 채움 effect)는 의도적 패턴이라 disable(DamageCalc 파일 단위/Header·LangContext 라인 단위), useMemo 누락 의존성 보강(calcResult lang, ketteiryokuOnly defJustSwitched)으로 언어/교체직후 staleness 버그까지 해소+preserve-manual-memoization 자동 충족, atkDefVal const화. 세션 시작 51개 → lint 0 problems, build·verify_calc 통과",
+      "[도구·특성 도감 신설] /items(도구 도감: 이미지+이름+효과, 검색·카테고리 필터, 챔피언스 148) + /abilities(특성 도감: 이름+설명+보유 포켓몬, 검색·초성 ㄱㄴㄷ 필터, 챔피언스 194). 둘 다 서버 컴포넌트(prisma 직접)+클라이언트(useLang). 네비에 도구·특성 추가(계산기 왼쪽), i18n 한/영/일 키, sitemap 등록",
+      "[도구 이미지 위키 재수집] 챔피언스 도구 148개 이미지를 포켓몬위키에서 재수집·교체. scripts/fetch_item_images.py — pageimages가 일부(먹다남은음식·광각렌즈·힘의머리띠·기합의띠 등) 만화/애니 일러스트를 대표이미지로 잘못 잡아, 페이지의 '아이콘 9세대/ZA' 파일을 prop=images로 직접 탐색하는 방식으로 개선. Fandom이 WebP로 내려줘서 Pillow로 전부 PNG(160×160) 변환",
+      "[영어·일본어 임시 비활성] LANG_LOCKED 플래그(LangContext)로 한국어 고정 — 마운트 시 감지 생략·setLang no-op, Header 언어 토글 숨김. 번역 미완 상태 노출 방지용, false로 즉시 복구. build·lint 0 통과"
     ],
     "commits": [
       "8b3ed69 - chore: 리팩터 잔재 미사용 코드 일괄 정리",
@@ -23,7 +26,8 @@
       "d1914ea - feat(calc): 데미지 계산기 UI 배틀 HUD 테마로 재디자인",
       "5c747dd - style(calc): 섹션 헤더 아이콘 제거 + '기술 & 조건' → '기술'",
       "2e22c53 - feat(calc): 데미지 영향 도구·특성 추가 + 스피드 실수치 반영",
-      "be5c446 - feat(calc): 수비 특성 3종 추가 + 계산기 lint 에러 0 정리"
+      "be5c446 - feat(calc): 수비 특성 3종 추가 + 계산기 lint 에러 0 정리",
+      "a56eb06 - feat: 도구·특성 도감 페이지 신설 + 위키 이미지 교체 + 영/일 임시 비활성"
     ]
   },
   {
