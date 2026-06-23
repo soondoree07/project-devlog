@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-06-23",
+    "project": "pochams_project",
+    "title": "반감열매 초나·린드 타입 교정 (전기↔풀)",
+    "items": [
+      "오카열매류 type-protection 반감열매 18종 점검 — 초나열매(wacan)·린드열매(rindo) 반감 타입이 서로 뒤바뀐 오류 발견",
+      "data/quiz_items.json desc 교정: 초나열매 전기 / 린드열매 풀 + DB upsert 반영",
+      "DamageCalc.tsx BERRY_RESIST 매핑 동일 교정 — verify_calc·build·lint 0 통과"
+    ],
+    "commits": [
+      "b4e7960 - fix: 초나열매·린드열매 반감 타입 교정 (전기↔풀)"
+    ]
+  },
+  {
     "date": "2026-06-21",
     "project": "maple-boss",
     "title": "시그너스·핑크빈·힐라 숨김 + 결정석 가격 조정 + 보스 룰렛 추가",
