@@ -6,10 +6,14 @@
     "items": [
       "오카열매류 type-protection 반감열매 18종 점검 — 초나열매(wacan)·린드열매(rindo) 반감 타입이 서로 뒤바뀐 오류 발견",
       "data/quiz_items.json desc 교정: 초나열매 전기 / 린드열매 풀 + DB upsert 반영",
-      "DamageCalc.tsx BERRY_RESIST 매핑 동일 교정 — verify_calc·build·lint 0 통과"
+      "DamageCalc.tsx BERRY_RESIST 매핑 동일 교정 — verify_calc·build·lint 0 통과",
+      "upsert.ts 독립 누락 버그 발견·수정 — DATA_DIR이 pokenova_project/data, SPRITE_BASE가 pokenova.vercel.app을 가리켜 seed.ts와 다른 소스를 읽고 있었음(독립 전 경로 잔재)",
+      "DATA_DIR → ../data, SPRITE_BASE → \"\"로 교정해 seed.ts와 일치. 단건 upsert가 옛 데이터·pokenova 절대 sprite URL을 DB에 덮어쓰던 문제 해소",
+      "DB 정상화 검증 — wacan/rindo desc(전기/풀)+sprite(로컬) 복구, itemData 659·pokemonData 312 전수 pokenova URL 오염 0 확인"
     ],
     "commits": [
-      "b4e7960 - fix: 초나열매·린드열매 반감 타입 교정 (전기↔풀)"
+      "b4e7960 - fix: 초나열매·린드열매 반감 타입 교정 (전기↔풀)",
+      "6ab60d2 - fix(upsert): DATA_DIR·SPRITE_BASE 독립 후 경로로 교정"
     ]
   },
   {
