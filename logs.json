@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-06-24",
+    "project": "pochams_project",
+    "title": "계산기 변환자재/리베로 자속 토글 추가",
+    "items": [
+      "변환자재(protean)·리베로(libero) 보유 포켓몬 선택 시 '특성·도구 효과' 칸에 on/off 토글 노출",
+      "ON이면 모든 기술을 자속으로 간주해 데미지 1.5배 적용 — 결정력·실데미지 두 블록 동시 반영",
+      "원래 자속 기술은 이미 isStab=true라 중복 없이 1.5배 한 번만 적용되도록 처리",
+      "lint 0 · verify_calc · build 통과"
+    ],
+    "commits": [
+      "8030f7c - feat(calc): 변환자재/리베로 자속 토글 추가"
+    ]
+  },
+  {
     "date": "2026-06-23",
     "project": "pochams_project",
     "title": "반감열매 초나·린드 타입 교정 (전기↔풀)",
