@@ -3465,5 +3465,18 @@
     ],
     "description": "오른쪽 월별 사이드바 빨간 헤더 수치를 그 달 결정석 인당 합이 아니라 전리품 가격을 나누지 않고 원가 그대로 더한 총합으로 변경. 메인 상단 수익 카드는 그대로 두어 두 영역의 의미를 분리.",
     "details": "## 변경 내용\n\n월별 누적 사이드바(monthly.js) 각 월 카드 헤더의 빨간 글씨(.month-card-perhead)를 변경.\n\n- **이전**: 인당 총 결정석 = Σ(회차 결정석 ÷ 회차 참여자 수)\n- **이후**: 전리품 총합 = 그 달 lootRows의 price를 1/N 없이 단순 합산\n\nprice가 null이거나 NaN인 전리품은 0으로 처리해 합계에서 제외. 0이면 \"0억\" 표시 유지.\n\n## 정리\n\n결정석 계산에만 쓰이던 import 3개(getBoss/getEffectiveCrystal/resolveDifficultyKey)와 defaults/partyCount 지역변수 제거. 헤더 title 툴팁 \"인당 총 결정석\"→\"전리품 총합\".\n\n## 의미 분리 (사용자 확인)\n\n- 메인 상단 수익 카드(earnings.js) = 멤버별 실수익(결정석 + 분배 전리품, 인당) — **무변경**\n- 오른쪽 월별 사이드 헤더 = 그 달 전리품 총 원가 합(1/N 안 함) — 이번 변경\n\nnode --check 통과, 커밋 1e568d5 push 완료(Vercel 자동 배포)."
+  },
+  {
+    "date": "2026-06-27",
+    "project": "jbae",
+    "title": "UI 전면 개편 준비 — Claude Design 프롬프트 4종 + artist_portfolio 정리",
+    "items": [
+      "사이트 UI 전면 개편 방향 확정: 통째로 새로 구축(단 data.json·images 이전), 무드 4종 모두 시도(한지·여백/먹·수묵 다크/자연·결 textile/모던 에디토리얼), 작가 기법(먹선·바느질) 표현 제외, 인터랙션·모션 강화가 핵심",
+      "Claude Design 앱용 프롬프트 4종 작성 — docs/claude-design-prompts.md에 보관(텍스트는 {{설명}} 자리표시자)",
+      "옛 복제 폴더 artist_portfolio 삭제. 그 안에만 있던 작품 원본 .tif 132개(173MB)는 ~/artist_originals로 이동 보존(git 미추적이라 유일본이었음)",
+      "삭제 폴더 git remote에 GitHub 토큰 노출 발견 → revoke 권고",
+      "RESUME.md 신규 작성 — 다음 단계: 사용자가 Claude Design 시안 가져오면 이식+data.json 연결"
+    ],
+    "commits": []
   }
 ]
