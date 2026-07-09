@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-07-09",
+    "project": "pokenova_project",
+    "title": "도감·퀴즈 전체 포켓몬(1025) 복구 — 포케노바 자체 마스터 데이터 전환",
+    "items": [
+      "포챔스 독립 개편으로 pochams API가 챔피언 205마리만 반환하면서 도감·메인퀴즈·오늘의퀴즈·기술도감·배틀팀이 205마리로 제한되던 문제를 확인",
+      "data/pokedex.json 신설: 전국도감 1025마리 + 폼(메가/리전/거다이맥스) + inChampions on/off 플래그. 포케노바가 inChampions 단일 원천(마스터)이 됨",
+      "scripts/build_pokedex.js로 pokedex.json (재)생성, 재실행 시 손으로 켠 플래그 보존",
+      "pokedex·index·today·movedex·entry의 포켓몬 소스를 pochams API → 로컬 data/pokedex.json으로 전환",
+      "movedex·entry는 learnsets도 API(327) → 로컬 data/learnsets.json(1285)으로 전환",
+      "확인 결과: 사이트에 접속 제한 없음(/admin만 비밀번호). 7/8 외부 접속·퀴즈 풀이는 공개 사이트 정상 동작"
+    ],
+    "commits": [
+      "94f5aab - fix: 도감·퀴즈 전체 포켓몬(1025) 복구 — 포케노바 자체 마스터 데이터로 전환"
+    ]
+  },
+  {
     "date": "2026-06-24",
     "project": "pochams_project",
     "title": "계산기 변환자재/리베로 자속 토글 + 내던지기 도구별 위력 자동 계산",
