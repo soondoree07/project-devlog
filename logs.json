@@ -1,6 +1,20 @@
 [
   {
     "date": "2026-07-09",
+    "project": "pochams_project",
+    "title": "포챔스 반영 파이프라인 — pokedex.json inChampions 플래그로 로스터 관리",
+    "items": [
+      "브릿지 scripts/champions_from_pokedex.py 신설: 포케노바 pokedex.json의 inChampions 플래그 → champions_pokemon_ids.json(baseIds/altOnlyEns/megaOnlyEns) 자동 생성. floette 등 폼 단독 챔피언 특수케이스 포함",
+      "sync-data.sh(npm run sync)를 0~5단계로 확장: 브릿지→위키 기술폭 수집→포챔스 소스 생성→champions_learnsets 재생성→DB seed→포케노바 커밋",
+      "이제 포켓몬 추가/제거 = pokedex.json에서 inChampions on/off + npm run sync 한 방. 단일 원천을 champions_pokemon_ids.json → pokedex.json으로 이동(문서 갱신)",
+      "라운드트립 검증: 브릿지 재생성 결과가 기존 로스터와 완전 일치(205 base+1 alt+1 mega)"
+    ],
+    "commits": [
+      "c7c0c70 - feat: 포챔스 반영 파이프라인 — pokedex.json inChampions → 포챔스 브릿지"
+    ]
+  },
+  {
+    "date": "2026-07-09",
     "project": "pokenova_project",
     "title": "도감·퀴즈 전체 포켓몬(1025) 복구 — 포케노바 자체 마스터 데이터 전환",
     "items": [
@@ -9,10 +23,13 @@
       "scripts/build_pokedex.js로 pokedex.json (재)생성, 재실행 시 손으로 켠 플래그 보존",
       "pokedex·index·today·movedex·entry의 포켓몬 소스를 pochams API → 로컬 data/pokedex.json으로 전환",
       "movedex·entry는 learnsets도 API(327) → 로컬 data/learnsets.json(1285)으로 전환",
-      "확인 결과: 사이트에 접속 제한 없음(/admin만 비밀번호). 7/8 외부 접속·퀴즈 풀이는 공개 사이트 정상 동작"
+      "확인 결과: 사이트에 접속 제한 없음(/admin만 비밀번호). 7/8 외부 접속·퀴즈 풀이는 공개 사이트 정상 동작",
+      "pokedex.json을 포챔스 노출(inChampions) 단일 원천(마스터)으로 확정 — build_pokedex.js가 포챔스 src/data 의존 없이 포케노바 자체 데이터만으로 생성(폼 284개 완전화)",
+      "초나/린드열매 반감 타입 교정(전기/풀)을 마스터에 반영 — 6/23 포챔스 수정이 포케노바에 누락됐던 것 발견·정정"
     ],
     "commits": [
-      "94f5aab - fix: 도감·퀴즈 전체 포켓몬(1025) 복구 — 포케노바 자체 마스터 데이터로 전환"
+      "94f5aab - fix: 도감·퀴즈 전체 포켓몬(1025) 복구 — 포케노바 자체 마스터 데이터로 전환",
+      "cbe5f74 - feat: pokedex.json을 포챔스 노출(inChampions) 단일 원천으로 — 자체 데이터 정리"
     ]
   },
   {
