@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-07-11",
+    "project": "pochams_project",
+    "title": "영어/일본어 언어 잠금 해제 — 다국어 UI 재활성화",
+    "items": [
+      "LANG_LOCKED true→false: 헤더 언어 토글(KO/JA/EN) + 브라우저 언어 자동감지 부활",
+      "영어권 방문자 자동 EN, 한국어권 KO 유지",
+      "loading.tsx '불러오는 중...'→'Loading…', global-error.tsx 한국어→영어(lang ko→en)",
+      "사전(i18n.ts 144키)·포켓몬 이름/타입·도감/도구/특성/계산기/신고 UI는 이미 EN 대응 완료 확인"
+    ],
+    "commits": [
+      "0421925 - i18n: 영어/일본어 언어 잠금 해제 (LANG_LOCKED=false)"
+    ]
+  },
+  {
     "date": "2026-07-09",
     "project": "pochams_project",
     "title": "포챔스 반영 파이프라인 — pokedex.json inChampions 플래그로 로스터 관리",
