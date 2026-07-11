@@ -1,6 +1,21 @@
 [
   {
     "date": "2026-07-11",
+    "project": "claude-dashboard",
+    "title": "dependency graph — 새 프로젝트 2개(maple-boss·flow-project) 안 뜨던 문제 수정",
+    "items": [
+      "_index.json엔 프로젝트 7개인데 프론트/API가 5개 시절 하드코딩이라 maple-boss·flow-project가 그래프에서 빠지고 회색으로 표시되던 문제 원인 특정",
+      "api/graphs/[project] route: ALLOWED 하드코딩 목록 제거 → id regex(^[a-z0-9-]+$)+파일 존재 기준 검증. _index.json에 프로젝트 추가 시 자동 서빙(다시 안 뒤처짐)",
+      "graph-merge.ts: PROJECT_COLORS에 maple-boss(#fb923c)·flow-project(#818cf8) 색 추가",
+      "dependency-graph/page.tsx: 헤더 '5 projects' 하드코딩 → _index.json 개수 동적 표기",
+      "npx tsc --noEmit 통과 + pm2 reload claude-dashboard 반영 완료"
+    ],
+    "commits": [
+      "bc125b0 - fix(graph): 새 프로젝트 2개(maple-boss·flow-project) 그래프에 안 뜨던 문제 수정"
+    ]
+  },
+  {
+    "date": "2026-07-11",
     "project": "pokemon_shorts_project",
     "title": "InkDex Studio 채널 셋업 완료 + 파일럿 발행 + 파일 재정리",
     "items": [
