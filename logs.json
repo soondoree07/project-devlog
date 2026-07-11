@@ -2,8 +2,11 @@
   {
     "date": "2026-07-11",
     "project": "claude-dashboard",
-    "title": "dependency graph — 새 프로젝트 2개(maple-boss·flow-project) 안 뜨던 문제 수정",
+    "title": "dependency graph — 미표시 프로젝트 수정(maple-boss·flow-project) + 앗물(WaterMe) 추가",
     "items": [
+      "앗물(WaterMe) 그래프 추가: 별하루 전용 dart-byeolharu.ts를 PROJECT_CONFIG(root·packageName) 기반 dart-flutter.ts로 범용화 → --project 인자로 프로젝트별 분석. 새 Flutter 프로젝트는 config 한 줄+JOBS 등록으로 추가",
+      "run-all JOBS·build-index PROJECTS·package.json·PROJECT_COLORS(#4ade80)에 waterme 등록, analyze:all 8/8 성공(앗물 69노드/316링크), _index.json 8개 프로젝트",
+      "별하루 회귀 없음(범용화 후 동작 동일 확인). 포켓몬쇼츠는 코드 없는 영상 프로젝트라 코드 의존성 그래프에서 제외",
       "_index.json엔 프로젝트 7개인데 프론트/API가 5개 시절 하드코딩이라 maple-boss·flow-project가 그래프에서 빠지고 회색으로 표시되던 문제 원인 특정",
       "api/graphs/[project] route: ALLOWED 하드코딩 목록 제거 → id regex(^[a-z0-9-]+$)+파일 존재 기준 검증. _index.json에 프로젝트 추가 시 자동 서빙(다시 안 뒤처짐)",
       "graph-merge.ts: PROJECT_COLORS에 maple-boss(#fb923c)·flow-project(#818cf8) 색 추가",
@@ -11,7 +14,8 @@
       "npx tsc --noEmit 통과 + pm2 reload claude-dashboard 반영 완료"
     ],
     "commits": [
-      "bc125b0 - fix(graph): 새 프로젝트 2개(maple-boss·flow-project) 그래프에 안 뜨던 문제 수정"
+      "bc125b0 - fix(graph): 새 프로젝트 2개(maple-boss·flow-project) 그래프에 안 뜨던 문제 수정",
+      "6e6ba9b - feat(graph): 앗물(WaterMe) dependency graph 추가 + Flutter 분석기 범용화"
     ]
   },
   {
