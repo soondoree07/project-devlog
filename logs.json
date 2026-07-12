@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-07-12",
+    "project": "devlog",
+    "title": "기획서 카드에 라이브 사이트 링크 추가",
+    "items": [
+      "specs 카드 헤더에 '🔗 사이트 열기' 버튼(사이트 있는 프로젝트만: pochams·pokenova·jbae·maple-boss)",
+      "푸터 구 pokenova github.io → pokenova.pochams.com, pochams 링크 추가"
+    ],
+    "commits": [
+      "7fdb427 - feat(devlog): 기획서 카드 헤더 사이트 링크 + 푸터 최신화"
+    ]
+  },
+  {
+    "date": "2026-07-12",
     "project": "pokenova_project",
     "title": "이로치(shiny) 도감 신설 + movedex·itemdex 로컬 데이터화 + Cloudflare 이전(pokenova.pochams.com)",
     "items": [
@@ -8,14 +20,16 @@
       "PokéAPI official-artwork/shiny 1025마리 전부 다운로드 → pokedex.json 각 항목에 shinySprite 필드",
       "movedex·itemdex·특성 로컬 데이터화(quiz_moves/items/abilities.json) — pochams API 402 의존 제거, 도감 전체 로딩 실패 해결, 데이터 자급자족",
       "퀴즈·기록·오늘의포켓몬 네비 임시 숨김(주석, 복구 쉬움)",
-      "Vercel → Cloudflare Workers 이전 + 커스텀 도메인 pokenova.pochams.com 연결(라이브 200). _headers·.assetsignore 추가, _redirects는 루프로 제거"
+      "Vercel → Cloudflare Workers 이전 + 커스텀 도메인 pokenova.pochams.com 연결(라이브 200). _headers·.assetsignore 추가, _redirects는 루프로 제거",
+      "이로치 도감 폼 shiny 275/284 추가 — za_ 폼→PokeAPI 이름 변환 다운로드(공식243·홈4·base26·necrozma리맵2). 남은 9개(계절/암컷/메가냐오닉스)는 공식 아트워크 부재로 폴백. build_pokedex.js가 재생성 시 shinySprite 보존하도록 수정"
     ],
     "commits": [
       "9ec9716 - feat(pokedex): 이로치(shiny) 도감 추가 + Cloudflare Pages 설정",
       "e73431c - fix(cloudflare): .assetsignore 로 대용량·비웹 파일 자산 업로드 제외",
       "8d09e25 - fix(cloudflare): _redirects 제거 — 리다이렉트 루프 해결",
       "9de01ad - fix(pokedex): 특성 데이터를 로컬 quiz_abilities.json 로",
-      "f74e208 - feat(pokenova): movedex·itemdex 로컬 데이터화 + 네비 임시 숨김"
+      "f74e208 - feat(pokenova): movedex·itemdex 로컬 데이터화 + 네비 임시 숨김",
+      "3c75e39 - feat(shiny): 이로치 도감 폼 275/284 + build_pokedex 보존"
     ]
   },
   {
