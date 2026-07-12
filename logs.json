@@ -1,5 +1,39 @@
 [
   {
+    "date": "2026-07-12",
+    "project": "pokenova_project",
+    "title": "이로치(shiny) 도감 신설 + movedex·itemdex 로컬 데이터화 + Cloudflare 이전(pokenova.pochams.com)",
+    "items": [
+      "이로치 도감 신설 — pokedex.html ?shiny=1 파라미터 방식, 네비 '포켓몬 도감' 오른쪽에 ✨ 이로치 도감 추가",
+      "PokéAPI official-artwork/shiny 1025마리 전부 다운로드 → pokedex.json 각 항목에 shinySprite 필드",
+      "movedex·itemdex·특성 로컬 데이터화(quiz_moves/items/abilities.json) — pochams API 402 의존 제거, 도감 전체 로딩 실패 해결, 데이터 자급자족",
+      "퀴즈·기록·오늘의포켓몬 네비 임시 숨김(주석, 복구 쉬움)",
+      "Vercel → Cloudflare Workers 이전 + 커스텀 도메인 pokenova.pochams.com 연결(라이브 200). _headers·.assetsignore 추가, _redirects는 루프로 제거"
+    ],
+    "commits": [
+      "9ec9716 - feat(pokedex): 이로치(shiny) 도감 추가 + Cloudflare Pages 설정",
+      "e73431c - fix(cloudflare): .assetsignore 로 대용량·비웹 파일 자산 업로드 제외",
+      "8d09e25 - fix(cloudflare): _redirects 제거 — 리다이렉트 루프 해결",
+      "9de01ad - fix(pokedex): 특성 데이터를 로컬 quiz_abilities.json 로",
+      "f74e208 - feat(pokenova): movedex·itemdex 로컬 데이터화 + 네비 임시 숨김"
+    ]
+  },
+  {
+    "date": "2026-07-12",
+    "project": "pochams_project",
+    "title": "인프라: DNS Cloudflare 이전 · Vercel Pro 복구 · Firewall 봇 차단 (대시보드 작업)",
+    "items": [
+      "DNS 관리처 가비아 → Cloudflare 네임서버 이전(소유권은 가비아 유지). pochams.com A/www는 DNS only(회색) 상태",
+      "160만 건 DDoS로 인한 일시정지 → Vercel Pro 업그레이드로 복구(pochams.com 200). Spend Management: On-Demand Budget $30, Pause=Off",
+      "Vercel Firewall 봇 차단 — Bot Protection=Challenge, AI Bots=Deny, DDoS Mitigation 자동 유지",
+      "sync-data.sh 주석 포케노바 배포처 Vercel→Cloudflare 반영",
+      "(보류) Cloudflare Proxy 전환 — SSL Full strict 선행 필요, 다음 세션"
+    ],
+    "commits": [
+      "484299a - docs(sync): 포케노바 배포처 Vercel→Cloudflare 주석 반영"
+    ]
+  },
+  {
     "date": "2026-07-11",
     "project": "claude-dashboard",
     "title": "dependency graph — 미표시 프로젝트 수정(maple-boss·flow-project) + 앗물(WaterMe) 추가",
