@@ -283,6 +283,25 @@
       color: #718096;
     }
 
+    .specs-site-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid #2d3748;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .specs-site-link:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #4a5568;
+    }
+
     .specs-file-list { padding: 10px 12px; }
 
     .specs-file-item {
@@ -693,7 +712,8 @@
   </div>
 
   <footer>
-    <a href="https://soondoree07.github.io/pokenova_project/" target="_blank">Pokenova</a> &nbsp;·&nbsp;
+    <a href="https://pokenova.pochams.com" target="_blank">Pokenova</a> &nbsp;·&nbsp;
+    <a href="https://pochams.com" target="_blank">Pochams</a> &nbsp;·&nbsp;
     <a href="https://soondoree07.github.io/jbae-portfolio/" target="_blank">jbae-portfolio</a> &nbsp;·&nbsp;
     <a href="https://github.com/soondoree07/junghyeok-portfolio" target="_blank">junghyeok-portfolio</a> &nbsp;·&nbsp;
     <a href="https://github.com/soondoree07" target="_blank">GitHub</a>
@@ -714,6 +734,14 @@
     const PROJECT_COLORS = {
       pokenova_project: { bg: '#2d3b1f', border: '#68d391', text: '#9ae6b4' },
       'junghyeok-portfolio': { bg: '#1a1f3b', border: '#b0e0ff', text: '#d6ecff' },
+    };
+
+    // ── 프로젝트별 라이브 사이트 (있는 것만) ───────────────────────
+    const PROJECT_SITES = {
+      pochams_project: 'https://pochams.com',
+      pokenova_project: 'https://pokenova.pochams.com',
+      jbae_portfolio: 'https://soondoree07.github.io/jbae-portfolio/',
+      'maple-boss': 'https://maplebossparty.vercel.app',
     };
 
     function getProjectColor(name) {
@@ -1108,9 +1136,15 @@
           }).join('');
         }
 
+        const site = PROJECT_SITES[projectName];
+        const siteLink = site
+          ? `<a class="specs-site-link" href="${site}" target="_blank" rel="noopener" style="color:${color.text}" onclick="event.stopPropagation()">🔗 사이트 열기</a>`
+          : '';
+
         card.innerHTML = `
           <div class="specs-project-header">
             <div class="specs-project-name" style="color:${color.text}">${projectName}</div>
+            ${siteLink}
             <div class="specs-file-count">${files.length}개 파일</div>
           </div>
           <div class="specs-file-list">${filesHtml}</div>
