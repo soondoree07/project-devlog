@@ -2,7 +2,7 @@
   {
     "date": "2026-07-13",
     "project": "pokenova_project",
-    "title": "이로치 도감 — 폼 카드 일반색 버그 수정 + 폼 shiny 284/284 완성",
+    "title": "이로치 도감 버그 수정·284/284 완성 + 이로치 도감을 메인(/)으로, 퀴즈 배포 제외",
     "items": [
       "리전폼 이로치가 안 보인다는 제보 → 원인은 데이터가 아니라 프론트. pokedex.json에는 폼 shinySprite 275개가 정상적으로 들어 있었고 스프라이트 파일도 전부 존재했음",
       "진짜 원인: 카드·모달용 엔트리 객체를 만들 때 sprite만 복사하고 shinySprite를 빠뜨려, spriteOf()가 이로치 모드에서도 일반 아트로 폴백했다. 07-12 당시 '프론트는 이미 shinySprite 지원이라 코드 변경 불필요'로 판단한 게 오판이었음",
@@ -16,11 +16,20 @@
       "메가냐오닉스: Legends Z-A 신규라 PokéAPI에 없고 Bulbapedia에도 일반 아트워크만 존재(공식 아트워크는 원래 일반 색만 그림). Serebii ZA 이로치 렌더 사용(250px, 게임 모델) — serebii.net/Shiny/ZA/678-m.png",
       "폼 shinySprite 284/284 달성, 누락 0. 라이브 검증 완료(기본 1025/1025, 폼 284/284, 새 스프라이트 9개 전부 200)",
       "메가진화가 이로치로 안 뜬다는 제보 → 이미지·데이터는 정상이었고 Cloudflare 배포 지연이 원인이었음. 메가 93개 전수 검사에서 21개가 '색차 거의 없음'으로 잡혔으나, 얼음귀신 메가(눈 청록→주황)처럼 원래 색 변화 면적이 작은 이로치라 오탐. 평균색 비교는 이로치 판별에 부적합",
-      "문서 오기 정정 — 바라철록을 '메꾸리', 탱탱겔을 '프리지오'로 잘못 표기했던 것 수정(데이터 파일 기준 정확한 이름 사용)"
+      "문서 오기 정정 — 바라철록을 '메꾸리', 탱탱겔을 '프리지오'로 잘못 표기했던 것 수정(데이터 파일 기준 정확한 이름 사용)",
+      "퀴즈 점검 결과 버그 3건 발견 — (1) quiz는 아직 pochams API를 쓰는데 포챔스 DDoS 때 켠 Vercel 봇차단에 걸려 JSON 대신 429+Security Checkpoint HTML이 옴. r.json() 실패 → Promise.all fail-fast → loadAllData에 catch가 없어 퀴즈 5종 전부 로딩 실패(프로덕션에서 이미 죽어 있었음)",
+      "(2) 특성 퀴즈 전체정복 불가 — 혼연일체 2건(버드렉스 백마/흑마)의 en이 둘 다 as_one이라 answeredSet 최대 309 < 조건 310",
+      "(3) 포켓몬 퀴즈 전체정복 불가 — 폼이 base.id를 공유(리자몽/메가X/메가Y/거다이 전부 id=6)해 최대 1025 < 조건 1309. 폼을 맞히면 기본형까지 카운트돼 진행률도 틀림",
+      "사용자 결정 — 퀴즈는 고칠 때까지 아예 다운. index.html → quiz.html 로 이동 + .assetsignore 등록해 배포 제외(/quiz, /quiz.html 모두 404). 소스는 레포에 보존",
+      "이로치 도감을 메인(/)으로 승격 — pokedex.html의 IS_ROOT 판정(경로가 /)으로 이로치 모드 자동 활성. ?shiny=1 구 링크도 계속 지원. /pokedex는 일반 도감 유지",
+      "⚠️ _redirects 함정 재발 — '/ → /pokedex.html 200' rewrite를 넣었더니 루트가 404. Cloudflare가 /pokedex.html을 clean-URL(/pokedex)로 307 리다이렉트해서 rewrite 대상이 튕긴 것. _redirects 삭제하고 scripts/build_index.js로 index.html 실물 사본을 생성하는 방식으로 해결. pokedex.html 수정 시 이 스크립트 재실행 필수",
+      "전 페이지 정리 — 로고·이로치 도감 링크를 루트로, 메타에서 사라진 퀴즈 광고 문구 제거, og:url 옛 vercel 도메인 → pochams.com, sitemap에서 퀴즈 URL 제외"
     ],
     "commits": [
       "1d7c0d4 - fix(shiny): 이로치 도감에서 폼(리전·메가·거다이·합체) 카드가 일반 색으로 뜨던 문제",
-      "cbe764d - feat(shiny): 이로치 도감 폼 284/284 완성 — 남은 9개 확보"
+      "cbe764d - feat(shiny): 이로치 도감 폼 284/284 완성 — 남은 9개 확보",
+      "4ccd9e6 - feat: 이로치 도감을 메인(/)으로, 퀴즈는 배포 제외",
+      "7cb4ce9 - fix: 루트 404 복구 — _redirects rewrite 대신 index.html 실물 생성"
     ]
   },
   {
