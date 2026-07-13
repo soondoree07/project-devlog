@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-07-13",
+    "project": "pokenova_project",
+    "title": "이로치 도감 — 폼(리전·메가·거다이·합체) 카드가 일반 색으로 뜨던 버그 수정",
+    "items": [
+      "리전폼 이로치가 안 보인다는 제보 → 원인은 데이터가 아니라 프론트. pokedex.json에는 폼 shinySprite 275개가 정상적으로 들어 있었고 스프라이트 파일도 전부 존재했음",
+      "진짜 원인: 카드·모달용 엔트리 객체를 만들 때 sprite만 복사하고 shinySprite를 빠뜨려, spriteOf()가 이로치 모드에서도 일반 아트로 폴백했다. 07-12 당시 '프론트는 이미 shinySprite 지원이라 코드 변경 불필요'로 판단한 게 오판이었음",
+      "flattenAll의 리전폼·합체폼 엔트리, renderForms의 메가·거다이 엔트리 4곳에 shinySprite 전달 추가",
+      "특성 모달의 '이 특성을 가진 포켓몬' 그리드도 p.sprite 직접 사용 → spriteOf() 경유로 통일 (이로치 모드에서 일반 색으로 뜨던 동일 증상)",
+      "jsdom 헤드리스 렌더로 검증 — 리전 68/68, 거다이 33/33, 메가 92/93, 합체 63/71, 기본 1018/1018이 shiny 스프라이트 사용. 남은 9개는 PokéAPI에 공식 shiny 아트워크 자체가 없는 건(사철록·메꾸리 계절 6, 탱그릴·프리지오 암컷 2, 메가냐오닉스 1)",
+      "스프라이트 파일명이 master__sprites__...__shiny__10091.png 형태라 잘못 받은 것으로 의심됐으나, 이미지를 직접 열어 확인한 결과 정상 이로치 아트워크(알로라 꼬렛 붉은색). PokéAPI 저장소 경로의 /를 __로 치환한 이름일 뿐"
+    ],
+    "commits": [
+      "1d7c0d4 - fix(shiny): 이로치 도감에서 폼(리전·메가·거다이·합체) 카드가 일반 색으로 뜨던 문제"
+    ]
+  },
+  {
     "date": "2026-07-12",
     "project": "devlog",
     "title": "기획서 카드에 라이브 사이트 링크 추가",
@@ -3606,6 +3622,18 @@
       "옛 복제 폴더 artist_portfolio 삭제. 그 안에만 있던 작품 원본 .tif 132개(173MB)는 ~/artist_originals로 이동 보존(git 미추적이라 유일본이었음)",
       "삭제 폴더 git remote에 GitHub 토큰 노출 발견 → revoke 권고",
       "RESUME.md 신규 작성 — 다음 단계: 사용자가 Claude Design 시안 가져오면 이식+data.json 연결"
+    ],
+    "commits": []
+  },
+  {
+    "date": "2026-07-12",
+    "project": "pokemon_shorts",
+    "title": "'이로치 색상' 편용 색 편집 워크플로우 — 자체 색교체 툴 제작 후 Krita로 방향 전환",
+    "items": [
+      "pokenova 이로치 도감(shiny 스프라이트)을 소재로 한 '이로치 색 바꾸기' 쇼츠 계획이 pokemon_shorts 쪽엔 미기록임을 확인 → RESUME에 정식 기록",
+      "자체 색 편집 툴 tools/color_swap.html 제작(무설치 단일 HTML): 색 교체(스포이드+음영유지/단색/색조회전), Ctrl+V 붙여넣기·드래그·파일열기, 그리기(펜), 채우기(flood fill), 되돌리기·PNG저장. JS 문법 검증 완료",
+      "사용자가 '일단 대기, Krita로 다시' → 윈도우에 Krita 설치 확인(C:\\Program Files\\Krita (x64)). Krita 워크플로우 정리: Ctrl+U(Hue)·Color 블렌딩 레이어(음영유지 색변경)·B(브러시)·F(채우기)",
+      "결정 대기: 색 편집을 Krita로 할지 자체 툴로 할지 — 사용자가 Krita 써보고 결정 예정. 자체 툴은 폴백 보존"
     ],
     "commits": []
   }
