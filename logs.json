@@ -1,5 +1,50 @@
 [
   {
+    "date": "2026-07-27",
+    "project": "the-deep",
+    "title": "스택 Next.js 16 확정 — 초기 세팅 + 밴드 md→JSON 데이터 파이프라인",
+    "items": [
+      "RESUME 상단에 인계돼 있던 스택 비교 표를 먼저 제시하고 사용자가 Next.js 선택. 스타일링은 CSS Modules, 낮/밤 토글은 v1 포함, 영/한은 접속 지역 자동 감지로 결정",
+      "Next.js 16.2.12 + React 19 세팅. 기존 docs/·README·RESUME를 보존한 채 같은 폴더에 스캐폴딩",
+      "Next 16부터 middleware.ts가 proxy.ts로 개명된 것을 번들 문서(node_modules/next/dist/docs/)에서 확인하고 그 규약대로 구현 — 학습 기억이 아니라 실제 문서 기준",
+      "언어 자동 감지: Accept-Language → 접속 국가(x-vercel-ip-country) 순으로 판단하고, 사용자가 버튼으로 고르면 쿠키에 저장해 그 선택을 항상 우선. URL은 슬래시 하나로 유지해 언어를 바꿔도 스크롤 위치가 안 끊기게 함",
+      "검증 6종 전부 통과 — 한국어 브라우저 ko / 영어 브라우저 en / 프랑스어 브라우저+한국 접속 ko / 프랑스어+미국 접속 en / 영어 브라우저+ko 쿠키 ko / 엔트리 276개 렌더",
+      "데이터 파이프라인: docs/bands 밑 md 4개 → src/data/bands.json 변환기 작성 (npm run build:bands). 표 파서·수심 해석·엔트리 매핑을 파일 4개로 분리",
+      "수심 표기를 약(물결)·오차(±)·최심 관측 기록·이상(+)·철회된 기록(취소선)·밴드 밖 참조로 구분해 담고, 숫자로 못 옮기는 4건(모호면·콜라 시추공·해구 퇴적층 미생물·밴드 밖 대왕등각류)은 추측 없이 null 유지",
+      "데이터 정직성 규칙을 코드에 반영 — 한국어 국명 없는 종은 ko를 null로 두고 임의 번역 금지, 밤 수심은 표에 명시된 종만 채우고 서술로만 언급된 종은 migratesAtNight만 true",
+      "밴드 수치 오류 정정 — 기존 RESUME·메모리의 구조물 121 + 생물 130이 실제 md 행 수와 달랐다. 독립 awk 집계로 교차 검증해 구조물 127 + 생물 149 = 276개로 재집계",
+      "현재 페이지는 데이터 확인용 임시 화면 (디자인 아님, 스크롤 연출이 정해지면 통째로 교체 예정)",
+      "typecheck·lint·프로덕션 빌드 통과"
+    ],
+    "commits": [
+      "1362a8a - feat: Next.js 16 초기 세팅 + 밴드 md → JSON 데이터 파이프라인"
+    ]
+  },
+  {
+    "date": "2026-07-27",
+    "project": "claude-dashboard",
+    "title": "Dependency Graph에 the-deep 등록",
+    "items": [
+      "The Deep을 ts-next 분석기에 등록 (run-all.ts JOBS · ts-next.ts PROJECT_PATHS · build-index.ts PROJECTS · package.json analyze:the-deep)",
+      "analyze:all 실행 결과 9/9 성공, the-deep 노드 20 · 링크 37. pm2 reload로 UI 반영 완료"
+    ],
+    "commits": [
+      "b6a7811 - feat: Dependency Graph에 the-deep 등록"
+    ]
+  },
+  {
+    "date": "2026-07-27",
+    "project": "claude-config",
+    "title": "The Deep 트리거 키워드·슬래시 커맨드 등록",
+    "items": [
+      "~/.claude/commands/the-deep.md 신설 — RESUME 우선 읽기, Next 16 proxy 주의사항, 데이터 정직성 규칙(국명 없는 종 임의 번역 금지 등)을 커맨드에 명시",
+      "전역 CLAUDE.md 트리거 표에 the deep / 더딥 / 심해 추가, 프로젝트별 CLAUDE.md 매핑에 the-deep 추가"
+    ],
+    "commits": [
+      "없음 (로컬 설정)"
+    ]
+  },
+  {
     "date": "2026-07-13",
     "project": "pochams_project",
     "title": "헤더에 포케노바(자매 사이트) 이동 버튼 추가",
