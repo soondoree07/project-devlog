@@ -2,14 +2,22 @@
   {
     "date": "2026-07-30",
     "project": "pokemon_trailer_project",
-    "title": "프로젝트 개명 — 포켓몬 쇼츠 → 포켓몬 팬 예고편 프로젝트",
+    "title": "프로젝트 개명 + 1막 시나리오 완결(26컷) + 실사화 Elements 파이프라인 확정",
     "items": [
       "폴더 ~/pokemon_shorts_project → ~/pokemon_trailer_project 로 이름 변경",
       "하드코딩 경로 2건 수정 (make_caption_box.py, make_banner.py)",
       "메모리 파일 project_pokemon_shorts.md → project_pokemon_trailer.md 재작성 + MEMORY.md 인덱스 갱신",
       "슬래시 커맨드 /포켓몬예고편 신설, 전역 CLAUDE.md 트리거 표에 등록 (옛 '포켓몬 쇼츠' 키워드 제거)",
       "타 프로젝트 참조 갱신: claude-dashboard/RESUME.md, pokenova_project/RESUME.md, devlog logs.json project 필드 통일",
-      "깃허브 레포는 없음 — 영상 프로젝트라 git 미등록 상태 유지"
+      "깃허브 레포는 없음 — 영상 프로젝트라 git 미등록 상태 유지",
+      "1막 시나리오 완결 — 24컷/62초 → 26컷/약 69초",
+      "컷 10 수정: 배리어 육각형→구 모양(하늘색+핑크빛), 레쿠쟈 공격을 파괴광선으로 명시",
+      "컷 11 수정: 메가진화 트리거를 운석 흡수→화룡점정 시전으로 교체",
+      "컷 18 수정: 유리·액체 파편 삭제 → 모니터 브레이크(화면 자체가 깨지는) 이펙트",
+      "컷 25·26 신규: 붉은 사슬 → 3색 포탈에서 디아루가·펄기아·기라티나(오리진폼) 소환 + 포효 → 아르세우스 강림 → 암전",
+      "기술 한글 표기 pokenova 데이터 검증: 시간의포효/공간절단/섀도다이브/심판의뭉치 (통칭 공간의균열·그림자힘·심판의빛은 오표기)",
+      "실사화 캐릭터 일관성 방안 조사: Soul은 사람 1명 전용·모델 제약으로 부적합 → Elements 확정(다중 캐릭터 가능, nano_banana_pro·kling3_0 지원)",
+      "Elements 4단계 파이프라인 수립(캐릭터 시트 → 키비주얼 → 승인 후 Element 등록 → 컷 생성). 3종 파일럿(레쿠쟈·그란돈·테오키스) 제안 후 승인 대기"
     ],
     "commits": [
       "9bb41c0 - docs: 포켓몬 쇼츠 → 포켓몬 팬 예고편 프로젝트 개명 반영 (claude-dashboard)",
