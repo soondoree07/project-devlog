@@ -9,11 +9,14 @@
       "M0 웹 프로토타입을 prototype/index.html로 배치 — 중력 렌즈(동심 고리 32개 확대·회전), 강착 원반, 아이콘 나선 흡입, 레벨업·증발 연출이 전부 동작",
       "기획서 2.3절 구조대로 하위 폴더 선생성 — src/main(+desktop), src/preload, src/renderer, native",
       "README.md·RESUME.md 작성 — 다음 액션은 M1(Electron 셸: 투명 창을 휴지통 자리에 고정 + 클릭 통과). SetParent(WorkerW) 방식의 드래그앤드롭·투명도 실측이 M1의 관문",
-      "claude-dashboard Dependency Graph에 blackhole-trash 등록(vanilla-js 분석기) — 3 노드 2 링크, analyze:all 10/10 성공 후 pm2 reload 완료"
+      "claude-dashboard Dependency Graph에 blackhole-trash 등록(vanilla-js 분석기) — 3 노드 2 링크, analyze:all 10/10 성공 후 pm2 reload 완료",
+      "GitHub private 레포 생성·push — soondoree07/blackhole-trash",
+      "트리거 키워드 등록 — ~/.claude/commands/블랙홀.md 신설 + 전역 CLAUDE.md 트리거 표에 블랙홀/blackhole 추가. 다음 세션부터 RESUME·기획서 자동 로드"
     ],
     "commits": [
       "798cc2c - 블랙홀 휴지통 프로젝트 초기 세팅 — 기획서·프로토타입·폴더 구조 (blackhole-trash, 로컬 저장소)",
-      "042ebae - analyzers: blackhole-trash 프로젝트 등록 (vanilla-js) (claude-dashboard)"
+      "042ebae - analyzers: blackhole-trash 프로젝트 등록 (vanilla-js) (claude-dashboard)",
+      "0bcc680 - README: 저장소 링크 추가 (blackhole-trash)"
     ]
   },
   {
