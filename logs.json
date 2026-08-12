@@ -2,7 +2,7 @@
   {
     "date": "2026-08-12",
     "project": "blackhole-trash",
-    "title": "블랙홀 휴지통 프로젝트 신설 + M7(커스텀 휴지통 창) 확정 + M1(Electron 셸) 완료",
+    "title": "블랙홀 휴지통 프로젝트 신설 + M7 확정 + M1·M1-b 완료(투명 위젯이 실제 휴지통 아이콘 위에 안착)",
     "items": [
       "새 프로젝트 ~/blackhole-trash 생성. Windows 11 휴지통의 기능은 그대로 두고 UI만 블랙홀 위젯으로 교체하는 데스크톱 앱",
       "기술 기획서 v0.1을 docs/기획서.md로 배치 — 스택 선정(Electron 43 + TypeScript + koffi), 성장 시스템(Lv1~12, 점유 칸 = 0.5 × 레벨^0.9), 창 배치·클릭 통과, 바탕화면 아이콘 흡입 방법 A/B, 마일스톤 M0~M6, 리스크",
@@ -20,14 +20,21 @@
       "🔬 부수 효과로 레벨·반경 계산을 src/main/levels.ts 한 곳에 모으고 렌더러는 메인이 준 반경만 그리도록 정리 — 중복 제거",
       "🔬 Windows에서 Electron은 GUI 앱이라 console.log가 부모 콘솔에 안 나온다 → BH_DEBUG=1 파일 로그(bh-debug.log) 도입. 이걸 붙이기 전까지 원인 파악이 불가능했다",
       "🔬 file://로 열린 페이지는 ES 모듈이 차단돼 렌더러를 import로 쪼갤 수 없다 → 렌더러는 당분간 단일 클래식 스크립트, M5에서 esbuild 도입 검토",
-      "남은 구멍 명시 — findRecycleBinCenter가 아직 임시(작업영역 첫 칸). 실측 PC는 휴지통이 좌상단이라 맞았을 뿐이며, M1-b에서 SysListView32 읽기로 교체 필요"
+      "남은 구멍 명시 — findRecycleBinCenter가 아직 임시(작업영역 첫 칸). 실측 PC는 휴지통이 좌상단이라 맞았을 뿐이며, M1-b에서 SysListView32 읽기로 교체 필요",
+      "M1-b 완료 — koffi로 explorer 리스트뷰를 원격 읽기해 진짜 휴지통 좌표 획득. 바탕화면 아이콘 87개 이름 전부 읽기 성공(한글 포함), 휴지통 중심 38,31 계산. 화면 확인 결과 블랙홀이 칸 중심이 아니라 휴지통 그림 정중앙에 박힘",
+      "🔬 위치는 LVM_GETITEMPOSITION이 아니라 LVM_GETITEMRECT(0x100E)+LVIR_ICON을 쓴다 — 전자는 라벨 포함 항목 상자라 중심이 6px 어긋난다. RECT.left에 영역 코드를 먼저 써 넣고 보내야 함",
+      "🔬 구조체마다 VirtualAllocEx를 따로 부른다 — 한 덩어리 잡고 오프셋 더하면 koffi에서 파생 포인터를 만들어야 해 번거롭다. x64 LVITEMW는 88바이트, pszText 오프셋 24, cchTextMax 32",
+      "🔬 ClientToScreen은 우리 프로세스 메모리 POINT를 쓰므로 원격 버퍼 불필요. Win32는 물리 픽셀이라 screen.screenToDipPoint로 DIP 환산 필요",
+      "🔬 native/는 src/ 안에 둬야 한다 — tsc rootDir가 src라 바깥에 두면 컴파일 대상에서 빠진다",
+      "koffi + Electron 43 조합 개발 실행 정상 확인(패키징 후 로딩은 M6에서 재검증 필요). 리스트뷰를 못 읽으면 첫 칸으로 폴백"
     ],
     "commits": [
       "798cc2c - 블랙홀 휴지통 프로젝트 초기 세팅 — 기획서·프로토타입·폴더 구조 (blackhole-trash, 로컬 저장소)",
       "042ebae - analyzers: blackhole-trash 프로젝트 등록 (vanilla-js) (claude-dashboard)",
       "0bcc680 - README: 저장소 링크 추가 (blackhole-trash)",
       "e4f79ed - 기획서: M7 커스텀 휴지통 창 추가 — 셸 COM 실측 결과와 함정 3건 반영",
-      "573464a - M1: Electron 셸 완료 — 투명 위젯 배치·클릭 통과 전환"
+      "573464a - M1: Electron 셸 완료 — 투명 위젯 배치·클릭 통과 전환",
+      "afe728b - M1-b: 실제 휴지통 아이콘 좌표 탐색 — koffi로 explorer 리스트뷰 원격 읽기"
     ]
   },
   {
