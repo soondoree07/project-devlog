@@ -2,7 +2,7 @@
   {
     "date": "2026-08-12",
     "project": "blackhole-trash",
-    "title": "블랙홀 휴지통 프로젝트 신설 + M7 확정 + M1·M1-b 완료(투명 위젯이 실제 휴지통 아이콘 위에 안착)",
+    "title": "블랙홀 휴지통 신설 + M7 확정 + M1·M1-b 완료 + M2 착수(휴지통 연동 검증)",
     "items": [
       "새 프로젝트 ~/blackhole-trash 생성. Windows 11 휴지통의 기능은 그대로 두고 UI만 블랙홀 위젯으로 교체하는 데스크톱 앱",
       "기술 기획서 v0.1을 docs/기획서.md로 배치 — 스택 선정(Electron 43 + TypeScript + koffi), 성장 시스템(Lv1~12, 점유 칸 = 0.5 × 레벨^0.9), 창 배치·클릭 통과, 바탕화면 아이콘 흡입 방법 A/B, 마일스톤 M0~M6, 리스크",
@@ -26,7 +26,14 @@
       "🔬 구조체마다 VirtualAllocEx를 따로 부른다 — 한 덩어리 잡고 오프셋 더하면 koffi에서 파생 포인터를 만들어야 해 번거롭다. x64 LVITEMW는 88바이트, pszText 오프셋 24, cchTextMax 32",
       "🔬 ClientToScreen은 우리 프로세스 메모리 POINT를 쓰므로 원격 버퍼 불필요. Win32는 물리 픽셀이라 screen.screenToDipPoint로 DIP 환산 필요",
       "🔬 native/는 src/ 안에 둬야 한다 — tsc rootDir가 src라 바깥에 두면 컴파일 대상에서 빠진다",
-      "koffi + Electron 43 조합 개발 실행 정상 확인(패키징 후 로딩은 M6에서 재검증 필요). 리스트뷰를 못 읽으면 첫 칸으로 폴백"
+      "koffi + Electron 43 조합 개발 실행 정상 확인(패키징 후 로딩은 M6에서 재검증 필요). 리스트뷰를 못 읽으면 첫 칸으로 폴백",
+      "🔬 휴지통 식별을 두 번 갈아엎음 — 처음 이름 하드코딩은 운으로 맞은 것이었다. UI 언어가 ko-KR인데도 PowerShell Self.Name과 SHLoadIndirectString이 둘 다 Recycle Bin을 반환(화면은 휴지통). 휴지통 PIDL을 SHGetSpecialFolderLocation(CSIDL_BITBUCKET)으로 얻어 SHGetFileInfoW(SHGFI_PIDL|SHGFI_DISPLAYNAME)로 물으면 휴지통이 나온다 → 이 경로만 사용",
+      "🔬 항목별 PIDL로 신원 비교 시도 실패 — LVM_GETITEMW + LVIF_PARAM으로 lParam을 읽었으나 Windows 11 바탕화면 리스트뷰는 모든 항목이 lParam=0. 이름을 거치지 않는 비교는 IFolderView2(COM vtable)가 필요해 보류하고 관련 코드 제거",
+      "M2 착수 — src/main/trash.ts 신설(measureSize 재귀·심볼릭링크 제외 / swallow / queryRecycleBin / emptyRecycleBin), preload에 webUtils.getPathForFile·swallow 창구, 렌더러 드롭 처리와 흡입 연출",
+      "M2 검증 — 임시 폴더(100000+23456B)를 삼켜 크기 123456 정확 합산, 원본은 디스크에서 사라지고 실제 휴지통이 292→293개·바이트 정확히 +123456. 삭제가 아니라 진짜 이동임을 숫자로 확인",
+      "🔬 SHQUERYRBINFO는 x64에서 24바이트 — cbSize(4) 뒤 정렬 패딩 4, i64Size 오프셋 8, i64NumItems 16. 경로에 null을 주면 전 드라이브 합산",
+      "드롭 대상 반경을 max(지평선×1.6, 칸너비/2)로 확대 — 지평선만 쓰면 Lv1에서 11px이라 파일을 떨어뜨릴 수 없다(실측 37.5px 확보)",
+      "⚠️ emptyRecycleBin은 구현만 하고 어디서도 호출하지 않음 — 되돌릴 수 없어 확인 UI를 갖춘 뒤 연결. 실측도 하지 않음(사용자 휴지통 293개를 지우게 되므로)"
     ],
     "commits": [
       "798cc2c - 블랙홀 휴지통 프로젝트 초기 세팅 — 기획서·프로토타입·폴더 구조 (blackhole-trash, 로컬 저장소)",
@@ -34,7 +41,9 @@
       "0bcc680 - README: 저장소 링크 추가 (blackhole-trash)",
       "e4f79ed - 기획서: M7 커스텀 휴지통 창 추가 — 셸 COM 실측 결과와 함정 3건 반영",
       "573464a - M1: Electron 셸 완료 — 투명 위젯 배치·클릭 통과 전환",
-      "afe728b - M1-b: 실제 휴지통 아이콘 좌표 탐색 — koffi로 explorer 리스트뷰 원격 읽기"
+      "afe728b - M1-b: 실제 휴지통 아이콘 좌표 탐색 — koffi로 explorer 리스트뷰 원격 읽기",
+      "74ccadb - 휴지통 식별을 PIDL 기반 표시 이름으로 교체",
+      "9fd5a85 - M2: 휴지통 연동 — 드롭 삼키기·크기 측정·용량 조회"
     ]
   },
   {
