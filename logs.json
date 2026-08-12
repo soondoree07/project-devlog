@@ -2,7 +2,7 @@
   {
     "date": "2026-08-12",
     "project": "blackhole-trash",
-    "title": "블랙홀 휴지통 프로젝트 신설 — 기획서·M0 프로토타입 배치 + 대시보드 Dependency Graph 등록",
+    "title": "블랙홀 휴지통 프로젝트 신설 + M7(커스텀 휴지통 창) 확정 + M1(Electron 셸) 완료",
     "items": [
       "새 프로젝트 ~/blackhole-trash 생성. Windows 11 휴지통의 기능은 그대로 두고 UI만 블랙홀 위젯으로 교체하는 데스크톱 앱",
       "기술 기획서 v0.1을 docs/기획서.md로 배치 — 스택 선정(Electron 43 + TypeScript + koffi), 성장 시스템(Lv1~12, 점유 칸 = 0.5 × 레벨^0.9), 창 배치·클릭 통과, 바탕화면 아이콘 흡입 방법 A/B, 마일스톤 M0~M6, 리스크",
@@ -11,12 +11,23 @@
       "README.md·RESUME.md 작성 — 다음 액션은 M1(Electron 셸: 투명 창을 휴지통 자리에 고정 + 클릭 통과). SetParent(WorkerW) 방식의 드래그앤드롭·투명도 실측이 M1의 관문",
       "claude-dashboard Dependency Graph에 blackhole-trash 등록(vanilla-js 분석기) — 3 노드 2 링크, analyze:all 10/10 성공 후 pm2 reload 완료",
       "GitHub private 레포 생성·push — soondoree07/blackhole-trash",
-      "트리거 키워드 등록 — ~/.claude/commands/블랙홀.md 신설 + 전역 CLAUDE.md 트리거 표에 블랙홀/blackhole 추가. 다음 세션부터 RESUME·기획서 자동 로드"
+      "트리거 키워드 등록 — ~/.claude/commands/블랙홀.md 신설 + 전역 CLAUDE.md 트리거 표에 블랙홀/blackhole 추가. 다음 세션부터 RESUME·기획서 자동 로드",
+      "M7 신설 — 탐색기 휴지통 창은 셸 뷰라 외부 리디자인이 불가능(DLL 인젝션은 백신 오탐·업데이트마다 파손). 대신 우리 창을 띄우기로 결정. Shell.Application COM Namespace(0xA)로 291개 항목·원래 위치·삭제 날짜·크기 열거와 복원/개별삭제 verb 실측 확인",
+      "M7 함정 3건 문서화 — ①verb·컬럼 문자열이 실행마다 한글/영문으로 바뀌어 하드코딩 금지 ②C:의 $I 322개 vs 셸 표시 291개로 $I 직접 파싱은 목록 원천으로 부적합 ③드라이브마다 휴지통이 따로 존재(C:·E:)",
+      "프로젝트를 ~/blackhole-trash → C:\\dev\\blackhole-trash로 이전 — Windows npm이 배치 파일이라 WSL 경로를 CWD로 못 잡는다. 편집·git은 WSL 유지, 실행만 cmd.exe 경유",
+      "M1 완료 — 투명·프레임 없는 5칸(375×375) 창이 휴지통 아이콘 자리에 뜨고, 여백은 클릭 통과(SysListView32) / 지평선 안은 위젯 수신(Chrome_RenderWidgetHostHWND) / 벗어나면 통과 복귀까지 WindowFromPoint로 검증",
+      "🔬 기획서 4.3 교체 — setIgnoreMouseEvents의 forward:true가 렌더러까지 마우스 이동을 전달하지 못함(focusable:true로 바꿔도 동일). 메인에서 screen.getCursorScreenPoint()를 50ms 폴링하는 방식으로 대체. 저레벨 지평선이 7px이라 최소 클릭 반경 16 DIP 설정",
+      "🔬 부수 효과로 레벨·반경 계산을 src/main/levels.ts 한 곳에 모으고 렌더러는 메인이 준 반경만 그리도록 정리 — 중복 제거",
+      "🔬 Windows에서 Electron은 GUI 앱이라 console.log가 부모 콘솔에 안 나온다 → BH_DEBUG=1 파일 로그(bh-debug.log) 도입. 이걸 붙이기 전까지 원인 파악이 불가능했다",
+      "🔬 file://로 열린 페이지는 ES 모듈이 차단돼 렌더러를 import로 쪼갤 수 없다 → 렌더러는 당분간 단일 클래식 스크립트, M5에서 esbuild 도입 검토",
+      "남은 구멍 명시 — findRecycleBinCenter가 아직 임시(작업영역 첫 칸). 실측 PC는 휴지통이 좌상단이라 맞았을 뿐이며, M1-b에서 SysListView32 읽기로 교체 필요"
     ],
     "commits": [
       "798cc2c - 블랙홀 휴지통 프로젝트 초기 세팅 — 기획서·프로토타입·폴더 구조 (blackhole-trash, 로컬 저장소)",
       "042ebae - analyzers: blackhole-trash 프로젝트 등록 (vanilla-js) (claude-dashboard)",
-      "0bcc680 - README: 저장소 링크 추가 (blackhole-trash)"
+      "0bcc680 - README: 저장소 링크 추가 (blackhole-trash)",
+      "e4f79ed - 기획서: M7 커스텀 휴지통 창 추가 — 셸 COM 실측 결과와 함정 3건 반영",
+      "573464a - M1: Electron 셸 완료 — 투명 위젯 배치·클릭 통과 전환"
     ]
   },
   {
