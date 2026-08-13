@@ -1,6 +1,31 @@
 [
   {
     "date": "2026-08-13",
+    "project": "cotton-playground",
+    "title": "솜사탕 놀이터 신설 — 클로드 디자인 시안을 Flutter로 이관, 6개 화면 + 그리기·녹음 실동작",
+    "items": [
+      "새 프로젝트 ~/cotton-playground 생성(android+ios). 친구와 그림·소리를 주고받는 전 연령 1:1 채팅앱. 이름은 '솜사탕 놀이터'로 확정",
+      "클로드 디자인 프로젝트에서 'Cotton Chat.dc.html'을 DesignSync로 읽어옴. .dc.html은 <sc-if>/<sc-for>를 support.js가 React로 렌더링하는 전용 포맷이라 어느 스택으로도 그대로 못 쓴다는 점을 확인",
+      "스택 Flutter 확정 — 이 디자인이 쓴 linear-gradient·backdrop-filter·repeating-linear-gradient·inset shadow·canvas가 Flutter는 전부 기본 내장(추가 의존성 0), RN은 라이브러리 4개 필요 + 안드로이드 블러 불안정. 시스템 키보드 결정으로 RN의 'JS 로직 재사용' 장점도 소멸",
+      "DM 화면 스파이크로 먼저 실기기 재현도 검증 후, 6개 화면으로 확장 — 대화 목록·대화방·그리기·녹음·친구 목록·설정",
+      "그리기 실동작: 팔레트 6색·붓 3단계·지우개·되돌리기, 740x740 PNG로 대화방 전송까지 실기기 확인",
+      "녹음 실동작: record·audioplayers·path_provider 3개 추가. 마이크 권한 팝업 → m4a 녹음 → dBFS 기반 실시간 파형 → 카드 재생. permission_handler는 record가 권한 요청까지 해서 제외",
+      "디자인 값을 lib/theme/cotton_tokens.dart에 1:1 이관, 아이콘 13종은 외부 패키지 없이 CustomPainter Path로 직접 구현",
+      "반응형 도입 — CottonMetrics.scaleOf()로 디자인 402dp 대비 화면 폭 배율을 크기·글자에 반영. 테스트 폰이 글꼴 1.3배+화면확대라 논리폭 339dp였던 것이 '디자인과 다르다'의 주원인이었음",
+      "자동 검증: 6화면 × 폭 7종(320~480dp) × 글꼴 3종 = 126조합 오버플로 테스트 + 동작 테스트 6건",
+      "버그 4건 수정 — ① Column 조건부 자식에 key가 없어 TextField 재생성→키보드가 열리자마자 닫힘 ② 그리는 영역이 정사각형이 아니라 전송 시 그림이 찌그러짐 ③ Flutter 기본 테마에 시스템 바 뒤 그리기 설정이 없어 하단 검은 띠 ④ 설정 아이콘이 해처럼 보임",
+      "기획서와 디자인 불일치 3건 정리(키보드 정책·하단 버튼 노출 조건·녹음 진입로 막힘)하고 사용자 결정 반영",
+      "claude-dashboard Dependency Graph 등록(31 nodes, 98 links). dart-flutter 분석기가 이미 범용이라 PROJECT_CONFIG 한 줄로 연결. pm2가 꺼져 있어 ecosystem.config.js로 기동",
+      "GitHub private 저장소 생성·푸시, 트리거 /솜사탕놀이터 등록, RESUME.md·LAST_CHAT.md 작성"
+    ],
+    "commits": [
+      "8731913 - feat: 솜사탕 놀이터 초기 구현 (6개 화면 + 그리기·녹음)",
+      "eb74663 - docs: 2026-08-13 세션 마감 기록",
+      "37efeee - feat(analyzers): 솜사탕 놀이터(cotton-playground) 등록 [claude-dashboard]"
+    ]
+  },
+  {
+    "date": "2026-08-13",
     "project": "blackhole-trash",
     "title": "M2 완료 — 드롭·비우기 실사용 검증 + 아이콘 추적·토스트·우클릭 메뉴 + 원래 아이콘 감추기",
     "items": [
