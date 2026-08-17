@@ -92,5 +92,19 @@
       "date": "2026-04",
       "type": "docx"
     }
+  ],
+  "cotton-playground": [
+    {
+      "title": "솜사탕 놀이터 기획서 (devlog 스냅샷)",
+      "file": "specs/cotton-playground/기획서.md",
+      "date": "2026-08-17",
+      "type": "md"
+    },
+    {
+      "title": "랜덤 사진 소재 목록 118개 + 생성 GPT 설정",
+      "file": "specs/cotton-playground/사진목록.md",
+      "date": "2026-08-17",
+      "type": "md"
+    }
   ]
 }
