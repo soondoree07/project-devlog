@@ -2,7 +2,7 @@
   {
     "date": "2026-08-27",
     "project": "cotton-playground",
-    "title": "앱 이름을 두토 DooTo 로 바꾸고 스토어 등록 준비 마무리",
+    "title": "앱 이름을 두토 DooTo 로 바꾸고 패키지명까지 교체 — 스토어 등록 준비 완료",
     "items": [
       "Play Console 신원 확인이 끝나 스토어 등록을 시작할 수 있게 됐다",
       "앱 이름을 '솜사탕 놀이터'에서 '두토 DooTo'로 바꿨다. 아직 아무 데도 올라가지 않았을 때 바꿔 비용이 없었다",
@@ -13,11 +13,18 @@
       "패키지명 com.junghyeok.cotton_playground 는 그대로 뒀다. 한 번 올리면 못 바꾸는 값이고 Firebase 설정·업로드 키 서명이 여기 묶여 있다",
       "디자인 무드 '솜사탕 파스텔'은 앱 이름과 별개라 건드리지 않았다",
       ".aab 를 새 이름으로 다시 빌드했다. 옛 aab 는 그림 118장·알림이 들어가기 전 것이라 그대로 올렸으면 반쪽 앱이 올라갈 뻔했다",
-      "검증: flutter test 18건 통과, .aab 안을 뒤져 옛 이름이 남은 파일 0건 확인"
+      "검증: flutter test 18건 통과, .aab 안을 뒤져 옛 이름이 남은 파일 0건 확인",
+      "패키지명도 com.junghyeok.cotton_playground 에서 com.junghyeok.dooto 로 바꿨다. 처음엔 안 보이는 값이라 두려 했는데, 스토어 주소(play.google.com/store/apps/details?id=...)에 그대로 들어간다는 걸 확인하고 바꿨다",
+      "아직 한 번도 올리지 않은 시점이라 가능했다. 한 번 올리면 패키지명은 영영 못 바꾼다",
+      "Firebase CLI 로 새 Android 앱을 만들고 google-services.json 을 새로 받아 넣었다. 사용자가 콘솔에서 직접 할 일이 없었다",
+      "Kotlin 폴더를 옮기고 MainActivity.kt 의 package 선언, iOS 번들 ID 까지 맞췄다",
+      "그대로 둔 것 — 저장소·Firebase 프로젝트 이름, Dart import 의 package:cotton_playground(Flutter 내부 이름), 알림 통로 id cotton_messages(바꾸면 알림이 조용히 사라질 위험만 있다)",
+      "검증: flutter test 18건 + flutter analyze 통과, .aab 안에 옛 패키지 흔적 0건"
     ],
     "commits": [
       "03c08fe - feat: 앱 이름을 두토 DooTo 로 바꾼다",
-      "81aea2d - docs: 앱 이름을 두토 DooTo 로 바꾼다 (cotton-playground-policy)"
+      "81aea2d - docs: 앱 이름을 두토 DooTo 로 바꾼다 (cotton-playground-policy)",
+      "f16f84c - feat: 패키지명을 com.junghyeok.dooto 로 바꾼다"
     ]
   },
   {
