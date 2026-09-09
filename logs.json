@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-09-10",
+    "project": "pochams_project",
+    "title": "items·abilities 색인 확인 완료 + 레귤레이션 M-C 신규 로스터 사전 조사",
+    "items": [
+      "두 달 밀려 있던 예약 항목(2026-07-18 예정) 처리 — Search Console URL 검사에서 /items·/abilities 둘 다 \"페이지 색인이 생성됨\" 확인. 7/4 색인 생성 요청이 정상 처리됐다",
+      "7/12에 켠 Vercel Bot Protection(Challenge)이 Googlebot 색인을 막고 있는지 검증 — 영향 없음. 외부 curl은 robots.txt·sitemap.xml까지 429 Vercel Security Checkpoint를 받지만 검증된 봇은 통과한다",
+      "검사 중 만난 \"속성에 URL이 없음\" 오류는 소유권 문제가 아니라 Search Console 속성 4개 중 pokenova.pochams.com이 선택돼 있어서였다. RESUME에 함정으로 기록",
+      "로컬 SEO 요소 전수 점검 — sitemap 등록·robots 미차단·canonical·SSR 본문(LangProvider가 mounted 전에도 children 렌더)·헤더 내부 링크 모두 정상",
+      "레귤레이션 M-C(9/9 적용) 신규 데이터 사전 조사 — 메가 6종 중 Z 3종은 9/2에 반영 완료, 메가보만다(스카이스킨)는 데이터에 이미 있고 inChampions만 켜면 됨",
+      "메가갑주무사·메가드닐레이브 특성은 포켓몬 위키 특성1 칸이 비어 있어 미공개 확인. 영어권 매체는 메가진화 전 원래 특성을 적어놔 신뢰 불가 — 추측 입력하지 않고 보류",
+      "신규 포켓몬 23종이 전부 pokedex.json에 존재하고 inChampions=false 상태임을 확인. 다만 위키에 {이름}_(포켓몬)/Champions_기술 문서가 하나도 없어(대조군 한카리아스는 기술 58개 정상) 지금 sync하면 전원 기술폭 0으로 올라간다 — 실행 보류",
+      "매체별 로스터 대조에서 빠르모트 1종이 Game8에만 있어 공식 24종과 1종 차이. 게임 내 입국 목록으로 확정 필요"
+    ],
+    "commits": [
+      "ec55d9e - docs(seo): items·abilities 색인 확인 완료 — 예약 항목 종료"
+    ]
+  },
+  {
     "date": "2026-09-08",
     "project": "sleep-asmr",
     "title": "꿀잠 — 오디오 소재 378개를 정리하고 1단계 14편 조합까지 확정했다",
