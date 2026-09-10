@@ -55,7 +55,10 @@
       "scripts/build_item_effects.py → src/lib/itemEffects.ts 생성(sync 5/9 단계). 도구 파일 310KB 가 화면 번들에 안 딸려가게 8KB 만 뽑는다",
       "itemModifiers.ts 는 표 5개가 사라지고 kind switch 하나가 됐다. 새 도구는 포케노바 데이터 한 곳만 고치면 된다",
       "동작 동일성 — 조합 595,614건을 바꾸기 전 값과 대조해 불일치 0 (화면 라벨 문자열까지 동일)",
-      "검증 4가지 추가 후 일부러 망가뜨려 exit 1 로 잡히는 것 확인 (데이터만 고치고 sync 안 돌린 경우 포함)"
+      "검증 4가지 추가 후 일부러 망가뜨려 exit 1 로 잡히는 것 확인 (데이터만 고치고 sync 안 돌린 경우 포함)",
+      "거다이맥스 기술 33종 일본어 이름 채움 — PokeAPI·포켓몬위키에 없어서 Bulbapedia 를 세 번째 출처로 추가. 기술 929개 중 일본어 이름 빈 곳 0",
+      "Bulbapedia 는 앞의 두 출처에 아예 없을 때만 보고, 리다이렉트로 엉뚱한 문서에 닿지 않게 문서의 영어 이름을 확인하고 쓴다 (일부러 어긋나게 넣어 None 확인)",
+      "pokenova_structure.json 무시 처리 — 2026-04-06 생성 후 아무 데서도 참조하지 않고 값도 낡음(특성 308 vs 313)"
     ],
     "commits": [
       "ec55d9e - docs(seo): items·abilities 색인 확인 완료 — 예약 항목 종료",
@@ -89,7 +92,11 @@
       "519865e - docs: 미채움목록.md 신설 (pochams)",
       "4cb4d8c - refactor(calc): 도구 효과를 코드 표에서 데이터로 옮김 (pochams)",
       "5892757 - data: 챔피언스 도구 166개에 champions_effect 채움 (pokenova)",
-      "b5bc07c - docs: 도구 효과 데이터 기반화 반영 (pochams)"
+      "b5bc07c - docs: 도구 효과 데이터 기반화 반영 (pochams)",
+      "e00b254 - data: 거다이맥스 기술 33종 일본어 이름 (pokenova)",
+      "17839cb - chore: pokenova_structure.json 무시 (pokenova)",
+      "48418e8 - data: 거다이맥스 기술 일본어 이름 반영 (pochams)",
+      "4c484bc - docs: 미채움 갱신 (pochams)"
     ]
   },
   {
