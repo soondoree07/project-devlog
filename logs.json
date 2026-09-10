@@ -62,7 +62,8 @@
       "도감 카드 팝업에 특성 추가 — 맨 위에 특성, 그 아래에 기술. 숨겨진 특성에는 배지",
       "메가·알트폼은 그 폼의 특성을 보여준다 (메가메가니움=메가솔라, 루카리오 메가Z=파동의방호, 시비꼬 옐로 페더=우격다짐)",
       "분류 필터·정렬을 기술 제목 아래로 내림 — 기술만 거르는 버튼인데 특성 위에 있어 헷갈렸다",
-      "팝업 파일을 셋으로 갈랐다 — AbilityList / MoveTable / PokemonDetailModal (MoveListModal 에서 개명)"
+      "팝업 파일을 셋으로 갈랐다 — AbilityList / MoveTable / PokemonDetailModal (MoveListModal 에서 개명)",
+      "팝업에서 \"챔피언스 기술\" 제목과 \"기술 N개\" 줄 제거 — 특성 아래에 표가 바로 오면 알아볼 수 있어 군더더기. 안 쓰게 된 문구도 세 언어에서 걷어냄"
     ],
     "commits": [
       "ec55d9e - docs(seo): items·abilities 색인 확인 완료 — 예약 항목 종료",
@@ -101,7 +102,8 @@
       "17839cb - chore: pokenova_structure.json 무시 (pokenova)",
       "48418e8 - data: 거다이맥스 기술 일본어 이름 반영 (pochams)",
       "4c484bc - docs: 미채움 갱신 (pochams)",
-      "2833d40 - feat(pokedex): 카드 팝업에 특성을 기술 위에 표시 (pochams)"
+      "2833d40 - feat(pokedex): 카드 팝업에 특성을 기술 위에 표시 (pochams)",
+      "f9983f0 - refactor(pokedex): 팝업에서 제목·개수 줄 제거 (pochams)"
     ]
   },
   {
