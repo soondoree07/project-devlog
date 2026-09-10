@@ -2,7 +2,7 @@
   {
     "date": "2026-09-10",
     "project": "pochams_project",
-    "title": "색인 확인 종료 · 도감 기술폭 팝업 · 데이터 보정 경로 · M-C 로스터 230종 · 챔피언스 도구 18종 + 기술폭 26종 · 특성 설명 4종 · 일본어 이름 130개 + 도구 효과 데이터 기반화",
+    "title": "색인 확인 종료 · 도감 기술폭 팝업 · 데이터 보정 경로 · M-C 로스터 230종 · 챔피언스 도구 18종 + 기술폭 26종 · 특성 설명 4종 · 일본어 이름 130개 + 도구 효과 데이터 기반화 + 도감 팝업 특성 표시",
     "items": [
       "두 달 밀려 있던 예약 항목(2026-07-18 예정) 처리 — Search Console URL 검사에서 /items·/abilities 둘 다 \"페이지 색인이 생성됨\" 확인. 7/4 색인 생성 요청이 정상 처리됐다",
       "7/12에 켠 Vercel Bot Protection(Challenge)이 Googlebot 색인을 막고 있는지 검증 — 영향 없음. 외부 curl은 robots.txt·sitemap.xml까지 429 Vercel Security Checkpoint를 받지만 검증된 봇은 통과한다",
@@ -58,7 +58,11 @@
       "검증 4가지 추가 후 일부러 망가뜨려 exit 1 로 잡히는 것 확인 (데이터만 고치고 sync 안 돌린 경우 포함)",
       "거다이맥스 기술 33종 일본어 이름 채움 — PokeAPI·포켓몬위키에 없어서 Bulbapedia 를 세 번째 출처로 추가. 기술 929개 중 일본어 이름 빈 곳 0",
       "Bulbapedia 는 앞의 두 출처에 아예 없을 때만 보고, 리다이렉트로 엉뚱한 문서에 닿지 않게 문서의 영어 이름을 확인하고 쓴다 (일부러 어긋나게 넣어 None 확인)",
-      "pokenova_structure.json 무시 처리 — 2026-04-06 생성 후 아무 데서도 참조하지 않고 값도 낡음(특성 308 vs 313)"
+      "pokenova_structure.json 무시 처리 — 2026-04-06 생성 후 아무 데서도 참조하지 않고 값도 낡음(특성 308 vs 313)",
+      "도감 카드 팝업에 특성 추가 — 맨 위에 특성, 그 아래에 기술. 숨겨진 특성에는 배지",
+      "메가·알트폼은 그 폼의 특성을 보여준다 (메가메가니움=메가솔라, 루카리오 메가Z=파동의방호, 시비꼬 옐로 페더=우격다짐)",
+      "분류 필터·정렬을 기술 제목 아래로 내림 — 기술만 거르는 버튼인데 특성 위에 있어 헷갈렸다",
+      "팝업 파일을 셋으로 갈랐다 — AbilityList / MoveTable / PokemonDetailModal (MoveListModal 에서 개명)"
     ],
     "commits": [
       "ec55d9e - docs(seo): items·abilities 색인 확인 완료 — 예약 항목 종료",
@@ -96,7 +100,8 @@
       "e00b254 - data: 거다이맥스 기술 33종 일본어 이름 (pokenova)",
       "17839cb - chore: pokenova_structure.json 무시 (pokenova)",
       "48418e8 - data: 거다이맥스 기술 일본어 이름 반영 (pochams)",
-      "4c484bc - docs: 미채움 갱신 (pochams)"
+      "4c484bc - docs: 미채움 갱신 (pochams)",
+      "2833d40 - feat(pokedex): 카드 팝업에 특성을 기술 위에 표시 (pochams)"
     ]
   },
   {
