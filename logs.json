@@ -2,7 +2,7 @@
   {
     "date": "2026-09-10",
     "project": "pochams_project",
-    "title": "색인 확인 종료 · 도감 기술폭 팝업 · 데이터 보정 경로 · M-C 로스터 230종 · 챔피언스 도구 18종 + 기술폭 26종 · 특성 설명 4종 · 일본어 이름 130개",
+    "title": "색인 확인 종료 · 도감 기술폭 팝업 · 데이터 보정 경로 · M-C 로스터 230종 · 챔피언스 도구 18종 + 기술폭 26종 · 특성 설명 4종 · 일본어 이름 130개 + 도구 효과 데이터 기반화",
     "items": [
       "두 달 밀려 있던 예약 항목(2026-07-18 예정) 처리 — Search Console URL 검사에서 /items·/abilities 둘 다 \"페이지 색인이 생성됨\" 확인. 7/4 색인 생성 요청이 정상 처리됐다",
       "7/12에 켠 Vercel Bot Protection(Challenge)이 Googlebot 색인을 막고 있는지 검증 — 영향 없음. 외부 curl은 robots.txt·sitemap.xml까지 429 Vercel Security Checkpoint를 받지만 검증된 봇은 통과한다",
@@ -49,7 +49,13 @@
       "챔피언스 신규 특성 4종 설명 채움 — PokeAPI 이름이 달랐다 (dragonize·mega-sol·piercing-drill·spicy-spray). 특성 설명 영어 309→313, 일본어 306→310",
       "일본어 이름 130개 교정 — fetch_japanese_names.py 가 우리 id 로 PokeAPI 를 물어 349번 이후 도구가 통째로 밀려 있었다 (요정의깃털이 ルガルガンＺ). 도구 124 · 특성 5 · 기술 1",
       "챔피언스 메가스톤 34종 일본어명은 PokeAPI 에 없어 포켓몬위키에서 수집 (픽시나이트는 ピクシーナイト 가 아니라 ピクシナイト)",
-      "수집 스크립트를 이름(슬러그) 기준으로 다시 씀 + --check 모드 · 출처 불일치 표시 · 근거 없으면 비워 두고 보고"
+      "수집 스크립트를 이름(슬러그) 기준으로 다시 씀 + --check 모드 · 출처 불일치 표시 · 근거 없으면 비워 두고 보고",
+      "미채움목록.md 신설 — 근거가 없어 못 채운 항목(거다이맥스 기술 일본어 33 · 요정의깃털 설명 2 · 특성 일본어 설명 3 · 위키 문서 16종)을 한자리에 정리",
+      "도구 효과를 코드 표에서 데이터로 옮김 — champions_effect 30 → 166(전부), kind 로 갈리는 한 모양. 계산기가 이 데이터에서 표를 생성한다",
+      "scripts/build_item_effects.py → src/lib/itemEffects.ts 생성(sync 5/9 단계). 도구 파일 310KB 가 화면 번들에 안 딸려가게 8KB 만 뽑는다",
+      "itemModifiers.ts 는 표 5개가 사라지고 kind switch 하나가 됐다. 새 도구는 포케노바 데이터 한 곳만 고치면 된다",
+      "동작 동일성 — 조합 595,614건을 바꾸기 전 값과 대조해 불일치 0 (화면 라벨 문자열까지 동일)",
+      "검증 4가지 추가 후 일부러 망가뜨려 exit 1 로 잡히는 것 확인 (데이터만 고치고 sync 안 돌린 경우 포함)"
     ],
     "commits": [
       "ec55d9e - docs(seo): items·abilities 색인 확인 완료 — 예약 항목 종료",
@@ -79,7 +85,11 @@
       "7682f92 - docs: 외부 데이터는 이름으로 묻는다 (pokenova)",
       "4cc2ae1 - data: 챔피언스 신규 특성 4종 설명 반영 (pochams)",
       "03bb35e - data: 일본어 이름 교정분 반영 (pochams)",
-      "89bd7aa - docs: 2026-09-10 저녁 세션 정리 (pochams)"
+      "89bd7aa - docs: 2026-09-10 저녁 세션 정리 (pochams)",
+      "519865e - docs: 미채움목록.md 신설 (pochams)",
+      "4cb4d8c - refactor(calc): 도구 효과를 코드 표에서 데이터로 옮김 (pochams)",
+      "5892757 - data: 챔피언스 도구 166개에 champions_effect 채움 (pokenova)",
+      "b5bc07c - docs: 도구 효과 데이터 기반화 반영 (pochams)"
     ]
   },
   {
