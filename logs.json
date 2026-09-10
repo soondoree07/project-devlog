@@ -42,7 +42,8 @@
       "도구·특성 설명을 영어·일본어로 채움 — **도구 166개 en 165·ja 165 / 특성 313개 en 309·ja 306.** 출처는 PokeAPI(스프라이트와 같은 출처). 스키마에 `desc_en`·`desc_ja` 추가(db push) + `/items`·`/abilities` 가 언어에 맞는 설명을 고르고 검색도 그 문구로 한다 + `/api/data/items` 노출 + `scripts/fetch_descriptions.py` 신설. **메가스톤 39종은 PokeAPI 에 문구가 없어, 문구가 있는 메가스톤에서 틀을 뽑아 포켓몬 이름만 갈아끼웠다**(이름도 PokeAPI 종족 정보에서 받아 지어내지 않음). 못 채운 건 요정의깃털 1개와 신규 특성 4개(공식 문구 자체가 없음)로 한국어를 그대로 둔다",
       "⚠️ **PokeAPI 함정 — 문구를 옛 버전부터 늘어놓는다.** 먼저 나오는 걸 집으면 20년 전 문장이 온다(대파 = \"A stick of leek. It can be sold cheaply.\" 루비·사파이어판). 마지막(최신) 것을 쓰도록 고쳤다. 슬러그도 우리와 다른 게 있어 확인된 것만 매핑(대파 = `stick`, 혼연일체 = `as-one-glastrier`/`as-one-spectrier`)",
       "우리가 직접 만든 신규 특성 슬러그(`aura_guard`·`eelevate`·`fire_mane`)가 PokeAPI 에도 같은 이름으로 있어 엉뚱한 설명을 가져올 뻔했다 — 내용을 대조해 같은 특성임을 확인하고 채택",
-      "`.pokeapi_cache/` 가 무시 목록에 없어 573개가 커밋에 딸려 들어간 것 발견·제거(`.wiki_cache`·`.serebii_cache` 는 이미 있었다)"
+      "`.pokeapi_cache/` 가 무시 목록에 없어 573개가 커밋에 딸려 들어간 것 발견·제거(`.wiki_cache`·`.serebii_cache` 는 이미 있었다)",
+      "고고트 광합성·고민씨 복원 — 위키 재수집에서 54 → 52 로 줄었는데 사용자가 인게임에서 둘 다 배우는 것을 확인해 `overrides.json` 에 add 로 넣었다(우선순위가 overrides > 위키 > Serebii 라 다음에 위키 문서가 채워져도 이 값이 이긴다)"
     ],
     "commits": [
       "ec55d9e - docs(seo): items·abilities 색인 확인 완료 — 예약 항목 종료",
@@ -62,7 +63,9 @@
       "5980575 - data: 위키에 Champions 기술 문서가 생긴 6종 재수집",
       "edcb35d - feat(i18n): 도구·특성 설명을 영어·일본어로 — 도감 언어 전환 완성",
       "a29f5c5 - chore: PokeAPI 캐시를 커밋에서 걷어냄",
-      "ece6eba/a681eb8 - (pokenova_project) 시비꼬 스프라이트 원천 반영 + desc_en/desc_ja 추가"
+      "ece6eba/a681eb8 - (pokenova_project) 시비꼬 스프라이트 원천 반영 + desc_en/desc_ja 추가",
+      "aef51fb - fix(data): 고고트 광합성·고민씨 되살림",
+      "4efb4ea - docs: 2026-09-10 오후 세션 정리"
     ]
   },
   {
