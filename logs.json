@@ -1,6 +1,19 @@
 [
   {
     "date": "2026-09-30",
+    "project": "junghyeok-portfolio",
+    "title": "공부 사이트 하루 미루기 기능",
+    "items": [
+      "공부 사이트에 '오늘 하루 미루기' 추가 — 오늘 화면 버튼으로 미루면 남은 일정이 하루씩 뒤로 밀리고(휴식 기간 유지, 종료일 12/1→12/2), 그날 안에 취소 가능",
+      "미룬 날은 기록(Redis study:postponed)에 저장, 일정은 data/index.ts buildSchedule 이 다시 계산",
+      "오늘 기록이 있으면 미룰 수 없게 막음, 달력·상태에 '미룸' 표시"
+    ],
+    "commits": [
+      "b39afa2 - feat(study): 오늘 공부 하루 미루기"
+    ]
+  },
+  {
+    "date": "2026-09-30",
     "project": "maple-boss",
     "title": "메이플 보스 기록 v1.0 전면 개편 (유저·캐릭터 모델, 화이트+다크, 과거 기록)",
     "items": [
