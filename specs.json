@@ -106,5 +106,13 @@
       "date": "2026-08-17",
       "type": "md"
     }
+  ],
+  "allinone-tools": [
+    {
+      "title": "올인원 기획서 v0.3",
+      "file": "specs/allinone-tools/기획서.md",
+      "date": "2026-10-02",
+      "type": "md"
+    }
   ]
 }
