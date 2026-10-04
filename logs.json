@@ -2,14 +2,17 @@
   {
     "date": "2026-10-04",
     "project": "allinone-tools",
-    "title": "사이트 이름 올인원 → 모아툴로 통일",
+    "title": "이름 모아툴로 통일 · 툴마다 공유 미리보기 이미지",
     "items": [
       "홈 상단 영문 문구를 ALL-IN-ONE TOOLS 에서 MOATOOL 로 변경",
       "작업 환경 트리거·슬래시 커맨드를 /모아툴 로 바꿈(옛 이름 올인원도 계속 인식)",
-      "폴더·GitHub 저장소·Vercel 프로젝트·브라우저 저장 키는 allinone 그대로 둠(방문자 기록 보존·배포 연결 유지)"
+      "폴더·GitHub 저장소·Vercel 프로젝트·브라우저 저장 키는 allinone 그대로 둠(방문자 기록 보존·배포 연결 유지)",
+      "카카오톡·SNS 공유 미리보기 이미지(og:image)를 툴 20종 + 홈 1장 만들어 연결 — 다크 네온 카드에 툴 아이콘·이름·한 줄 소개",
+      "npm run og 로 Playwright 가 사이트 아이콘·색을 그대로 써서 이미지를 만들고, 이미지가 빠지면 빌드가 멈춤"
     ],
     "commits": [
-      "6cfb0e5 - 홈 상단 영문 문구를 ALL-IN-ONE TOOLS 에서 MOATOOL 로 변경"
+      "6cfb0e5 - 홈 상단 영문 문구를 ALL-IN-ONE TOOLS 에서 MOATOOL 로 변경",
+      "87bd749 - 툴마다 공유 미리보기 이미지(og:image) 추가"
     ]
   },
   {
