@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-10-04",
+    "project": "allinone-tools",
+    "title": "사이트 이름 올인원 → 모아툴로 통일",
+    "items": [
+      "홈 상단 영문 문구를 ALL-IN-ONE TOOLS 에서 MOATOOL 로 변경",
+      "작업 환경 트리거·슬래시 커맨드를 /모아툴 로 바꿈(옛 이름 올인원도 계속 인식)",
+      "폴더·GitHub 저장소·Vercel 프로젝트·브라우저 저장 키는 allinone 그대로 둠(방문자 기록 보존·배포 연결 유지)"
+    ],
+    "commits": [
+      "6cfb0e5 - 홈 상단 영문 문구를 ALL-IN-ONE TOOLS 에서 MOATOOL 로 변경"
+    ]
+  },
+  {
+    "date": "2026-10-04",
+    "project": "claude-dashboard",
+    "title": "올인원 표시 이름을 모아툴로 변경",
+    "items": [
+      "Dependency Graph 의 allinone-tools 표시 이름을 '모아툴 (웹 툴 모음)'으로 바꾸고 인덱스 재생성·pm2 재시작"
+    ],
+    "commits": [
+      "fa6950d - 올인원 표시 이름을 모아툴로 변경"
+    ]
+  },
+  {
+    "date": "2026-10-04",
     "project": "maple-boss",
     "title": "전리품에서 기록 카드 열기 · 헤더 새로고침 버튼",
     "items": [
