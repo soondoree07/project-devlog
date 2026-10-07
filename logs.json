@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-07",
+    "project": "save-point-sleep",
+    "title": "스노우맨 캐릭터 누끼",
+    "items": [
+      "스노우맨 누끼(원본 크기 · 여백 없음) — 흰 배경이라 rembg 없이 가장자리부터 배경 지우기",
+      "흰 배경 누끼 스크립트 scripts/cutout_white_bg.py 추가(가장 큰 덩어리만 남겨 음표·흔들림 선 제거)"
+    ],
+    "commits": [
+      "36a48f3 - 스노우맨 누끼 · 흰 배경 누끼 스크립트 · RESUME/LAST_CHAT 10-07 마감"
+    ]
+  },
+  {
     "date": "2026-10-06",
     "project": "save-point-sleep",
     "title": "확정본 3곡 완성 · 원곡 음원 대조로 루트 19곡 원곡판 · 박자 지원 · 이펙트·썸네일 체계",
