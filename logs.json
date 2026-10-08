@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-08",
+    "project": "allinone-tools",
+    "title": "애드센스 사이트 연결·ads.txt 배포, 색인 현황 점검",
+    "items": [
+      "애드센스 가입 후 사이트 연결 코드를 모든 페이지 head 에 넣고 ads.txt 추가, 라이브 확인",
+      "구글 색인 9개(홈·주요 툴) 확인, 룰렛은 FAQ 넣기 전 크롤링이라 색인 재요청 안내"
+    ],
+    "commits": [
+      "3726e74 - 애드센스 사이트 연결 코드와 ads.txt 추가"
+    ]
+  },
+  {
     "date": "2026-10-07",
     "project": "save-point-sleep",
     "title": "스노우맨 캐릭터 누끼",
