@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-11",
+    "project": "save-point-sleep",
+    "title": "확정본 17곡 완성 · 업로드 시작",
+    "items": [
+      "남은 확정 9곡 굽기 완료 · 검사 통과(밝기 · 음량), 확정본 17곡 34편",
+      "채널은 Hushed Places 를 Save Point Sleep 으로 바꿔 씀 · 업로드 복사용 페이지(로컬) · 엘리니아부터 예약 업로드 시작"
+    ],
+    "commits": [
+      "9e3e1d1 - RESUME: 확정본 17곡 완성, 업로드 시작"
+    ]
+  },
+  {
     "date": "2026-10-10",
     "project": "save-point-sleep",
     "title": "남은 곡 원곡 왼손 대조 — 4곡 추가, 뒤틀린 회랑 왼손판·원곡저음판",
