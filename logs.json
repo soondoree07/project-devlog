@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-23",
+    "project": "calldesk",
+    "title": "콜데스크 호출 스킬과 세션 마감 정리",
+    "items": [
+      "/콜데스크 호출 스킬을 만들고 CLAUDE.md 트리거 표에 등록, 콜데스크 프로젝트 터미널은 이 트리거로 맥락을 불러온다",
+      "세션 마감: RESUME 정리, LAST_CHAT 작성"
+    ],
+    "commits": [
+      "8c9acc2 - 세션 마감: RESUME 정리, LAST_CHAT, 콜데스크 프로젝트는 /콜데스크 트리거로 불러오기"
+    ]
+  },
+  {
     "date": "2026-10-22",
     "project": "maple-boss",
     "title": "채널 룰렛 59채널까지 늘리기",
