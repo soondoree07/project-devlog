@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-10-22",
+    "project": "claude-dashboard",
+    "title": "의존성 그래프에 Python 분석기 추가 — 콜데스크 등록",
+    "items": [
+      "Python 프로젝트도 의존성 그래프에 잡히도록 분석기를 새로 만듦(requirements.txt 패키지 + 파일 간 import, WSL 호출은 외부 노드)",
+      "콜데스크를 그래프에 등록: 파일 14개·패키지 4개·외부 1개, 연결 31개. 전체 13개 프로젝트 분석 성공"
+    ],
+    "commits": [
+      "1b2a505 - Python 분석기 추가, 콜데스크(calldesk) 의존성 그래프 등록"
+    ]
+  },
+  {
+    "date": "2026-10-22",
     "project": "calldesk",
     "title": "콜데스크 시작 — \"리코, ~해줘\" 처럼 이름을 부른 말만 Claude Code 에 보내는 음성 비서 1단계",
     "items": [
