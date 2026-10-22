@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-10-22",
+    "project": "maple-boss",
+    "title": "채널 룰렛 59채널까지 늘리기",
+    "items": [
+      "인게임 채널이 59채널까지 늘어나 채널 목록(js/data.js CHANNELS)을 1 · 20세이상 · 2~59 = 60개로 바꿈. 채널 룰렛은 이 목록에서 고르므로 함께 반영"
+    ],
+    "commits": [
+      "a4f86d2 - 채널 룰렛: 59채널까지 늘리기"
+    ]
+  },
+  {
+    "date": "2026-10-22",
     "project": "claude-dashboard",
     "title": "의존성 그래프에 Python 분석기 추가 — 콜데스크 등록",
     "items": [
