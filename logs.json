@@ -2,15 +2,18 @@
   {
     "date": "2026-10-25",
     "project": "allinone-tools",
-    "title": "툴 페이지 가로 넘침 수정",
+    "title": "툴 페이지 가로 넘침 수정 · 구글 색인 요청 11개",
     "items": [
       "툴 페이지 가로 넘침 원인 확인: 무대 네온 테두리의 빛 번짐 층이 무대 밖 160px까지 상자를 키워 가로 스크롤 발생(1280px 60px, 390px 120px)",
       "사이트 틀에 overflow-x: clip 적용 — 23개 페이지 × 390·1280·1440px 넘침 0, 옆 광고 레일 고정 유지 확인",
-      "Vercel 방문 통계(@vercel/analytics) 넣고 배포 — 대시보드 Analytics 탭에서 켜면 방문자 집계 시작"
+      "Vercel 방문 통계(@vercel/analytics) 넣고 배포 — 대시보드 Analytics 탭에서 켜면 방문자 집계 시작",
+      "구글 서치 콘솔 URL 검사 11개 색인 요청 완료(privacy 1개 남음)"
     ],
     "commits": [
       "3e7bf6e - 툴 페이지 가로 넘침 수정: 무대 네온 빛 번짐 층을 화면 폭에서 잘라냄",
-      "05533b8 - Vercel 방문 통계(Analytics) 넣기"
+      "05533b8 - Vercel 방문 통계(Analytics) 넣기",
+      "178d928 - RESUME: 구글 색인 요청 11개 완료, privacy 만 남음",
+      "bafd4bf - 세션 인계: RESUME·LAST_CHAT 갱신 (가로 넘침 수정·색인 요청 11개 이후)"
     ]
   },
   {
