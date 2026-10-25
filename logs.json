@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-10-25",
+    "project": "jbae",
+    "title": "Ponder in Pond 3 크기 정정",
+    "items": [
+      "「Ponder in Pond 3」 크기를 114×162cm 에서 112×162cm 로 바로잡음 (사이트·도록 둘 다, 공모 신청서와 맞춤)"
+    ],
+    "commits": [
+      "438f278 - Ponder in Pond 3 크기를 112×162cm 로 바로잡는다"
+    ]
+  },
+  {
+    "date": "2026-10-25",
     "project": "allinone-tools",
     "title": "툴 페이지 가로 넘침 수정 · 구글 색인 요청 11개",
     "items": [
