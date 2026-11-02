@@ -2,7 +2,7 @@
   {
     "date": "2026-11-02",
     "project": "junghyeok-portfolio",
-    "title": "3D 책장 기획자 포트폴리오(portfolio-folio) 첫 버전",
+    "title": "junghyeok.com 메인을 3D 책장 포트폴리오로 — 청사진 인트로 · 책 파도 · 전체 화면 상세 배포",
     "items": [
       "motionsites.ai Folio 프롬프트 구조를 바탕으로 프로젝트 11개를 3D 책으로 놓은 한 화면 포트폴리오 제작 (Three.js r160, 빌드 없는 정적 사이트)",
       "남의 표지 이미지 대신 프로젝트별 타이포 표지를 캔버스로 직접 그림, 앞 책에 가려지지 않게 제목은 왼쪽 위에",
@@ -47,7 +47,8 @@
       "da61336 - portfolio-folio: 청사진 인트로를 원래 프롬프트에 맞춤",
       "6884686 - portfolio-folio: junghyeok.com 메인으로 배포, 로고 아이콘 · 아래 안내 문구 삭제",
       "4efef8b - portfolio-folio: 청사진 인트로 그림을 책에서 게임 컨트롤러로",
-      "61842ae - portfolio-folio: 인트로 건너뛰기 버튼 삭제, 첫 화면부터 청사진이 보이게"
+      "61842ae - portfolio-folio: 인트로 건너뛰기 버튼 삭제, 첫 화면부터 청사진이 보이게",
+      "47bb09f - RESUME·LAST_CHAT: 2026-11-02 마감"
     ]
   },
   {
