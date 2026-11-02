@@ -25,7 +25,8 @@
       "인트로가 움직임 없이 사라지던 원인 = 사용자 PC 의 윈도우 애니메이션 효과 꺼짐(움직임 줄이기) → 사이트 전체에서 따르지 않게(앞선 '너무 빠르다 · 순간이동' 피드백도 같은 원인), 로고를 누르면 인트로부터 다시",
       "큰 이름 Junghyeok 을 조금 올려 J 꼬리가 쉬고 있는 책에 가려지지 않게 (1280 · 1440 · 1920 확인)",
       "청사진 인트로를 원래 프롬프트에 맞춤(약 1.7초 잉크 번짐, 외곽선이 튕기듯 펴짐, 라벨 3단어 PARK JUNGHYEOK PORTFOLIO, 1.5초 멈춤) · 인트로 코드를 본체 · 시간표 · 치수 라벨로 나눔",
-      "3D 책장 포트폴리오를 junghyeok.com 메인으로 배포(Vercel junghyeok-home 배포 폴더 home-landing → portfolio-folio), 로고 아이콘 · 아래 안내 문구 삭제"
+      "3D 책장 포트폴리오를 junghyeok.com 메인으로 배포(Vercel junghyeok-home 배포 폴더 home-landing → portfolio-folio), 로고 아이콘 · 아래 안내 문구 삭제",
+      "청사진 인트로 그림을 책 정면도에서 위에서 본 게임 컨트롤러로 교체(곡선 손 선 · 곧은 선 펴짐 · 원 10개), 스케치 코드 분리"
     ],
     "commits": [
       "a47af74 - portfolio-folio: 3D 책장 기획자 포트폴리오 첫 버전",
@@ -43,7 +44,8 @@
       "7da94ba - portfolio-folio: 움직임 줄이기 설정을 따르지 않게, 로고를 누르면 인트로부터 다시",
       "618a494 - portfolio-folio: 큰 이름을 조금 올려 J 꼬리가 쉬는 책에 가려지지 않게",
       "da61336 - portfolio-folio: 청사진 인트로를 원래 프롬프트에 맞춤",
-      "6884686 - portfolio-folio: junghyeok.com 메인으로 배포, 로고 아이콘 · 아래 안내 문구 삭제"
+      "6884686 - portfolio-folio: junghyeok.com 메인으로 배포, 로고 아이콘 · 아래 안내 문구 삭제",
+      "4efef8b - portfolio-folio: 청사진 인트로 그림을 책에서 게임 컨트롤러로"
     ]
   },
   {
