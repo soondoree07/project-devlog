@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-03",
+    "project": "junghyeok-portfolio",
+    "title": "포트폴리오 메뉴 정리 — 소개를 맨 아래 연락처 위로",
+    "items": [
+      "위 메뉴의 '소개' · '연락하기' 버튼 삭제, About 창 내용(학교 · 한 줄 소개 · 방향 · 잘하는 것)을 맨 아래 연락처 칸 이름 아래 · 전화번호 위로 옮기고 소제목 삭제, 메뉴 About 은 그 칸으로 내려가게"
+    ],
+    "commits": [
+      "c95fae4 - portfolio-folio: 연락하기 · 소개 버튼 삭제, 소개 내용을 맨 아래 연락처 위로"
+    ]
+  },
+  {
     "date": "2026-11-02",
     "project": "junghyeok-portfolio",
     "title": "junghyeok.com 메인을 3D 책장 포트폴리오로 — 청사진 인트로 · 책 파도 · 전체 화면 상세 배포",
