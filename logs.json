@@ -1,6 +1,20 @@
 [
   {
     "date": "2026-11-05",
+    "project": "claude-dashboard",
+    "title": "대시보드 전체 화면을 모노 미니멀 무드로 개편",
+    "items": [
+      "전체 화면 무드를 네온에서 모노 미니멀(무채색 + 흰 강조 하나)로 바꿈. uipro 추천을 바탕으로 시안 8개 → 4개 → 1번을 골라 적용",
+      "색은 app/styles/tokens.css 한 곳에서 관리하고, Tailwind 색과 공용 부품(btn·surface·field·status-dot 등)이 이 토큰을 씀. globals.css 352줄 → 173줄",
+      "글꼴을 IBM Plex Sans KR + JetBrains Mono로 바꾸고, 화면 문구를 해요체로 정리(종료 → 끄기, 그래프 영어 제목 → 한국어)",
+      "의존성 그래프의 데이터 색은 그대로 두고 주변 패널만 새 무드로 바꿈. 코드 리뷰 지적(터미널 모서리, hex 직접 사용, 긴 꼬리표 줄바꿈)도 반영"
+    ],
+    "commits": [
+      "a9d9eb1 - 전체 화면을 모노 미니멀 무드로 바꿈"
+    ]
+  },
+  {
+    "date": "2026-11-05",
     "project": "junghyeok-portfolio",
     "title": "포트폴리오 책 2권 추가 · 남은 9개 프로젝트 캡처 적용 · 학교 프로젝트 뒤로 빼고 표시",
     "items": [
