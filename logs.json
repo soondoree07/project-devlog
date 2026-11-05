@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-05",
+    "project": "junghyeok-portfolio",
+    "title": "포트폴리오 책 2권 추가(NuriKorea · One App, Endless Play) · 남은 프로젝트 캡처 모으고 추천 정리",
+    "items": [
+      "책장에 NuriKorea(관광데이터 공모전 본선 진출, 기획 25% · 디자인 80%)와 캡스톤 One App, Endless Play(Tap Blast · Slime Dash 3D · Chrono Cat 게임별 비율) 추가 — 17권, 표지 도형 지도 핀 · 재생 화살표 새로 그림",
+      "Smart Highway(기말 발표 PDF · 구상도 · IA · 웨어러블 UI), NuriKorea(Flow Map 구역 · 피그마 7.14 수정본 · 실제 앱 캡처 6장), 캡스톤 판넬 3번, 오늘의집 프로토타입 3화면, LOPA 화면 5장을 대기 폴더에 모음",
+      "대기 폴더를 프로젝트마다 추천캡쳐 / 캡쳐로 나누고 추천 이유를 추천목록.txt 에 정리 — 사용자 확인 전이라 사이트 적용은 아직, 대시보드는 UI 수정 뒤 다시 찍기로"
+    ],
+    "commits": [
+      "48e8e25 - portfolio-folio: NuriKorea · One App, Endless Play 책 추가 (17권)"
+    ]
+  },
+  {
     "date": "2026-11-04",
     "project": "junghyeok-portfolio",
     "title": "포트폴리오 상세 화면 캡처 — 운영 중인 사이트 7개 넣기 · 피그마 캡처 대기 폴더",
