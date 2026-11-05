@@ -10,11 +10,13 @@
       "가로로 너무 긴 캡처가 작게 보이는 문제 — 추천 캡처 전부를 16:10 검정 바탕 틀로 다시 짬(ENCORE 6화면은 3화면씩 나누고, 캡스톤은 판넬 원본 스크린샷으로 게임별 3화면, 젤로팡 민트 바탕은 검정으로)",
       "젤로팡 · 돈이돼지 · NuriKorea · ENCORE · 오늘의집 · LOPA · Smart Highway · Hopetail · 캡스톤 상세 화면에 캡처와 설명 적용 (1800x1125, 큰 것은 JPG)",
       "책 순서를 회사(젤로팡 · 돈이돼지) → 공모전(NuriKorea) → 개인 작업 → 학교 프로젝트로 바꾸고, 데이터를 projects-work.js / projects-school.js 로 나눔 — 학교 책은 표지에 SCHOOL, 상세에 '학교 프로젝트' 표시",
-      "오늘의집: 인터뷰이 1명당 1시간 이상 인터뷰했다고 명시"
+      "오늘의집: 인터뷰이 1명당 1시간 이상 인터뷰했다고 명시",
+      "LOPA 2번째 캡처(시작 화면 · 프리미엄) 추가 — 받은 화면의 제목 오타 Preimium 두 곳(상단 제목 · 본문 큰 제목)을 같은 그라데이션 위에 Premium 으로 다시 써서 넣음"
     ],
     "commits": [
       "48e8e25 - portfolio-folio: NuriKorea · One App, Endless Play 책 추가 (17권)",
-      "e596918 - portfolio-folio: 남은 9개 프로젝트 캡처 적용 · 학교 프로젝트를 뒤로 빼고 표시"
+      "e596918 - portfolio-folio: 남은 9개 프로젝트 캡처 적용 · 학교 프로젝트를 뒤로 빼고 표시",
+      "08e4373 - portfolio-folio: LOPA 시작 화면 · 프리미엄 캡처 추가"
     ]
   },
   {
