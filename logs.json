@@ -20,7 +20,7 @@
   {
     "date": "2026-11-05",
     "project": "junghyeok-portfolio",
-    "title": "포트폴리오 책 2권 추가 · 남은 9개 프로젝트 캡처 적용 · 학교 프로젝트 뒤로 빼고 표시",
+    "title": "포트폴리오 책 2권 추가 · 캡처 적용 · 학교 프로젝트 분리 · 프로젝트 돌아보기",
     "items": [
       "책장에 NuriKorea(관광데이터 공모전 본선 진출, 기획 25% · 디자인 80%)와 캡스톤 One App, Endless Play(Tap Blast · Slime Dash 3D · Chrono Cat 게임별 비율) 추가 — 17권, 표지 도형 지도 핀 · 재생 화살표 새로 그림",
       "Smart Highway(기말 발표 PDF · 구상도 · IA · 웨어러블 UI), NuriKorea(Flow Map 구역 · 피그마 7.14 수정본 · 실제 앱 캡처 6장), 캡스톤 판넬 3번, 오늘의집 프로토타입 3화면, LOPA 화면 5장을 대기 폴더에 모음",
@@ -29,12 +29,14 @@
       "젤로팡 · 돈이돼지 · NuriKorea · ENCORE · 오늘의집 · LOPA · Smart Highway · Hopetail · 캡스톤 상세 화면에 캡처와 설명 적용 (1800x1125, 큰 것은 JPG)",
       "책 순서를 회사(젤로팡 · 돈이돼지) → 공모전(NuriKorea) → 개인 작업 → 학교 프로젝트로 바꾸고, 데이터를 projects-work.js / projects-school.js 로 나눔 — 학교 책은 표지에 SCHOOL, 상세에 '학교 프로젝트' 표시",
       "오늘의집: 인터뷰이 1명당 1시간 이상 인터뷰했다고 명시",
-      "LOPA 2번째 캡처(시작 화면 · 프리미엄) 추가 — 받은 화면의 제목 오타 Preimium 두 곳(상단 제목 · 본문 큰 제목)을 같은 그라데이션 위에 Premium 으로 다시 써서 넣음"
+      "LOPA 2번째 캡처(시작 화면 · 프리미엄) 추가 — 받은 화면의 제목 오타 Preimium 두 곳(상단 제목 · 본문 큰 제목)을 같은 그라데이션 위에 Premium 으로 다시 써서 넣음",
+      "상세 화면 '배운 것'을 돌아보기(아쉬운 점 · 배운 점 · 다음엔)로 넓힘 — 사용자에게 프로젝트마다 질문하고 답을 정리해 16개 작성(크몽은 의뢰 전이라 보류), 팀원 문제는 공개 화면에 맞게 사실 + 다음 행동으로 다듬음. 글은 js/project-retros.js, 솔직한 초안은 레포 밖 ~/portfolio-captures-staging/돌아보기_초안.md"
     ],
     "commits": [
       "48e8e25 - portfolio-folio: NuriKorea · One App, Endless Play 책 추가 (17권)",
       "e596918 - portfolio-folio: 남은 9개 프로젝트 캡처 적용 · 학교 프로젝트를 뒤로 빼고 표시",
-      "08e4373 - portfolio-folio: LOPA 시작 화면 · 프리미엄 캡처 추가"
+      "08e4373 - portfolio-folio: LOPA 시작 화면 · 프리미엄 캡처 추가",
+      "c582330 - portfolio-folio: 상세 화면 '배운 것'을 돌아보기(아쉬운 점 · 배운 점 · 다음엔)로 넓힘"
     ]
   },
   {
