@@ -1,5 +1,35 @@
 [
   {
+    "date": "2026-11-12",
+    "project": "claude-config",
+    "title": "나만의 하네스 1단계 — 조사 · 설계 · 전역 규칙 개편",
+    "items": [
+      "하네스 엔지니어링 조사: OpenAI 글 · lopopolo/harness-engineering 저장소 · 영상 속 harness-todo",
+      "설계도 1~4판 (원칙 5개 · worktree 흐름 · 검증 8가지 · 레이어 · 브라우저 자동화 · 로그 · 이중 확인), 결정 카드 18개 확정",
+      "~/.claude 를 비공개 저장소 P000-harness 로 만들고 원본 백업",
+      "전역 CLAUDE.md 235줄 → 135줄, 세부는 docs 13개로 · 프로젝트 코드 P000~P022 와 projects.json 단일 기준",
+      "별도 리뷰 에이전트 검토에서 막음 4건 · 고치면 좋음 17건 찾아 반영",
+      "개선 기록(HARNESS_BACKLOG) 시작 — 첫날 열린 항목 10개"
+    ],
+    "commits": [
+      "415eb66 - 문서: 전역 규칙 개편 (CLAUDE.md + docs 13개 + 프로젝트 코드)",
+      "d65a59c - 문서: 개선 기록: 블로그 글 작업에서 찾은 빈틈 6건"
+    ]
+  },
+  {
+    "date": "2026-11-12",
+    "project": "junghyeok-blog",
+    "title": "글 추가 — 나만의 하네스 만들기 1편 (새 하네스 흐름 첫 적용)",
+    "items": [
+      "하네스 작업 정리 글 추가 (설계도 · 전역 규칙 초안 링크 2개)",
+      "새 규칙으로 처음 작업: worktree → 실행 계획 → lint · build → 데스크톱 · 모바일 캡처 → PR → 확인 → 합치기",
+      ".gitignore 에 logs/ 추가"
+    ],
+    "commits": [
+      "6f3178d - 문서: 글: 나만의 하네스 만들기 1편"
+    ]
+  },
+  {
     "date": "2026-11-11",
     "project": "junghyeok-blog",
     "title": "정혁이의 실험실 시작 — 네이버식 블로그 뼈대",
