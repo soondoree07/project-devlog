@@ -6953,5 +6953,16 @@
       "새 리뷰 에이전트 3회: 1회차에 git -C · cd \"$HOME\" 뒤 커밋 같은 우회 모양과 로그를 지우는 정리 버그를 잡았고, 3회차에 막음 없음",
       "키트 테스트 100개, devlog 는 PR 없이 main 직접 기록으로 정함"
     ]
+  },
+  {
+    "date": "2026-11-13",
+    "project": "claude-config",
+    "title": "디자인 규칙 모음 · 한글 줄바꿈 · 하네스 시험 git 환경 버그 수정 (PR #5)",
+    "items": [
+      "docs/DESIGN_RULES.md 새로: 정혁님이 지적하고 고친 결과를 오케이한 디자인 규칙을 '지적 → 고친 방법' 표로 모음, 화면 작업 전 필독으로 CLAUDE.md 에 연결",
+      "한글 줄바꿈 규칙: 낱말 중간 줄바꿈 금지(keep-all), 마지막 줄 한두 글자 막기(text-wrap balance · pretty), 안 되면 문구 줄이기",
+      "버그: pre-commit 안에서 키트 시험이 GIT_INDEX_FILE 을 물려받아 작업 폴더 index 를 덮어쓰고 ~/.claude 를 bare 저장소로 바꿈 → run.sh 시작할 때 GIT_* 지움",
+      "P023 벨로나지지 등록"
+    ]
   }
 ]
